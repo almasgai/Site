@@ -7,6 +7,7 @@ defaultContentLanguage = "en"
 theme = "kiss"
 publishDir = "docs"
 
+
 [params.info]
 homeTitle = "Al Masgai"
 

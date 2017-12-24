@@ -42,6 +42,8 @@ button
 
 #image{
   overflow: hidden;
+  position: relative;
+
 }
 
 img

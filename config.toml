@@ -1,0 +1,20 @@
+baseURL = "http://masgai.com/"
+languageCode = "en-us"
+title = "Al Masgai"
+staticDir = "static"
+config = "config.toml"
+defaultContentLanguage = "en"
+theme = "kiss"
+publishDir = "docs"
+
+
+[params.info]
+homeTitle = "Al Masgai"
+
+[params.social]
+github = "almasgai"
+email = "alex.masgai@gmail.com"
+linkedin = "alex-masgai"
+
+[params.assets]
+customCSS = ["css/custom.css"]

@@ -1,7 +1,7 @@
 ---
 title: "Building This Site"
 date: 2017-12-23T23:16:51-05:00
-draft: true
+draft: false
 tags: ["web development", "2017"]
 ---
 I built this website using basic HTML, CSS, JS, and the [Bootstrap](http://getbootstrap.com) framework. The particles on the homepage where created using open source software [particle.js](https://github.com/VincentGarreau/particles.js/). Looking back at it, using Bootstrap was completely overkill for this project since I only used for its 12 grid system. A more appropriate CSS framework would have been [Skeleton](http://getskeleton.com), which I might migrate to in the near future.

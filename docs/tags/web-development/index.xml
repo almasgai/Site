@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on Al Masgai</title>
+    <link>http://masgai.com/tags/web-development/</link>
+    <description>Recent content in Web Development on Al Masgai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Dec 2017 23:16:51 -0500</lastBuildDate>
+    
+	<atom:link href="http://masgai.com/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building This Site</title>
+      <link>http://masgai.com/posts/building-this-site/</link>
+      <pubDate>Sat, 23 Dec 2017 23:16:51 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/building-this-site/</guid>
+      <description>I built this website using basic HTML, CSS, JS, and the Bootstrap framework. The particles on the homepage where created using open source software particle.js. Looking back at it, using Bootstrap was completely overkill for this project since I only used for its 12 grid system. A more appropriate CSS framework would have been Skeleton, which I might migrate to in the near future.
+In order to create blog posts, I had to learn how to use static site generator Hugo.</description>
+    </item>
+    
+  </channel>
+</rss>

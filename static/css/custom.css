@@ -71,7 +71,8 @@ a:hover > i:hover
 .navbar-nav
 {
     display: inline-block;
-
+    float: none;
+    vertical-align: top;
     text-align: center;
 
     background-color: transparent;
@@ -83,6 +84,9 @@ a:hover > i:hover
 }
 @media (max-width:991px)
 {
+  .navbar navbar-collapse{
+    text-align: center;
+  }
     #name
     {
         border-left: 0 solid !important;
@@ -91,9 +95,6 @@ a:hover > i:hover
     .collapse navbar-collapse
     {
         display: inline-block;
-        float: none;
-        vertical-align: top;
-        text-align: center;
         margin: 0;
         padding: 0;
     }

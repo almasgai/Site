@@ -40,22 +40,19 @@ button
     z-index: 9999;
 }
 
-#image{
-  overflow: hidden;
-  position: relative;
-
+img {
+  width: 45%;
+  height: 45%;
 }
 
-img
-{
-    border: 4px solid black;
-    /*
-    Brings img to the front
-    */
-    position: relative;
-    border-radius: 50%;
-    overflow: visible;
-    z-index: 9999;
+#image img{
+      border: 4px solid black;
+      position: block;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 9999;
+      margin: 0;
+      padding: 0;
 }
 
 a:hover,
@@ -64,7 +61,7 @@ i:hover
     text-decoration: underline !important;
 
     color: cyan !important;
-    text-shadow: 3px 3px 8px black;
+
 }
 a:hover > i:hover
 {
@@ -112,7 +109,7 @@ a:hover > i:hover
 
 .center-block
 {
-    display: block;
+    display: inline-block;
 
     margin-top: 50px;
     margin-right: auto;

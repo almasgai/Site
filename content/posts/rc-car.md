@@ -42,7 +42,7 @@ ASCII characters via Bluetooth over to be read by the car and make a decision ba
 on the information sent over. For example, pressing a button would send 'L' over
 to the car. This would result in the car interpreting the character and turning left. I also helped with the wiring
 between the HC-06, the motor shield, the Arduino 2560, and the motor. Troubleshooting the connections between the Arduino, Bluetooth module, and motor shield helped me understand electronics immensely. It
-is one thing to read about it online through guides on [electricity](http://www.instructables.com/class/Electronics-Class/) and [Arduinos](http://www.instructables.com/class/Arduino-Class/)
+is one thing to read about it online through guides on [electronics](http://www.instructables.com/class/Electronics-Class/) and [Arduinos](http://www.instructables.com/class/Arduino-Class/)
 like I did and a completely different experience doing it hands on. Although things
 didn't click at first, I  now have a strong understanding of the basics of
 circuits and embedded systems. This will come handy in future Arduino-based projects

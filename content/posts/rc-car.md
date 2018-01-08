@@ -48,12 +48,11 @@ didn't click at first, I  now have a strong understanding of the basics of
 circuits and embedded systems. This will come handy in future Arduino-based projects
 that I will do and for a course I'm taking next semester called the Internet of Things.
 
-I was also the group leader because it was originally my idea. This meant that I would do my fair
-share of the work but also do a lot of the tedious and administrative work as well.
-I was held responsible for keeping minutes during group meetings and reporting to
-my professor to keep him in the loop of things. It also meant that I made sure everyone
-was doing their work which admittedly was pretty easy since everyone in my group
-was amicable and hard working.
+I was also the group leader. This meant that I would do my fair share of the work but also
+do a lot of the tedious and administrative work as well. I was held responsible
+for keeping minutes during group meetings and reporting to my professor to keep
+him in the loop of things. It also meant that I made sure everyone was doing their
+work which admittedly was pretty easy since everyone in my group was amicable and hard working.
 
 ## Pitfalls & Obstacles
 

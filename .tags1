@@ -5,9 +5,10 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Particle Simulation in C++	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^# Particle Simulation in C++$/;"	function	line:7
-Why I Chose this Project	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^## Why I Chose this Project$/;"	function	line:14
-C++	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^## C++$/;"	function	line:20
-Setting Up SDL to Work in Xcode	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^## Setting Up SDL to Work in Xcode$/;"	function	line:34
-Particles:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Particles:$/;"	function	line:54
-Swarm	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Swarm$/;"	function	line:59
-Screen	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Screen$/;"	function	line:69
+Why I Chose this Project	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Why I Chose this Project$/;"	function	line:12
+C++	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### C++$/;"	function	line:17
+Setting Up SDL to Work in Xcode	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Setting Up SDL to Work in Xcode$/;"	function	line:31
+Particles:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Particles:$/;"	function	line:50
+Swarm:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Swarm:$/;"	function	line:55
+Screen:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Screen:$/;"	function	line:65
+Screen:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Screen:$/;"	function	line:78

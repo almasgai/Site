@@ -1,10 +1,10 @@
 ---
 title: "Why I Will Never Miss an 8 am Ever Again"
 date: 2018-03-01T14:10:27-05:00
-draft: true
+draft: false
 tags: ["arduino", "DIY"]
 ---
-# Solving a Common College Student Problem
+## Solving a Common College Student Problem
 Like most people, I enjoy sleep. A lot. Maybe too much. Waking up early in the
 morning is a herculean task since I'm a heavy sleeper. But I'm also taking an 8am
 class this semester and don't want to sleep in. I decided that between my knowledge on
@@ -43,12 +43,26 @@ Miscellaneous parts that most electronic enthusiasts already have:
 - Hot Glue Gun
 
 After gathering all the parts, I got down to work!
+<center>
+  <figure>
+    <img src="/images/WULA/1.jpg" alt="One big mess">
+    <figcaption>One big mess.</figcaption>
+  </figure>
+</center>
 
 ## First Things First
 I wanted to make my panel rectangular so that when the light shines at 7 in the
 morning, it would cover my entire field of vision and (hopefully) wake up. I
 decided to make each strip 18 LED lights long. I then cut pleather to make a
 lightweight, flexible panel panel.
+
+<center>
+<figure>
+<img src="/images/WULA/2.jpg" alt="One big mess">
+<figcaption>Cut up and wired the strips pasted them across the pleather panel.</figcaption>
+</figure>
+</center>
+<br>
 
 It wasn't too long until I hit my first roadblock,
 which was soldering. I found the culprit, or should I say culprits. The first problem
@@ -80,10 +94,26 @@ soldering was done. This helped hide where the positive and negative ends were
 exposed. I also made a small cut where the power adapter was and threaded the
 power adapter through the hole so that it would remain hidden from the front view.
 
+<center>
+<figure>
+  <img src="/images/WULA/3.jpg" alt="One big mess">
+  <figcaption>The Arduino-less panel unit. I unfortunately could not find an effective to hide those hideous wires. </figcaption>
+</figure>
+</center>
+
 After testing out the lights one last time to ensure that everything was working,
 I switched over to the software side of things.
 
 ## A Simple Microcontroller for a Simple Task: Arduino Uno
+
+<center>
+  <figure>
+    <img src="/images/WULA/logo.svg" alt="One big mess">
+    <figcaption>Arduino Logo</figcaption>
+  </figure>
+</center>
+<br>
+
 Keeping my costs down was my number one priority. Originally, I thougt about using
 an STM32 but I already had a spare Arduino Uno laying around so I thought it was
 about time putting it to use. I had an Arduino Mega2560 as well but thought it
@@ -149,6 +179,67 @@ while(countDown != 0){
   analogWrite(PIN, LOW);
 }
 ```
+<center>
+<figure style="float: right">
+  <img src="/images/WULA/4.jpg" alt="Testing">
+  <figcaption>Working on the Arduino program and testing it out on panel.</figcaption>
+</figure>
+</center>
 
 ## Piecing Things Together
-My next step was bringing the project together.
+My next step was bringing the project together. I connected pin 9 (PWM) to the source
+of the MOSFET. It is important to use a pin with a tilde(~) next to it. These pins
+support [pulse width modulation](https://www.arduino.cc/en/Tutorial/PWM) which allow
+the light to dim the LED lights by getting analog results from digital mean. Of
+course, one can have it so that the lights turn on as bright as they can without
+the pulsating fading effect but I opted for these effects because I thought it
+would be easier to wake up to. To each their own for lighting methods!
+
+I then connected this pin to the source terminal of the MOSFET by soldering the
+ends together using some soldering wire. This was a little tedious since I had to
+solder outside (no soldering allowed in the residence hall) in 40° weather where
+the soldering wire was reluctant to melt and keep this composition while I managed
+to merge the two ends together. After more attempts than I would like to admit,
+I finally got it.
+
+Next I decided to solder the gate terminal to a jumper wire connected to negative
+wire that directly feed into the negative end of the LED lights. I then connected
+drain terminal to the GND pin on the Arduino. Lastly, I connected the positive red
+wire from the LED strip to the VIN pin which powers the panel with 9V of electricity.
+
+## Tying Up the Loose Ends
+<center>
+<figure>
+  <img src="/images/WULA/5.jpg" alt="One big mess">
+  <figcaption>Added those strange loops to panel here using glue gun. Soldered the wiring up between the panel and Arduino as well, making it one unit.</figcaption>
+</figure>
+</center>
+<br>
+
+
+From a functional stand point, my product worked and was 100% complete. Structurally
+speaking, there was still work left to be done. I wanted to suspend my LED panel
+above my bed but initially had no clear way of doing so. I eventually decided to
+create loops out of my pleather that I would thread some cheap string through. I
+held down the loops using my hot glue gun and was able to suspend it all with string
+that was connected to a nail above my bed.
+
+My wiring was a little hectic so I decided to use zip ties to organize them better.
+I then glued my Arduino to the back of the LED panel so it was out of sight and
+securely attached to the back side. I have included some pictures below this article
+to show exactly what I am talking about.
+
+## Conclusion
+Overall, I learned a lot through this project. I had recently began looking for
+ways in my own life to solve any problems I might have through technology and I
+accomplished my goal. I explored two new and very practical libraries that may
+come handy somewhere down the line and I few like I have a pretty solid understanding
+of basic electronics. Now waking up isn't so bad and I won't be sleeping in anymore
+8am classes, at least I hope not!
+
+<a href "/posts/_index.md">Back to Articles</a>
+
+<figure style="float:right;">
+  <img src="/images/WULA/vid.gif" alt="Panel in Action">
+  <figcaption>Animation of what the fading effect looks like</figcaption>
+</figure>

@@ -44,10 +44,8 @@ Miscellaneous parts that most electronic enthusiasts already have:
 
 After gathering all the parts, I got down to work!
 <center>
-  <figure>
     ![Image 1](/images/WULA/1.jpg)
     <figcaption>One big mess.</figcaption>
-  </figure>
 </center>
 
 ## First Things First
@@ -237,9 +235,5 @@ come handy somewhere down the line and I few like I have a pretty solid understa
 of basic electronics. Now waking up isn't so bad and I won't be sleeping in anymore
 8am classes, at least I hope not!
 
-<a href "/posts/_index.md">Back to Articles</a>
-
-<figure style="float:right;">
-  <img src="/images/WULA/vid.gif" alt="Panel in Action">
-  <figcaption>Animation of what the fading effect looks like</figcaption>
-</figure>
+  ![Panel in Action](/images/WULA/vid.gif)
+Animation of what the fading effect looks like.

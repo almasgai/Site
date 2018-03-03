@@ -4,7 +4,7 @@ date: 2018-01-28T13:20:32-05:00
 draft: false
 tags: ["c++", "2018"]
 ---
-# Simple Particle Simulation in C++
+# Simple Particle Simulation in C++:
 The title says it all! In this project I wanted to use a simple library that would
 allow me to create a GUI of a particle simulation. After searching around, I decided to use Simple
 DirectMedia Layer, better known as [SDL](https://www.libsdl.org) for its simplicity and

@@ -4,7 +4,7 @@ date: 2018-03-01T14:10:27-05:00
 draft: false
 tags: ["arduino", "DIY"]
 ---
-## Solving a Common College Student Problem
+## Solving a Common College Student Problem:
 Like most people, I enjoy sleep. A lot. Maybe too much. Waking up early in the
 morning is a herculean task since I'm a heavy sleeper. But I'm also taking an 8am
 class this semester and don't want to sleep in. I decided that between my knowledge on

@@ -4,7 +4,7 @@ date: 2018-01-04T13:32:28-05:00
 draft: false
 tags: ["arduino", "android","2018"]
 ---
-# Building an Arduino-powered Car for CSC 315
+# Building an Arduino-powered Car for CSC 315:
 
 This semester I took a class that I have wanted to take since my first
 semester at college: CSC 315, Software Engineering. CSC 315 focuses more on

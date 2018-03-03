@@ -223,6 +223,5 @@ come handy somewhere down the line and I few like I have a pretty solid understa
 of basic electronics. Now waking up isn't so bad and I won't be sleeping in anymore
 8am classes, at least I hope not!
 
-<center>![Panel in Action](/images/wula/vid.gif)
+![Panel in Action](/images/wula/vid.gif)
 *Animation of what the fading effect looks like.*
-</center>

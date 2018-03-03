@@ -43,10 +43,7 @@ Miscellaneous parts that most electronic enthusiasts already have:
 - Hot Glue Gun
 
 After gathering all the parts, I got down to work!
-<center>
-    ![Image 1](/images/WULA/1.jpg)
-    *One big mess.*
-</center>
+<center>![Image 1](/images/wula/1.jpg)</center>
 
 ## First Things First
 I wanted to make my panel rectangular so that when the light shines at 7 in the
@@ -55,7 +52,7 @@ decided to make each strip 18 LED lights long. I then cut pleather to make a
 lightweight, flexible panel panel.
 
 <center>
-![Panel](/images/WULA/2.jpg)
+![Panel](/images/wula/2.jpg)
 *Cut up and wired the strips pasted them across the pleather panel.*
 </center>
 <br>
@@ -91,7 +88,7 @@ exposed. I also made a small cut where the power adapter was and threaded the
 power adapter through the hole so that it would remain hidden from the front view.
 
 <center>
-  ![Hideous!](/images/WULA/3.jpg)
+  ![Hideous!](/images/wula/3.jpg)
   *The Arduino-less panel unit. I unfortunately could not find an effective to hide those hideous wires.*
 </center>
 
@@ -102,7 +99,7 @@ I switched over to the software side of things.
 
 <center>
 
-    ![Logo](/images/WULA/logo.svg)
+    ![Logo](/images/wula/logo.svg)
     *Arduino Logo*
 
 </center>
@@ -174,7 +171,7 @@ while(countDown != 0){
 }
 ```
 <center>
-  ![Anotha One](/images/WULA/4.jpg)
+  ![Anotha One](/images/wula/4.jpg)
   *Working on the Arduino program and testing it out on panel.*
 </center>
 
@@ -202,7 +199,7 @@ wire from the LED strip to the VIN pin which powers the panel with 9V of electri
 ## Tying Up the Loose Ends
 
 <center>
-  ![Putting it together](/images/WULA/5.jpg)
+  ![Putting it together](/images/wula/5.jpg)
   *Added those strange loops to panel here using glue gun. Soldered the wiring up between the panel and Arduino as well, making it one unit.*
 </center>
 

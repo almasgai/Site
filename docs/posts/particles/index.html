@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Particles | Al Masgai</title>
+
+
+<link rel="stylesheet" href="http://masgai.com//css/style.css"/><link rel='stylesheet' href='/css/custom.css'></head>
+
+
+
+<body>
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://masgai.com/"><h1 class="title is-4">Al Masgai</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" href='mailto:alex.masgai@gmail.com' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" href='https://github.com/almasgai' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" href='https://linkedin.com/in/alex-masgai' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/c&#43;&#43;">#c&#43;&#43;</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/2018">#2018</a>
+  
+
+      
+    </div>
+    <h2 class="subtitle is-6">January 28, 2018</h2>
+    <h1 class="title">Particles</h1>
+      
+    <div class="content">
+      
+
+<h1 id="simple-particle-simulation-in-c">Simple Particle Simulation in C++:</h1>
+
+<p>The title says it all! In this project I wanted to use a simple library that would
+allow me to create a GUI of a particle simulation. After searching around, I decided to use Simple
+DirectMedia Layer, better known as <a href="https://www.libsdl.org">SDL</a> for its simplicity and
+plethora of online resources in case I get stuck. In order to learn the library I used SDL&rsquo;s documentation
+and followed a <a href="https://www.youtube.com/user/caveofprogramming/videos">YouTube channel</a> to help structure my project.
+I mainly wanted to do this project to sharpen my C++ skills and learn how to create
+a simple GUI using a C++ library. I mainly drew inspiration from reading about people creating
+fire simulations in <em>assembly</em> online. I figured if people could accomplish this using only assembly, then I could
+create my own version in C++ with enough time and effort.</p>
+
+<h3 id="c">C++</h3>
+
+<p>Initially I considered doing this project in Java but ultimately opted for C++ to
+practice my skills in C++ and because I wanted more of a challenge since C++ is more error prone and demands the programmer
+to manage memory allocation.
+Although C++ and Java are syntactically similar, the two programming languages have
+some very stark differences. Java follows the programming paradigm of object oriented
+programming while C++ is both procedural and OOP. Java has a garbage collector
+while C++ doesn&rsquo;t meaning you have to allocate and deallocate memory manually on the heap in order to avoid garbage
+values and potential bugs. This is what I meant when I said C++ is in most cases more
+error prone than most languages. This caused a strange bug that I kept getting during
+runtime early on in development which I talk about later in this article. C++ arguments can be passed by
+value or by reference by utilizing references and pointers. Java passes by value
+through primitive types and passes by reference through objects when calling functions.
+Java follows a &lsquo;WORA&rsquo; approach (write once, run anywhere) by using the JVM
+(Java Virtual Machine) which translates byte code into machine code so that it can be ran on any system. An entire article
+could be written on the differences between the two languages but for the rest of
+the article, I will focus on my approach and creating this project.</p>
+
+<h3 id="setting-up-sdl-to-work-in-xcode">Setting Up SDL to Work in Xcode</h3>
+
+<p><center><img src="/images/Particles/logo.png" alt="SDL Logo" /></center></p>
+
+<p>Despite its ease of use when setting it up on Windows and Linux,
+SDL seemed unnecessarily difficult to set up on macOS.
+I ran into a few issues but after scouring the internet, I found a <a href="http://lazyfoo.net/tutorials/SDL/01_hello_SDL/mac/xcode/index.php">guide</a>
+that allowed me to get the SDL library up and running. I was able to verify that SDL was linked into
+my Xcode project by running the following code in the main method:</p>
+
+<pre><code class="language-C++">if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) != 0) {
+        SDL_Log(&quot;Unable to initialize SDL: %s&quot;, SDL_GetError());
+        return 1;
+    }
+    SDL_Quit();
+</code></pre>
+
+<p>Straight from SDL&rsquo;s documentation, the code above is used to initialize the SDL
+library. If SDL is properly configured and present in the working project tree, the
+test program will return no errors, otherwise it is going to a negative value.
+I decided to make the following classes: Particles, Swarm, &amp; Screen along with
+header files for each respective class.</p>
+
+<h3 id="particles">Particles:</h3>
+
+<p>This class focused on the characteristics of each
+particle, namely speed and direction when they &lsquo;explode&rsquo;.
+This is by far the smallest of the classes.</p>
+
+<h3 id="swarm">Swarm:</h3>
+
+<p>Swarm focused on the particles as a whole. In this class
+I set a <code>const int</code> of the number of particles the program
+will have in total. The swarm of particles is then updated
+based on the speed of the user&rsquo;s computer. This is done by
+calculating how long it takes the user&rsquo;s computer to run
+<code>update()</code> which is called in main in a forever while loop. The difference between each interval is multiplied by the
+<code>double xSpeed</code> and <code>double  ySpeed</code> and assigned to member variables <code>m_x</code> and <code>m_y</code>. This makes the particles animation based on how fast the computer can complete the method each time. Slower computers that take longer to compute will have a higher <code>interval</code> value each time
+that will cause the particles to go farther every update. This allows both fast and slow computers to run the program effectively and at a constant speed.</p>
+
+<h3 id="screen">Screen:</h3>
+
+<p>Screen class was created to handle to actual window that
+pops up when the program runs. By default, the window is
+800px wide and 600px tall. The class consists of
+SDL type objects. The object pointer window is the actual window that
+displays the program. Textures are processed in the buffer by the renderer and
+then displayed by the window. As previously stated in the C++ section of this article,
+I had a mysterious EXC_BAD_ACCESS memory bug that occurred during runtime. This
+was accidentally caused by me by initializing an SDL unsigned 32-bit integer that was
+already initialized elsewhere in the program. This caused the pinter to be confused
+on what unsigned integer was I referring to. The reason I specifically needed to
+use SDL&rsquo;s version of a Uint32 was to avoid the potential bug of an int being a
+different value on a different computer or operating system although after researching
+the topic more, I could have added <code>&lt;inttypes.h&gt;</code> to the top of all my headers and
+created <code>int32_t</code> variables as needed.</p>
+
+<h3 id="screen-1">Screen:</h3>
+
+<p>Screen class also does a lot of the behind the scenes
+work as well such as ensuring that the components that
+made up the display such as the renderer, buffer,
+and texture were properly destroyed in the <code>close()</code>
+method. Other methods like <code>update()</code>, as the name
+suggests updates the screen every time it is called in a
+loop.</p>
+
+<p>I learned how to do the pulsating effect between two colors through the
+<a href="https://www.youtube.com/user/caveofprogramming/videos">Cave of Programming</a>
+YouTube channel. The basic idea is to use sine
+and cosine to calculate a value between 0 and 2
+by multiply an arbitrary number by the variable <code>elapsed</code> and adding 1 since a value in
+sine or cosine can be negative <em>but</em> a color can not have a negative value in the world programming.
+The value is then multiplied by 128 to get an RGB value between 0 and 255. The numbers are then casted
+into unsigned chars which is OK to do since the values should not be negative anyway and because char is
+technically an int value.
+The process can be seen below:</p>
+
+<pre><code class="language-C++">unsigned char red = (unsigned char)((1 + sin(elapsed * 0.002)) * 128);
+unsigned char green = (unsigned char)((1 + sin(elapsed * 0.002)) * 128);
+unsigned char blue = (unsigned char)((1 + cos(elapsed * 0.002)) * 128);
+</code></pre>
+
+<p>This value is then saved to a
+char variable to be passed into the <code>setPixel()</code> method where the hex value is
+calculated by adding the chars of red, green, and blue into a hex value using the
+addition operator (+) and the shifting bitwise left operator (&lt;&lt;).
+I set mine up to pulsate between an aqua blue and red. It is a simple program
+but I&rsquo;m happy with how it turned out:</p>
+
+<p><center><img src="/images/Particles/a.gif" alt="Gif of Project" /></center></p>
+
+<h1 id="future-plans-takeaways">Future Plans &amp; Takeaways</h1>
+
+<p>I decided to intentionally write a blog post about this project in particular to
+make sure that I completely understand the program, the SDL library, and all my
+memory management done with pointers, references, and SDL objects. Through the assistance of <a href="https://www.youtube.com/user/caveofprogramming/videos">this</a> YouTube channel, I
+can now create basic GUI&rsquo;s using SDL. Looking back in hindsight, there were probably
+easier, more up-to-date libraries that I could have used such as the robust <a href="https://www.qt.io">Qt framework</a> or the incredible <a href="https://libcinder.org">Cinder library</a> but SDL
+is still a solid GUI library regardless and I am confident that what I learned will
+transfer to other GUI frameworks and libraries one way or another.</p>
+
+<p>I do not consider this program completely done. I still plan on adding a menu prompt
+that pops up before the program automatically runs that asks the user to enter RGB values
+to set the color of the particles
+and to implement a specific list of behaviors on how the particles flow in the program.
+For those interested, I have uploaded my project along with all my others to my <a href="https://github.com/almasgai">Github account</a>.
+This will have to be put on the back burner at the moment because all my electronic
+parts that I ordered online finally came and I want to create a project that I have been
+meaning to do for a very long time. Until then, stay tuned!</p>
+
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+</body>
+</html>

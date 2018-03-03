@@ -45,7 +45,7 @@ Miscellaneous parts that most electronic enthusiasts already have:
 After gathering all the parts, I got down to work!
 <center>
   <figure>
-    <img src="/images/WULA/1.jpg" alt="One big mess">
+    ![Image 1](/images/WULA/1.jpg)
     <figcaption>One big mess.</figcaption>
   </figure>
 </center>

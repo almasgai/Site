@@ -45,7 +45,7 @@ Miscellaneous parts that most electronic enthusiasts already have:
 After gathering all the parts, I got down to work!
 <center>
     ![Image 1](/images/WULA/1.jpg)
-    <figcaption>One big mess.</figcaption>
+    *One big mess.*
 </center>
 
 ## First Things First
@@ -55,10 +55,8 @@ decided to make each strip 18 LED lights long. I then cut pleather to make a
 lightweight, flexible panel panel.
 
 <center>
-<figure>
-<img src="/images/WULA/2.jpg" alt="One big mess">
-<figcaption>Cut up and wired the strips pasted them across the pleather panel.</figcaption>
-</figure>
+![Panel](/images/WULA/2.jpg)
+*Cut up and wired the strips pasted them across the pleather panel.*
 </center>
 <br>
 
@@ -93,10 +91,8 @@ exposed. I also made a small cut where the power adapter was and threaded the
 power adapter through the hole so that it would remain hidden from the front view.
 
 <center>
-<figure>
-  <img src="/images/WULA/3.jpg" alt="One big mess">
-  <figcaption>The Arduino-less panel unit. I unfortunately could not find an effective to hide those hideous wires. </figcaption>
-</figure>
+  ![Hideous!](/images/WULA/3.jpg)
+  *The Arduino-less panel unit. I unfortunately could not find an effective to hide those hideous wires.*
 </center>
 
 After testing out the lights one last time to ensure that everything was working,
@@ -105,10 +101,10 @@ I switched over to the software side of things.
 ## A Simple Microcontroller for a Simple Task: Arduino Uno
 
 <center>
-  <figure>
-    <img src="/images/WULA/logo.svg" alt="One big mess">
-    <figcaption>Arduino Logo</figcaption>
-  </figure>
+
+    ![Logo](/images/WULA/logo.svg)
+    *Arduino Logo*
+
 </center>
 <br>
 
@@ -178,10 +174,8 @@ while(countDown != 0){
 }
 ```
 <center>
-<figure style="float: right">
-  <img src="/images/WULA/4.jpg" alt="Testing">
-  <figcaption>Working on the Arduino program and testing it out on panel.</figcaption>
-</figure>
+  ![Anotha One](/images/WULA/4.jpg)
+  *Working on the Arduino program and testing it out on panel.*
 </center>
 
 ## Piecing Things Together
@@ -206,13 +200,12 @@ drain terminal to the GND pin on the Arduino. Lastly, I connected the positive r
 wire from the LED strip to the VIN pin which powers the panel with 9V of electricity.
 
 ## Tying Up the Loose Ends
+
 <center>
-<figure>
-  <img src="/images/WULA/5.jpg" alt="One big mess">
-  <figcaption>Added those strange loops to panel here using glue gun. Soldered the wiring up between the panel and Arduino as well, making it one unit.</figcaption>
-</figure>
+  ![Putting it together](/images/WULA/5.jpg)
+  *Added those strange loops to panel here using glue gun. Soldered the wiring up between the panel and Arduino as well, making it one unit.*
 </center>
-<br>
+
 
 
 From a functional stand point, my product worked and was 100% complete. Structurally
@@ -235,5 +228,6 @@ come handy somewhere down the line and I few like I have a pretty solid understa
 of basic electronics. Now waking up isn't so bad and I won't be sleeping in anymore
 8am classes, at least I hope not!
 
-  ![Panel in Action](/images/WULA/vid.gif)
-Animation of what the fading effect looks like.
+<center>![Panel in Action](/images/wula/vid.gif)
+*Animation of what the fading effect looks like.*
+</center>

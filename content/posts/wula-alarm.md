@@ -247,7 +247,7 @@ ways in my own life to solve any problems I might have through technology and I
 accomplished my goal. I explored two new and very practical libraries that may
 come handy somewhere down the line and I few like I have a pretty solid understanding
 of basic electronics. Now waking up isn't so bad and I won't be sleeping in anymore
-8am classes, at least I hope not!
+8 am classes, at least I hope not!
 
 <center>
   <figure>

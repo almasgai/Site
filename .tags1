@@ -4,11 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Particle Simulation in C++	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^# Particle Simulation in C++$/;"	function	line:7
-Why I Chose this Project	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Why I Chose this Project$/;"	function	line:12
-C++	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### C++$/;"	function	line:17
-Setting Up SDL to Work in Xcode	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Setting Up SDL to Work in Xcode$/;"	function	line:31
-Particles:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Particles:$/;"	function	line:50
-Swarm:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Swarm:$/;"	function	line:55
-Screen:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Screen:$/;"	function	line:65
-Screen:	/Applications/MAMP/htdocs/masgai.com/content/posts/particles.md	/^### Screen:$/;"	function	line:78
+section	/Applications/MAMP/htdocs/masgai.com/themes/kiss/layouts/404.html	/^<section class="hero is-fullheight">$/;"	function	line:2
+div	/Applications/MAMP/htdocs/masgai.com/themes/kiss/layouts/404.html	/^  <div class="hero-body">$/;"	function	line:3
+div	/Applications/MAMP/htdocs/masgai.com/themes/kiss/layouts/404.html	/^    <div class="container has-text-centered">$/;"	function	line:4
+h	/Applications/MAMP/htdocs/masgai.com/themes/kiss/layouts/404.html	/^      <h1 class="title notfound" style="margin:0;padding0;">404<\/h1>$/;"	function	line:5
+a	/Applications/MAMP/htdocs/masgai.com/themes/kiss/layouts/404.html	/^      <a class="button" style="margin:0;padding0;" href="{{ .Site.BaseURL }}">Home Page<\/a>$/;"	function	line:6

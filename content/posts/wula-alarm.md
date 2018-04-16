@@ -1,9 +1,10 @@
 ---
-title: "Why I Will Never Miss an 8 am Ever Again"
+title: "I Will Never Miss an 8 am Again"
 date: 2018-03-01T14:10:27-05:00
 draft: false
 tags: ["arduino", "DIY"]
 ---
+
 ## Solving a Common College Student Problem:
 
 Like most people, I enjoy sleep. A lot. Maybe too much. Waking up early in the
@@ -19,32 +20,34 @@ of my life, plus I might learn something new. This is where my quest to waking
 up earlier easier begins!
 
 ## Parts List
+
 Below are all the parts I used, most of which are similar to what you can find
 in the video
 
-- [LED Light Strip](https://www.amazon.com/gp/product/B00HSF64JG/ref=oh_aui_detailpage_o07_s01?ie=UTF8&psc=1): Personally I chose to use 'warm' white to emulate natural
-sunlight
-- [Fake Leather](https://www.amazon.com/gp/product/B00JLPQKFO/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1): Used this as the panel since pleather is flexible, strong, and inexpensive!
-- [Power Source](https://www.amazon.com/Adapter-Arduino-Tbuymax-Listed-Positive/dp/B06Y1LF8T5/ref=sr_1_3?ie=UTF8&qid=1519933043&sr=8-3&keywords=arduino+power+supply&dpID=51%252BmVpNs4eL&preST=_SY300_QL70_&dpSrc=srch): Used to power the Arduino and light panel.
-- [MOSFET](https://www.amazon.com/gp/product/B00CHTLAIS/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1): Used to control the 12V LED lights. Using this allows the Arduino to pump
-out more electricity to the lights without frying the Arduino board when using a
-12V power supply. The LED lights still work using at 75% power using the power
-supply above. I used the power supply listed above because it was something that I
-already had in my room and was satisfied with how bright it was.
-- [Aluminum Wire](https://www.amazon.com/gp/product/B01B0Y06SA/ref=oh_aui_detailpage_o02_s05?ie=UTF8&psc=1):
-This is used to help the panel maintain its form. The wires are easy to bend, but
-hard to break. Perfect for the panel.
+* [LED Light Strip](https://www.amazon.com/gp/product/B00HSF64JG/ref=oh_aui_detailpage_o07_s01?ie=UTF8&psc=1): Personally I chose to use 'warm' white to emulate natural
+  sunlight
+* [Fake Leather](https://www.amazon.com/gp/product/B00JLPQKFO/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1): Used this as the panel since pleather is flexible, strong, and inexpensive!
+* [Power Source](https://www.amazon.com/Adapter-Arduino-Tbuymax-Listed-Positive/dp/B06Y1LF8T5/ref=sr_1_3?ie=UTF8&qid=1519933043&sr=8-3&keywords=arduino+power+supply&dpID=51%252BmVpNs4eL&preST=_SY300_QL70_&dpSrc=srch): Used to power the Arduino and light panel.
+* [MOSFET](https://www.amazon.com/gp/product/B00CHTLAIS/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1): Used to control the 12V LED lights. Using this allows the Arduino to pump
+  out more electricity to the lights without frying the Arduino board when using a
+  12V power supply. The LED lights still work using at 75% power using the power
+  supply above. I used the power supply listed above because it was something that I
+  already had in my room and was satisfied with how bright it was.
+* [Aluminum Wire](https://www.amazon.com/gp/product/B01B0Y06SA/ref=oh_aui_detailpage_o02_s05?ie=UTF8&psc=1):
+  This is used to help the panel maintain its form. The wires are easy to bend, but
+  hard to break. Perfect for the panel.
 
 Miscellaneous parts that most electronic enthusiasts already have:
 
-- Soldering Iron
-- Solder Wire
-- Red(+) & Black(-) Wire
-- Wire Cutter
-- Smoke Fan with Carbon Filter
-- Hot Glue Gun
+* Soldering Iron
+* Solder Wire
+* Red(+) & Black(-) Wire
+* Wire Cutter
+* Smoke Fan with Carbon Filter
+* Hot Glue Gun
 
 After gathering all the parts, I got down to work!
+
 <center>
   <figure>
     <img src="/images/wula/1.jpg">
@@ -53,6 +56,7 @@ After gathering all the parts, I got down to work!
 </center>
 
 ## First Things First
+
 I wanted to make my panel rectangular so that when the light shines at 7 in the
 morning, it would cover my entire field of vision and (hopefully) wake up. I
 decided to make each strip 18 LED lights long. I then cut pleather to make a
@@ -78,7 +82,7 @@ did usually flickered.
 
 The second issue was the red and black wires were too stiff and wouldn't stay bent
 since the I was bending them too sharply. This caused the thick wires to literally
-*rip* the soldering wire metal off of the LED light panels, cutting the circuit
+_rip_ the soldering wire metal off of the LED light panels, cutting the circuit
 short.
 
 I rearranged space between the strips so that 1) soldering the wires together
@@ -89,6 +93,7 @@ of light output while making sure the light output was strong enough to wake me
 up.
 
 ## Let There Be Light!
+
 I held my breath while I plugged the power supply into the socket... and it worked!
 Or at least the first three rows. The positive and negative wires were soldered
 together on the fourth row by accident that cut the circuit short. Whoops. After
@@ -191,6 +196,7 @@ while(countDown != 0){
   analogWrite(PIN, LOW);
 }
 ```
+
 <center>
   <figure>
     <img src="/images/wula/4.jpg" alt="Anotha one">
@@ -199,6 +205,7 @@ while(countDown != 0){
 </center>
 
 ## Piecing Things Together
+
 My next step was bringing the project together. I connected pin 9 (PWM) to the source
 of the MOSFET. It is important to use a pin with a tilde(~) next to it. These pins
 support [pulse width modulation](https://www.arduino.cc/en/Tutorial/PWM) which allow
@@ -228,8 +235,6 @@ wire from the LED strip to the VIN pin which powers the panel with 9V of electri
   </figure>
 </center>
 
-
-
 From a functional stand point, my product worked and was 100% complete. Structurally
 speaking, there was still work left to be done. I wanted to suspend my LED panel
 above my bed but initially had no clear way of doing it so I eventually decided to
@@ -242,6 +247,7 @@ I then glued my Arduino to the back of the LED panel so it was out of sight and
 securely attached to the back side that you can see in the picture above.
 
 ## Conclusion
+
 Overall, I learned a lot through this project. I had recently began looking for
 ways in my own life to solve any problems I might have through technology and I
 accomplished my goal. I explored two new and very practical libraries that may

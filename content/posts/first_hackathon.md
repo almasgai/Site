@@ -1,6 +1,6 @@
 ---
 title: "First_hackathon"
-date: 2018-04-22T20:57:59-04:00
+date: 2018-04-15T20:57:59-04:00
 draft: true
 tags: ["2018"]
 ---
@@ -32,4 +32,4 @@ I dived right into PHP’s documentation and used [this tutorial](https://www.tu
 
 After some finishing touches, we presented our project to numerous groups of judges, explaining the current issues that diabetics faced and how our product provided some convenience to their lives. We received generally positive feedback from the judges who were impressed with its ease of use and practicality. We demonstrated for each group how to sign up and use our software to see results based of the criteria entered.
 
-Overall, I was very pleased with our final product. Initially I wanted to implement SendGrid and a PHP library called PHPMailer to send changes to medicine to patients via email but we ran out of time. I was able to get a mockup version up and running. The only problem was that we needed data from actual insurance companies to be disclosed to us in order to determine changes made to a patient’s medicine. Without this data, my mailer code was useless so we had to get rid of it. One embarrassing snare that occurred while creating my rudimentary bot was that we keep all out code on a public Github repository that you can find [here](https://github.com/thewhiterabbit31/diabeticinsuranceguide). Though we did not win a prize, I was still very content with the outcome of Codefest. My initial goal was meet new people, reach out to potential employers, and build something that brings social good.
+Overall, I was very pleased with our final product. Initially I wanted to implement SendGrid and a PHP library called PHPMailer to send changes to medicine to patients via email but we ran out of time. I was able to get a mockup version up and running. The only problem was that we needed data from actual insurance companies to be disclosed to us in order to determine changes made to a patient’s medicine. Without this data, my mailer code was useless so we had to get rid of it. One embarrassing snare that occurred while creating my rudimentary bot was that we keep all out code on a public Github repository that you can find [here](https://github.com/thewhiterabbit31/diabeticinsuranceguide). Though we did not win a prize, I was still very content with the outcome of Codefest. My initial goal was meet new people, reach out to potential employers, and build something that brings social good and that was something I accomplished over the weekend.

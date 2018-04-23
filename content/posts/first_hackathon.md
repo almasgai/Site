@@ -5,6 +5,7 @@ draft: true
 tags: ["2018"]
 ---
 
+![Our Project](/.images/first-hackathon/gallery.jpg)
 Hackathons are almost a rite of passage for computer science students so it was about time that I went to one. I recently participated in Philly Codefest at Drexel University where the theme was to create something for social good. The overall experience was quite memorable and lots of fun.
 
 I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough. The thought of being on a team with 4 or 5 other programmers for over 24 hours and not being able to contribute any meaningful work due to lack of skills deterred me from hackathons. As a result, I chose to knock out all my core CS classes and a few electives before going to my first hackathon but then I came to a realization.
@@ -17,6 +18,8 @@ Unfortunately no one else in my classes wanted to go to a hackathon for one of t
 * They did not feel adequately prepared to compete against others in a completive way
 * The timing just wasn’t right. Something came up
 
+![The room minus all the screaming basketball fans](./images/first-hackathon/room.jpg)
+
 I was initially disappointed by the lack of interest from my peers yet I still wanted to go. After contemplating back and forth for about a day, I decided I would go anyway. Going to a hackathon can be pretty unnerving for first timers. It will vary among hackathons but the gist is that tens to hundreds of sleep-deprived, caffeinated programmers are all in one very large room. At Drexel, we were all in Daskalakis Athletic Center.
 
 The atmosphere was incredible. Some of the most passionate computer scientists in Philadelphia were under the same roof, typing away on their keyboards implementing novel features to their software, eyes searching for bugs, people networking with prospective employers, and of course, hackathon veterans and newcomers alike loading up on free food and goods from generous companies.
@@ -24,6 +27,8 @@ The atmosphere was incredible. Some of the most passionate computer scientists i
 Once I joined a group, we began to get down to work. My group consisted of Siling who is a grad student, Austin who is an undergrad student, Chris who is a business professor, and Bethany who is pursuing an MBA. Our diverse backgrounds and skillsets would help us and hinder us in a few ways. When I joined the team, the rest of my teammates had already decided on a project.
 
 Bethany’s came up with the idea after experiencing her partner’s frustration as a diabetic. We created a web site that would determine price tiers for diabetics based on their needs from insurance providers. This solves a problem all diabetics face because price information for medication is not available online anywhere and prices are usually only updated twice a year. The previous solution would be call your insurance provider and ask or wait for your bill to come in. Anyone who has had to talk to any company over the phone for more than thirty seconds knows how frustrating and cumbersome the process is and being updated biannually is not useful if a patient needs information now.
+
+![PHP](./images/first-hackathon/logo.svg)
 
 Aside from coming up with the idea, Bethany created all the images for the site and worked on the design. Chris did frontend using HTML, CSS, and jQuery to design an intuitive user experience. I then would take that information and store it into our database that was created by Siling. Austin created a search bar and helped with some backend too. Despite these roles, we all tended to do a little bit of everything and help out where we could. One of our strongest qualities was constant communication and a practical mindset. Initially I wanted to include a PHP-based chat bot that would pick apart key phrases from the patients sentences and determine what medicine they would need information on. Time was our biggest constraint so this idea was not put in place. Our second biggest constraint was our diverse skill set which was a double edged sword. Our collective breadth of knowledge easily allowed us to divide the work up fairly easy. However, our first major roadblock was what technology to use on the backend. Austin had worked with the Python framework Django, Siling was experienced in PHP, and I had be learning Node.js on the side by building a few projects.
 

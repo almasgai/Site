@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://masgai.com/posts/first_hackathon/</loc>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://masgai.com/posts/wula-alarm/</loc>
     <lastmod>2018-03-01T14:10:27-05:00</lastmod>
   </url>
@@ -35,13 +40,13 @@
   
   <url>
     <loc>http://masgai.com/tags/2018/</loc>
-    <lastmod>2018-01-28T13:20:32-05:00</lastmod>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://masgai.com/</loc>
-    <lastmod>2018-03-01T14:10:27-05:00</lastmod>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,7 +81,7 @@
   
   <url>
     <loc>http://masgai.com/posts/</loc>
-    <lastmod>2018-03-01T14:10:27-05:00</lastmod>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   

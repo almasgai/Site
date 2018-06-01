@@ -22,5 +22,3 @@ fields:
   type: tag_list
   hidden: false
   default: []
-pages:
-- posts/this-is-a-test.md

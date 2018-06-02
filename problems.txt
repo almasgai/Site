@@ -1,0 +1,3 @@
+- Forestry.io creates new blog but doesn't build site consequently breaking the site
+- Clean up code (CSS, HTML)
+- Look into optimization

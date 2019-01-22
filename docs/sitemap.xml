@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://masgai.com/post/first-hackathon/</loc>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/bitcoin-legal/</loc>
+    <lastmod>2018-04-11T17:42:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/wula-alarm/</loc>
+    <lastmod>2018-03-01T14:10:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/particles/</loc>
+    <lastmod>2018-01-28T13:20:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/rc-car/</loc>
+    <lastmod>2018-01-04T13:32:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/building-this-site/</loc>
+    <lastmod>2017-12-23T23:16:51-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/hello-world/</loc>
+    <lastmod>2017-12-23T22:09:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/post/</loc>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/2017/</loc>
+    <lastmod>2017-12-23T23:16:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/2018/</loc>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/</loc>
+    <lastmod>2018-04-15T20:57:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/android/</loc>
+    <lastmod>2018-01-04T13:32:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/arduino/</loc>
+    <lastmod>2018-03-01T14:10:27-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/c&#43;&#43;/</loc>
+    <lastmod>2018-01-28T13:20:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/cryptocurrency/</loc>
+    <lastmod>2018-04-11T17:42:44-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/diy/</loc>
+    <lastmod>2018-03-01T14:10:27-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/</loc>
+    <lastmod>2017-12-23T23:16:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://masgai.com/tags/web-development/</loc>
+    <lastmod>2017-12-23T23:16:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

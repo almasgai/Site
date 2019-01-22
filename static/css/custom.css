@@ -162,3 +162,7 @@ i {
 a > i {
   z-index: 9999;
 }
+
+::selection {
+  background: #0FF;
+}

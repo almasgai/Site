@@ -1,12 +1,11 @@
-baseURL = "http://masgai.com/"
+baseurl = "http://masgai.com"
 languageCode = "en-us"
 title = "Al Masgai"
 staticDir = "static"
 config = "config.toml"
 defaultContentLanguage = "en"
 theme = "kiss"
-publishDir = "docs"
-
+publishDir = "site"
 
 [params.info]
 homeTitle = "Al Masgai"
@@ -14,7 +13,7 @@ homeTitle = "Al Masgai"
 [params.social]
 github = "almasgai"
 email = "alex.masgai@gmail.com"
-linkedin = "alex-masgai"
+linkedin = "al-masgai"
 
 [params.assets]
 customCSS = ["css/custom.css"]

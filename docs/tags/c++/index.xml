@@ -13,10 +13,10 @@
     
     <item>
       <title>Particles</title>
-      <link>http://masgai.com/post/particles/</link>
+      <link>http://masgai.com/posts/particles/</link>
       <pubDate>Sun, 28 Jan 2018 13:20:32 -0500</pubDate>
       
-      <guid>http://masgai.com/post/particles/</guid>
+      <guid>http://masgai.com/posts/particles/</guid>
       <description>Simple Particle Simulation in C++: The title says it all! In this project I wanted to use a simple library that would allow me to create a GUI of a particle simulation. After searching around, I decided to use Simple DirectMedia Layer, better known as SDL for its simplicity and plethora of online resources in case I get stuck. In order to learn the library I used SDL&amp;rsquo;s documentation and followed a YouTube channel to help structure my project.</description>
     </item>
     

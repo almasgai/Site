@@ -138,7 +138,6 @@ tiny computers like the Raspberry Pi.
 - [Distance Sensor Sonar](https://www.amazon.com/SainSmart-HC-SR04-Ranging-Detector-Distance/dp/B004U8TOE6/ref=sr_1_13?s=electronics&ie=UTF8&qid=1515287849&sr=1-13&keywords=distance+sensor)
 
 - [IR Distance Sensors](https://www.amazon.com/OSOYOO-Infrared-Obstacle-Avoidance-Arduino/dp/B01I57HIJ0/ref=sr_1_3?s=electronics&ie=UTF8&qid=1515287890&sr=1-3&keywords=ir+distance)
-
 ![Image 1](/images/RC/1.png)
 ![Image 2](/images/RC/2.png)
 ![Image 4](/images/RC/4.jpg)

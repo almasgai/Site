@@ -4,8 +4,8 @@ title = "Al Masgai"
 staticDir = "static"
 config = "config.toml"
 defaultContentLanguage = "en"
-theme = "kiss"
-publishDir = "site"
+theme = "tale"
+publishDir = "docs"
 
 [params.info]
 homeTitle = "Al Masgai"
@@ -17,3 +17,6 @@ linkedin = "al-masgai"
 
 [params.assets]
 customCSS = ["css/custom.css"]
+
+[taxonomies]
+tag = ["electronics", "arduino", "C", "C++", "Python", "Mobile", "School"]

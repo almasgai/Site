@@ -13,10 +13,10 @@
     
     <item>
       <title>RC Car</title>
-      <link>http://masgai.com/post/rc-car/</link>
+      <link>http://masgai.com/posts/rc-car/</link>
       <pubDate>Thu, 04 Jan 2018 13:32:28 -0500</pubDate>
       
-      <guid>http://masgai.com/post/rc-car/</guid>
+      <guid>http://masgai.com/posts/rc-car/</guid>
       <description>Building an Arduino-powered Car for CSC 315: This semester I took a class that I have wanted to take since my first semester at college: CSC 315, Software Engineering. CSC 315 focuses more on the practical side of computer science as opposed to the theoretical stuff like data structures and algorithms. The first half of the semester was learning about software engineering approaches, how to work with teams when developing software, and computer ethics.</description>
     </item>
     

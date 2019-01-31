@@ -13,20 +13,20 @@
     
     <item>
       <title>Building This Site</title>
-      <link>http://masgai.com/post/building-this-site/</link>
+      <link>http://masgai.com/posts/building-this-site/</link>
       <pubDate>Sat, 23 Dec 2017 23:16:51 -0500</pubDate>
       
-      <guid>http://masgai.com/post/building-this-site/</guid>
+      <guid>http://masgai.com/posts/building-this-site/</guid>
       <description>I built this website using basic HTML, CSS, JS, and the Bootstrap framework. The particles on the homepage where created using open source software particle.js. Looking back at it, using Bootstrap was completely overkill for this project since I only used for its 12 grid system. A more appropriate CSS framework would have been Skeleton, which I might migrate to in the near future.
 In order to create blog posts, I had to learn how to use static site generator Hugo.</description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>http://masgai.com/post/hello-world/</link>
+      <link>http://masgai.com/posts/hello-world/</link>
       <pubDate>Sat, 23 Dec 2017 22:09:19 -0500</pubDate>
       
-      <guid>http://masgai.com/post/hello-world/</guid>
+      <guid>http://masgai.com/posts/hello-world/</guid>
       <description>Hello world! This my first article on my Hugo-powered blog! The purpose of this blog to is periodically update recruiters on CS related projects.</description>
     </item>
     

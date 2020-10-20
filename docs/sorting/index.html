@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <footer>
+      <select name="algos" id="algos">
+        <option value="merge">Merge</option>
+        <option value="quick">Quick</option>
+        <option value="select">Selection</option>
+        <option value="insert">Insertion</option>
+        <option value="bubble">Bubble</option>
+        <option value="heap">Heap</option>
+      </select>
+      <label for="algos" id="algoLabel">Sort</label>
+
+      <label for="speed">Speed</label>
+      <input
+        id="speed"
+        name="speed"
+        type="range"
+        min="3000"
+        max="3999"
+        value="3500"
+        class="speed"
+      />
+
+      <form oninput="print.value=parseInt(size.value)">
+        <label for="size">Size: </label>
+        <div style="width: 35px; display: inline-flex;" id="sizeLabel">10</div>
+        <input
+          id="size"
+          name="size"
+          type="range"
+          min="4"
+          max="100"
+          value="10"
+          class="size"
+        />
+      </form>
+
+      <label for="blockWidthController">Width</label>
+      <input
+        id="blockWidthController"
+        type="range"
+        min="30"
+        max="150"
+        value="100"
+      />
+
+      <button type="submit" onclick="main()" id="go">Go!</button>
+      <button type="submit" onclick="shuffle()" id="shuffle">Shuffle</button>
+      <label for="warning">Hide Warning</label>
+      <input type="checkbox" id="warning" />
+      <center>
+        <a href="/" id="go_back">Go Back</a>
+      </center>
+    </footer>
+
+    <script src="./main.js" onload="init()"></script>
+  </body>
+</html>

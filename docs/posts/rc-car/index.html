@@ -3,29 +3,20 @@
     <head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-		<title>
-				RC Car &middot; Al Masgai
-		</title>
-	
+
+		<title>RC Car &middot; Al Masgai</title>
+
 		
   		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-	
+		<link rel="stylesheet" href="/css/fonts.css">
 		
 		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-        <link rel="icon" type="image/png" href="images/favicon.ico">
 
-	
 		
 		<link href="" rel="alternate" type="application/rss+xml" title="Al Masgai" />
-        
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	</head>
-	
 
     <body>
         		<nav class="nav">
@@ -34,18 +25,33 @@
 					<h2 class="nav-title">Al Masgai</h2>
 				</a>
 				<ul>
-    <li><a href="/about">About</a></li>
-    <li><a href="/">Posts</a></li>
- 
     
-    <li><a href="mailto:alex.masgai@gmail.com"><i class="far fa-envelope"></i></a></li>
-  
-    <li><a href="https://www.linkedin.com/in/al-masgai/"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-  
-    <li><a href="https://github.com/almasgai"><i class="fab fa-github"></i></a></li>
-
+    
+        <li>
+            <a href="/posts/">
+                
+                <span>Posts</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/sorting/">
+                
+                <span>Sorting</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/pathfinding/">
+                
+                <span>Pathfinding</span>
+                
+            </a>
+        </li>
+    
 </ul>
-
 			</div>
 		</nav>
 
@@ -54,20 +60,18 @@
 <main>
 	<div class="post">
 		<div class="post-info">
-    <span></span>
+    <span>Written by</span>
         
         <br>
-        <span>&nbsp;</span><time datetime="2018-01-04 13:32:28 -0500 EST">January 4, 2018</time>
+        <span>on&nbsp;</span><time datetime="2018-01-04 13:32:28 -0500 EST">January 4, 2018</time>
 </div>
+
 		<h1 class="post-title">RC Car</h1>
 <div class="post-line"></div>
 
 		
 
-		
-
-<h1 id="building-an-arduino-powered-car-for-csc-315">Building an Arduino-powered Car for CSC 315:</h1>
-
+		<h1 id="building-an-arduino-powered-car-for-csc-315">Building an Arduino-powered Car for CSC 315:</h1>
 <p>This semester I took a class that I have wanted to take since my first
 semester at college: CSC 315, Software Engineering. CSC 315 focuses more on
 the practical side of computer science as opposed to the theoretical stuff like data structures and algorithms. The first half of the semester was
@@ -76,28 +80,22 @@ The second half of the semester was more hands-on. The  objective of the second 
 is to pitch an idea to my professor on a project or idea that my group and I would
 like to pursue. Once given the green light, the group is given the rest of the semester
 to complete their idea.</p>
-
 <h2 id="choosing-one-idea">Choosing one idea</h2>
-
 <p>The hardest part for me was choosing an idea because there were about five different projects I wanted to embark on. Since my group and had to commit idea for an entire
 semester, we made sure to choose something that was 1) challenging 2) realistic,
 and 3) seemed like a lot of fun. We were not allowed to choose our groups and I was
 with 3 other people I had never spoken to. This was not a problem though because
 we all gave honest feedback to each other and pulled our own weight in the project based on our strengths.</p>
-
 <p>We all sat down and discussed our top ideas to each other. Luckily for me, the
 two final ideas that we came to were both mine: a fully functioning e-commerce
 website or an RC car. You can probably guess which idea we pursued. 😉</p>
-
-<h2 id="assigning-roles-responsibilities">Assigning Roles &amp; Responsibilities</h2>
-
+<h2 id="assigning-roles--responsibilities">Assigning Roles &amp; Responsibilities</h2>
 <p>We came across a nontechnical issue quickly during our first meeting. Two of four members of our group were
 commuters and were only on campus Tuesday and Thursday. This meant that most of
 the work would be done via my team&rsquo;s GitList and communication limited to messaging
 for the most part. We held each other accountable by ending each team meeting on days we could all meet by stating what we would each do in the next sprint.
 It also helped that we had to explain in front of our classmates and the professor
 what exactly we individually accomplished and what our next move was every Tuesday.</p>
-
 <p>We divided our workload based on our skills and expertise. I was given the task
 with one other member of creating a simple but functional Android app to send
 ASCII characters via Bluetooth over to be read by the car and make a decision based
@@ -109,15 +107,12 @@ like I did and a completely different experience doing it hands on. Although thi
 didn&rsquo;t click at first, I  now have a strong understanding of the basics of
 circuits and embedded systems. This will come handy in future Arduino-based projects
 that I will do and for a course I&rsquo;m taking next semester called the Internet of Things.</p>
-
 <p>I was also the group leader. This meant that I would do my fair share of the work but also
 do a lot of the tedious and administrative work as well. I was held responsible
 for keeping minutes during group meetings and reporting to my professor to keep
 him in the loop of things. It also meant that I made sure everyone was doing their
 work which admittedly was pretty easy since everyone in my group was amicable and hard working.</p>
-
-<h2 id="pitfalls-obstacles">Pitfalls &amp; Obstacles</h2>
-
+<h2 id="pitfalls--obstacles">Pitfalls &amp; Obstacles</h2>
 <p>Everyone in my group came across inevitable setbacks and bugs that hindered progress in
 one way or another. In my case, I had a lot of learning to do to become comfortable
 with Arduinos because I never used them before. I had to make sure that I had correct wiring so
@@ -127,7 +122,6 @@ module. If I passed too much electricity through it I potentially could have fri
 This would mean that we would have to order another one online and wait until it came. After
 setting up some pretty gnarly wiring (see images below) between the HC-06 and MEGA 2560, I had an ugly
 but working set up to test my app on.</p>
-
 <p>&hellip;Except my app would not work. Interestingly enough, I was able to connect to any
 other Bluetooth device <em>besides</em> my module. When trying to connect with the HC-06, my
 app would say paired by not connected. After a few hours (a few more than I would
@@ -135,15 +129,12 @@ like to admit) I discovered that I was using the wrong UUID (universally unique 
 After switching to the UUID designated for embedded systems found on the official Android
 developers <a href="https://developer.android.com/reference/android/bluetooth/BluetoothDevice.html">Bluetooth documentation page</a> and following <a href="https://www.youtube.com/watch?v=y8R2C86BIUc&amp;list=PLgCYzUzKIBE8KHMzpp6JITZ2JxTgWqDH2">this tutorial,</a>
 I was able to send data over to the Arduino and see it via the serial monitor in the Arduino IDE.</p>
-
 <h2 id="pivoting-our-product">Pivoting our Product</h2>
-
 <p>This took way longer than anticipated and time was running out of the semester so
 my team and I had to work diligently. Initially my team and I wanted to make the car
 fully autonomous via the <a href="https://developers.google.com/maps/documentation/directions/intro">Google Maps API</a>
 or through preinstalled instructions (turn left after driving 30 meters) but the time
 constraint restricted us to create a basic model.</p>
-
 <p>We were able to make the car semi-autonomous by adding 2 IR sensors to the front on the
 sides and an ultrasonic sensor in the middle to detect obstacles. This allowed the car
 to stop itself from running into an obstacle and consequently back up and either go
@@ -151,16 +142,13 @@ left or right based on whether of not there are obstacles in either the left or 
 Unfortunately, we had to give all the project parts back to our professor after the semester ended.
 I still want to make a car fully autonomous so I might just buy all the necessary
 parts again in the future and do it on my own time next semester.</p>
-
 <h2 id="the-big-day-presenting">The Big Day: Presenting</h2>
-
 <p>My group and I finally presented our car. Instead of using batteries like we initially planned,
 we decided to power the Arduino unit via a cable connected to a laptop while the
 motors ran on batteries. We chose to do this because there was an uneven
 weight distribution that caused the car to drag in the back and lift the front off
 the ground which disrupted driving. Overall the presentation went smoother than
 I had anticipated.</p>
-
 <p>We did have a few hiccups though. For example, the actual demonstration was awkward since one of my team members had to carry his laptop plugged into the car.
 I suspect this consequently led to an issue: after about 10 minutes, the Bluetooth module
 would turn off and leave me, who was controlling the car, disconnected. After doing some research, I think the problem
@@ -170,7 +158,6 @@ been solved if we added another chassis on top of the first. Adding an additiona
 level would have created more surface area so that we could add another battery pack
 to power the Arduino sufficiently and move the components of the vehicle around more freely to distribute
 the weight evenly.</p>
-
 <p>Overall I learned a lot about electronics and Arduinos through this project, both through the
 hardware aspect of wiring and through the Arduino programming language which is really just C++. I am
 also very comfortable with Android app development now. Although I struggled a lot
@@ -178,35 +165,43 @@ in this project, especially getting the app to communicate with the Bluetooth mo
 I learned a lot about software engineering and electronics. I can&rsquo;t wait to take
 Internet of Things next semester, a class where we focus on embedded systems and
 tiny computers like the Raspberry Pi.</p>
-
-<h2 id="pictures-parts">Pictures &amp; Parts</h2>
-
+<h2 id="pictures--parts">Pictures &amp; Parts</h2>
 <ul>
-<li><p><a href="https://www.amazon.com/Board-ATmega2560-ATMEGA16U2-Compatible-Arduino/dp/B01H4ZDYCE/ref=sr_1_2?ie=UTF8&amp;qid=1515287436&amp;sr=8-2&amp;keywords=2560">Elegoo MEGA 2560</a></p></li>
-
-<li><p><a href="https://www.amazon.com/DROK-Controller-H-Bridge-Mega2560-Duemilanove/dp/B00CAG6GX2/ref=sr_1_6?s=industrial&amp;ie=UTF8&amp;qid=1515287469&amp;sr=1-6&amp;keywords=motor+arduino">Motor Shield</a></p></li>
-
-<li><p><a href="https://www.amazon.com/eBoot-Experiment-Solderless-Breadboard-400-Points/dp/B01MG5IPUX/ref=sr_1_5?s=industrial&amp;ie=UTF8&amp;qid=1515287539&amp;sr=1-5&amp;keywords=breadboard">Breadboard</a></p></li>
-
-<li><p><a href="https://www.amazon.com/DIYmall-Motor-Geared-Magnetic-Gearbox/dp/B07671HCDZ/ref=sr_1_1?s=industrial&amp;ie=UTF8&amp;qid=1515287596&amp;sr=1-1&amp;keywords=motor+arduino+wheels">Motor &amp; Wheels</a></p></li>
-
-<li><p><a href="https://www.amazon.com/Haitronic-Multicolored-Breadboard-Arduino-raspberry/dp/B01LZF1ZSZ/ref=sr_1_3?s=industrial&amp;ie=UTF8&amp;qid=1515287646&amp;sr=1-3&amp;keywords=jumper+wires">Jumper Wires</a></p></li>
-
-<li><p><a href="https://www.amazon.com/DealMux-Motor-Chassis-Encoder-Arduino/dp/B01F0T3I8G/ref=sr_1_2?s=industrial&amp;ie=UTF8&amp;qid=1515287687&amp;sr=8-2&amp;keywords=arduino+car+chasis">Frame &amp; Battery Holder</a></p></li>
-
-<li><p><a href="https://www.amazon.com/dp/B01MQKX7VP/ref=asc_df_B01MQKX7VP5327491/?tag=hyprod-20&amp;creative=395033&amp;creativeASIN=B01MQKX7VP&amp;linkCode=df0&amp;hvadid=167146065113&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=8096617673536435054&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9007186&amp;hvtargid=pla-362748457327">HC-05 (Works just like the HC-06 I used)</a></p></li>
-
-<li><p><a href="https://www.amazon.com/SainSmart-HC-SR04-Ranging-Detector-Distance/dp/B004U8TOE6/ref=sr_1_13?s=electronics&amp;ie=UTF8&amp;qid=1515287849&amp;sr=1-13&amp;keywords=distance+sensor">Distance Sensor Sonar</a></p></li>
-
-<li><p><a href="https://www.amazon.com/OSOYOO-Infrared-Obstacle-Avoidance-Arduino/dp/B01I57HIJ0/ref=sr_1_3?s=electronics&amp;ie=UTF8&amp;qid=1515287890&amp;sr=1-3&amp;keywords=ir+distance">IR Distance Sensors</a>
-<img src="/images/RC/1.png" alt="Image 1" />
-<img src="/images/RC/2.png" alt="Image 2" />
-<img src="/images/RC/4.jpg" alt="Image 4" />
-<img src="/images/RC/5.jpg" alt="Image 5" />
-<img src="/images/RC/6.jpg" alt="Image 6" />
-<img src="/images/RC/7.jpg" alt="Image 7" />
-<img src="/images/RC/8.jpg" alt="Image 8" />
-<img src="/images/RC/9.jpg" alt="Image 9" /></p></li>
+<li>
+<p><a href="https://www.amazon.com/Board-ATmega2560-ATMEGA16U2-Compatible-Arduino/dp/B01H4ZDYCE/ref=sr_1_2?ie=UTF8&amp;qid=1515287436&amp;sr=8-2&amp;keywords=2560">Elegoo MEGA 2560</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/DROK-Controller-H-Bridge-Mega2560-Duemilanove/dp/B00CAG6GX2/ref=sr_1_6?s=industrial&amp;ie=UTF8&amp;qid=1515287469&amp;sr=1-6&amp;keywords=motor+arduino">Motor Shield</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/eBoot-Experiment-Solderless-Breadboard-400-Points/dp/B01MG5IPUX/ref=sr_1_5?s=industrial&amp;ie=UTF8&amp;qid=1515287539&amp;sr=1-5&amp;keywords=breadboard">Breadboard</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/DIYmall-Motor-Geared-Magnetic-Gearbox/dp/B07671HCDZ/ref=sr_1_1?s=industrial&amp;ie=UTF8&amp;qid=1515287596&amp;sr=1-1&amp;keywords=motor+arduino+wheels">Motor &amp; Wheels</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/Haitronic-Multicolored-Breadboard-Arduino-raspberry/dp/B01LZF1ZSZ/ref=sr_1_3?s=industrial&amp;ie=UTF8&amp;qid=1515287646&amp;sr=1-3&amp;keywords=jumper+wires">Jumper Wires</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/DealMux-Motor-Chassis-Encoder-Arduino/dp/B01F0T3I8G/ref=sr_1_2?s=industrial&amp;ie=UTF8&amp;qid=1515287687&amp;sr=8-2&amp;keywords=arduino+car+chasis">Frame &amp; Battery Holder</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/dp/B01MQKX7VP/ref=asc_df_B01MQKX7VP5327491/?tag=hyprod-20&amp;creative=395033&amp;creativeASIN=B01MQKX7VP&amp;linkCode=df0&amp;hvadid=167146065113&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=8096617673536435054&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9007186&amp;hvtargid=pla-362748457327">HC-05 (Works just like the HC-06 I used)</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/SainSmart-HC-SR04-Ranging-Detector-Distance/dp/B004U8TOE6/ref=sr_1_13?s=electronics&amp;ie=UTF8&amp;qid=1515287849&amp;sr=1-13&amp;keywords=distance+sensor">Distance Sensor Sonar</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/OSOYOO-Infrared-Obstacle-Avoidance-Arduino/dp/B01I57HIJ0/ref=sr_1_3?s=electronics&amp;ie=UTF8&amp;qid=1515287890&amp;sr=1-3&amp;keywords=ir+distance">IR Distance Sensors</a>
+<img src="/images/RC/1.png" alt="Image 1">
+<img src="/images/RC/2.png" alt="Image 2">
+<img src="/images/RC/4.jpg" alt="Image 4">
+<img src="/images/RC/5.jpg" alt="Image 5">
+<img src="/images/RC/6.jpg" alt="Image 6">
+<img src="/images/RC/7.jpg" alt="Image 7">
+<img src="/images/RC/8.jpg" alt="Image 8">
+<img src="/images/RC/9.jpg" alt="Image 9"></p>
+</li>
 </ul>
 
 
@@ -217,14 +212,15 @@ tiny computers like the Raspberry Pi.</p>
 		<a href="/posts/hello-world/" class="left arrow">&#8592;</a>
 		<a href="/posts/particles/" class="right arrow">&#8594;</a>
 
-		<a href="/" class="top">Top</a>
+		<a href="#" class="top">Top</a>
 	</div>
 </main>
 
 
         		<footer>
+			
 			<span>
-                
+			&copy; <time datetime="2020-10-20 12:37:03.999244 -0400 EDT m=&#43;0.065675383">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

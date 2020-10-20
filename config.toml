@@ -4,7 +4,7 @@ title = "Al Masgai"
 staticDir = "static"
 config = "config.toml"
 defaultContentLanguage = "en"
-theme = "tale"
+theme = "tale" 
 publishDir = "docs"
 
 [params.info]
@@ -20,3 +20,23 @@ customCSS = ["css/custom.css"]
 
 [taxonomies]
 tag = ["electronics", "arduino", "C", "C++", "Python", "Mobile", "School"]
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    title = "Posts"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    identifier = "sorting"
+    name = "Sorting"
+    title = "Sorting"
+    url = "/sorting/"
+    weight = 3
+  [[menu.main]]
+    identifier = "pathfinding"
+    name = "Pathfinding"
+    title = "Pathfinding"
+    url = "/pathfinding/"
+    weight = 4

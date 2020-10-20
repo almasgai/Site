@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Al Masgai</title>
@@ -6,19 +6,14 @@
     <description>Recent content in Posts on Al Masgai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Apr 2018 20:57:59 -0400</lastBuildDate>
-    
-	<atom:link href="http://masgai.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 15 Apr 2018 20:57:59 -0400</lastBuildDate><atom:link href="http://masgai.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Hackathon</title>
       <link>http://masgai.com/posts/first-hackathon/</link>
       <pubDate>Sun, 15 Apr 2018 20:57:59 -0400</pubDate>
       
       <guid>http://masgai.com/posts/first-hackathon/</guid>
-      <description>Philly Codefest &amp;lsquo;18  Hackathons are almost a rite of passage for computer science students so it was about time that I went to one. I recently participated in Philly Codefest at Drexel University where the theme was to create something for social good. The overall experience was quite memorable and lots of fun.
-I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough.</description>
+      <description>Philly Codefest &amp;lsquo;18 I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough. The thought of being on a team with 4 or 5 other programmers for over 24 hours and not being able to contribute any meaningful work due to lack of skills deterred me from hackathons. As a result, I chose to knock out all my core CS classes and a few electives before going to my first hackathon but then I came to a realization.</description>
     </item>
     
     <item>
@@ -27,7 +22,8 @@ I had always wanted to go to a hackathon since freshmen year but never felt prep
       <pubDate>Wed, 11 Apr 2018 17:42:44 -0400</pubDate>
       
       <guid>http://masgai.com/posts/bitcoin-legal/</guid>
-      <description>Table of Contents  Abstract &amp;amp; Keywords, Page 1 Introduction, Page 1 Advancements in Computer Science, Page 1 Defining Blockchain, Cryptocurrencies and the Origin of Cryptocurrencies, Page 2 Adoption from Organizations and People, Page 4 Laws and Regulations at State and Federal Level, Page 5 Laws and Regulations at an International Level, Page 9 Conclusion, Page 10 Sources, Page 11  Abstract&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;This paper will first describe the progression of technology on both aspects of hardware and software, the advent of cryptocurrencies, and how they work with blockchain technology.</description>
+      <description>The following is a writing assignment
+Table of Contents   Abstract &amp;amp; Keywords, Page 1 Introduction, Page 1 Advancements in Computer Science, Page 1 Defining Blockchain, Cryptocurrencies and the Origin of Cryptocurrencies, Page 2 Adoption from Organizations and People, Page 4 Laws and Regulations at State and Federal Level, Page 5 Laws and Regulations at an International Level, Page 9 Conclusion, Page 10 Sources, Page 11   Keywords: bitcoin; cryptocurrency; laws; domestic and international regulations; blockchain technology; decentralized currency; cypherpunks; Satoshi Nakamoto.</description>
     </item>
     
     <item>

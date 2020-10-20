@@ -1,0 +1,47 @@
+html,
+body {
+  margin: -15px;
+  overflow: hidden;
+  height: 110%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu {
+  position: fixed;
+  margin-top: 40px;
+  margin-left: 50px;
+  width: 200px;
+  height: 240px;
+  border-radius: 10px;
+  background-color: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#start_text {
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#end_text {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#grid {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  overflow: hidden;
+  white-space: nowrap;
+}

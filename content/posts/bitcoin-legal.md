@@ -4,7 +4,7 @@ date: 2018-04-11T17:42:44-04:00
 draft: false
 tags: ['cryptocurrency', '2018'] 
 ---
-
+*The following is a writing assignment*
 ### Table of Contents
 ---
 - Abstract & Keywords, <a href="#abstract">Page 1</a>

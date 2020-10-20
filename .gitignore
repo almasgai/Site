@@ -1,4 +1,7 @@
 *.tags
 *.tags1
-*.toml
-/.forestry
+.forestry/
+.vscode/
+problems.txt
+ideas.md
+

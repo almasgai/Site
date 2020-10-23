@@ -39,7 +39,7 @@ async function Bidirectional() {
           document.getElementById(`${row} ${col}`).style.backgroundColor =
             "lightgreen";
 
-          await pause(25);
+          await pause(10);
         }
       }
 
@@ -52,6 +52,17 @@ async function Bidirectional() {
             "lightblue";
 
           await pause(5);
+
+          // Now check to see if current node connects to destinations node
+          let up = get_node(row - 1, col, start_visited);
+          let right = get_node(row, col + 1, start_visited);
+          let down = get_node(row + 1, col, start_visited);
+          let left = get_node(row, col - 1, start_visited);
+
+          for (let check_neighbor of [up, right, down, left]) {
+            if (check_neighbor && end_visited.has(check_neighbor.toString()))
+              return;
+          }
 
           start_queue.push(node);
         }
@@ -79,7 +90,7 @@ async function Bidirectional() {
             document.getElementById(`${row} ${col}`).style.backgroundColor =
               "lightgreen";
 
-            await pause(25);
+            await pause(10);
           }
         }
 
@@ -92,6 +103,20 @@ async function Bidirectional() {
               "lightblue";
 
             await pause(5);
+
+            // Now check to see if current node connects to destinations node
+            let up = get_node(row - 1, col, end_visited);
+            let right = get_node(row, col + 1, end_visited);
+            let down = get_node(row + 1, col, end_visited);
+            let left = get_node(row, col - 1, end_visited);
+
+            for (let check_neighbor of [up, right, down, left]) {
+              if (
+                check_neighbor &&
+                start_visited.has(check_neighbor.toString())
+              )
+                return;
+            }
 
             end_queue.push(node);
           }

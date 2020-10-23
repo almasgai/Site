@@ -23,7 +23,8 @@ export function color(event) {
     !draw ||
     square === current_square ||
     square.style.backgroundColor == "red" ||
-    square.style.backgroundColor == "green"
+    square.style.backgroundColor == "green" ||
+    square.style.backgroundColor == "black"
   ) {
     return;
   }
@@ -50,6 +51,7 @@ export function color_click(event) {
   if (
     square.style.backgroundColor == "red" ||
     square.style.backgroundColor == "green" ||
+    square.style.backgroundColor == "black" ||
     square.style.backgroundColor == "lightblue"
   )
     return;
@@ -96,6 +98,7 @@ export function move_node(event) {
     event.target == end ||
     event.target == start ||
     event.target.style.backgroundColor == "gray" ||
+    event.target.style.backgroundColor == "black" ||
     event.target.style.backgroundColor == "lightblue"
   )
     return;
@@ -139,7 +142,12 @@ export function move_node(event) {
 }
 
 function update_grid(square, square_color) {
-  if (square_color == "lightblue" || square_color == "lightgreen") return;
+  if (
+    square_color == "lightblue" ||
+    square_color == "lightgreen" ||
+    square_color == "black"
+  )
+    return;
   // Now do the same logically with the array
   // Explored square
   let index = square.id.split(" ");
@@ -155,6 +163,8 @@ function update_grid(square, square_color) {
 
   // Destination square; where the algorithm (hopefully) ends
   if (square_color == "green") grid[i][j] = 3;
+
+  if (square_color == "black") grid[i][j] = 5;
 }
 
 export function offscreen(event) {
@@ -162,18 +172,23 @@ export function offscreen(event) {
   move = false;
 }
 
-function allow_drop(event) {
+export function allow_drop(event) {
   event.preventDefault();
 }
 
-function drop(event) {
+export function drop(event) {
   event.preventDefault();
+  let data = event.dataTransfer.getData("text");
   let node = event.target.id.split(" ");
+
   let i = node[0];
   let j = node[1];
   document.getElementById(`${i} ${j}`).style.backgroundColor = "black";
   grid[i][j] = 5;
-  alert(i, j);
+}
+
+export function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
 }
 
 export function pause(speed) {

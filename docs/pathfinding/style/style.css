@@ -56,4 +56,5 @@ body {
 
 #fontawesome_icon {
   margin: 10px;
+  display: flex;
 }

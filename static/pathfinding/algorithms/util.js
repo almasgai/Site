@@ -6,8 +6,8 @@ export function get_node(i, j, visited) {
     i >= grid.length ||
     j >= grid[0].length ||
     document.getElementById(`${i} ${j}`).style.backgroundColor == "gray" ||
+    document.getElementById(`${i} ${j}`).style.backgroundColor == "black" ||
     visited.has([i, j].toString())
-    // document.getElementById(`${i} ${j}`).style.backgroundColor == "cyan"
   ) {
     return undefined;
   }

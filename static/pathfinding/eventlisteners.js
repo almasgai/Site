@@ -162,6 +162,20 @@ export function offscreen(event) {
   move = false;
 }
 
+function allow_drop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  let node = event.target.id.split(" ");
+  let i = node[0];
+  let j = node[1];
+  document.getElementById(`${i} ${j}`).style.backgroundColor = "black";
+  grid[i][j] = 5;
+  alert(i, j);
+}
+
 export function pause(speed) {
   return new Promise((resolve) => setTimeout(resolve, speed));
 }

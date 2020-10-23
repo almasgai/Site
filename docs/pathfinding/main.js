@@ -2,6 +2,7 @@ import * as event from "./eventlisteners.js";
 import initialize_variables from "./variables.js";
 import BFS from "./algorithms/bfs.js";
 import DFS from "./algorithms/dfs.js";
+import Bidirectional from "./algorithms/bidirectional.js";
 
 /*
  * If left >= -5 and top >= -5, white. Otherwise gray.
@@ -81,6 +82,9 @@ function clear_grid() {
       square.addEventListener("mousemove", event.move_node);
       square.addEventListener("mousedown", event.toggle_move);
 
+      square.addEventListener("dragover", event.allow_drop);
+      square.addEventListener("drop", event.drop);
+
       row.append(square);
     }
 
@@ -154,6 +158,8 @@ async function main() {
         return BFS;
       case "DFS":
         return DFS;
+      case "Bidirectional":
+        return Bidirectional;
       default:
         return BFS;
     }
@@ -166,6 +172,18 @@ async function main() {
   await algo();
   document.body.style.pointerEvents = "auto";
 }
+
+document
+  .getElementById("fontawesome_icon")
+  .addEventListener("drag", function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+  });
+
+/*
+alert(
+  "There is problem with weights so Dijkstra's algorithm is disbaled at the moment."
+);
+*/
 
 window.main = main;
 window.clear_grid = clear_grid;

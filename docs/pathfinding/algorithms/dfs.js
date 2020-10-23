@@ -42,9 +42,9 @@ async function DFS() {
     // and the algorithm can be stopped.
     if (
       (await _DFS(i, j + 1, visited)) ||
+      (await _DFS(i - 1, j, visited)) ||
       (await _DFS(i + 1, j, visited)) ||
-      (await _DFS(i, j - 1, visited)) ||
-      (await _DFS(i - 1, j, visited))
+      (await _DFS(i, j - 1, visited))
     ) {
       return true;
     }

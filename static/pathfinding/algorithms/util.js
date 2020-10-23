@@ -5,11 +5,11 @@ export function get_node(i, j, visited) {
     j < 0 ||
     i >= grid.length ||
     j >= grid[0].length ||
-    grid[i][j] == 1 ||
-    visited.has([i, j].toString()) ||
-    document.getElementById(`${i} ${j}`).style.backgroundColor == "cyan"
+    document.getElementById(`${i} ${j}`).style.backgroundColor == "gray" ||
+    visited.has([i, j].toString())
+    // document.getElementById(`${i} ${j}`).style.backgroundColor == "cyan"
   ) {
-    return null;
+    return undefined;
   }
   return [i, j];
 }

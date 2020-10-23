@@ -2,9 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Al Masgai</title>
-    <link>http://masgai.com/index.html</link>
+    <link>http://masgai.com/</link>
     <description>Recent content on Al Masgai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Apr 2018 20:57:59 -0400</lastBuildDate><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Hackathon</title>
+      <link>http://masgai.com/posts/first-hackathon/</link>
+      <pubDate>Sun, 15 Apr 2018 20:57:59 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/first-hackathon/</guid>
+      <description>Philly Codefest &amp;lsquo;18 I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough. The thought of being on a team with 4 or 5 other programmers for over 24 hours and not being able to contribute any meaningful work due to lack of skills deterred me from hackathons. As a result, I chose to knock out all my core CS classes and a few electives before going to my first hackathon but then I came to a realization.</description>
+    </item>
+    
+    <item>
+      <title>Legal Analysis of Cryptocurrency</title>
+      <link>http://masgai.com/posts/bitcoin-legal/</link>
+      <pubDate>Wed, 11 Apr 2018 17:42:44 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/bitcoin-legal/</guid>
+      <description>The following is a writing assignment
+Table of Contents   Abstract &amp;amp; Keywords, Page 1 Introduction, Page 1 Advancements in Computer Science, Page 1 Defining Blockchain, Cryptocurrencies and the Origin of Cryptocurrencies, Page 2 Adoption from Organizations and People, Page 4 Laws and Regulations at State and Federal Level, Page 5 Laws and Regulations at an International Level, Page 9 Conclusion, Page 10 Sources, Page 11   Keywords: bitcoin; cryptocurrency; laws; domestic and international regulations; blockchain technology; decentralized currency; cypherpunks; Satoshi Nakamoto.</description>
+    </item>
+    
+    <item>
+      <title>I Will Never Miss an 8am Again</title>
+      <link>http://masgai.com/posts/wula-alarm/</link>
+      <pubDate>Thu, 01 Mar 2018 14:10:27 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/wula-alarm/</guid>
+      <description>Solving a Common College Student Problem: Like most people, I enjoy sleep. A lot. Maybe too much. Waking up early in the morning is a herculean task for me because I&amp;rsquo;m a heavy sleeper. But I&amp;rsquo;m also taking an 8 am class this semester and don&amp;rsquo;t want to sleep in. I decided that between my knowledge on programming and electronics, I could somehow solve my problem.
+I had my &amp;lsquo;eureka&amp;rsquo; moment about two weeks ago while watching a YouTube video on creating flexible LED panels.</description>
+    </item>
+    
+    <item>
+      <title>Particles</title>
+      <link>http://masgai.com/posts/particles/</link>
+      <pubDate>Sun, 28 Jan 2018 13:20:32 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/particles/</guid>
+      <description>Simple Particle Simulation in C++: The title says it all! In this project I wanted to use a simple library that would allow me to create a GUI of a particle simulation. After searching around, I decided to use Simple DirectMedia Layer, better known as SDL for its simplicity and plethora of online resources in case I get stuck. In order to learn the library I used SDL&amp;rsquo;s documentation and followed a YouTube channel to help structure my project.</description>
+    </item>
+    
+    <item>
+      <title>RC Car</title>
+      <link>http://masgai.com/posts/rc-car/</link>
+      <pubDate>Thu, 04 Jan 2018 13:32:28 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/rc-car/</guid>
+      <description>Building an Arduino-powered Car for CSC 315: This semester I took a class that I have wanted to take since my first semester at college: CSC 315, Software Engineering. CSC 315 focuses more on the practical side of computer science as opposed to the theoretical stuff like data structures and algorithms. The first half of the semester was learning about software engineering approaches, how to work with teams when developing software, and computer ethics.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://masgai.com/posts/hello-world/</link>
+      <pubDate>Sat, 23 Dec 2017 22:09:19 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/hello-world/</guid>
+      <description>Hello world! This my first article on my Hugo-powered blog! The purpose of this blog to is periodically update recruiters on CS related projects.
+I decided I wanted a simple, lightweight blogging site. I chose to use Hugo for its ease of use and speed. By opting for Hugo my website does not use a database making faster and more secure. As for the Hugo theme I chose Tales. For hosting, I chose to use Github Pages.</description>
+    </item>
+    
   </channel>
 </rss>

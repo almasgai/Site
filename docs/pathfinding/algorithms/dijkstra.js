@@ -1,4 +1,4 @@
-import { pause } from "../eventlisteners";
+import { pause } from "../eventlisteners.js";
 import { get_node } from "./util.js";
 
 async function Dijsktra() {
@@ -55,3 +55,4 @@ async function Dijsktra() {
     }
   }
 }
+export default Dijsktra;

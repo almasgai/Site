@@ -9,9 +9,9 @@ function initialize_variables() {
 
   window.current_square = undefined;
   window.previous_color = "white";
+  window.square_color = "gray";
   window.draw = false;
   window.move = false;
-  window.square_color = "gray";
 
   window.start_row = Math.floor(rows / 3);
   window.start_col = Math.floor(columns / 6);

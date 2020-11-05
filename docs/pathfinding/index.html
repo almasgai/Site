@@ -19,10 +19,10 @@
       <hr />
       <label for="cars">Algorithms</label>
       <select name="algos" id="algos_list">
-        <option value="BFS" selected>BFS</option>
+        <option value="BFS">BFS</option>
         <option value="DFS">DFS</option>
         <option value="Bidirectional">Bidirectional</option>
-        <option value="Djikstra">Dijkstra</option>
+        <option value="Dijkstra" selected>Dijkstra</option>
       </select>
       <br />
       <div id="fontawesome_icon" draggable="true">
@@ -37,8 +37,6 @@
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          width="15%"
-          height="15%"
         >
           <path
             fill="currentColor"
@@ -47,8 +45,13 @@
         </svg>
       </div>
       <br />
+      <br />
+      <br />
       <button class="menu_items" onclick="clear_grid()">
-        Clear
+        Clear Walls &amp; Traversal
+      </button>
+      <button class="menu_items" onclick="clear_traversal()">
+        Clear Traversal
       </button>
       <button class="menu_items" type="submit" onclick="main()">Go!</button>
       <br />

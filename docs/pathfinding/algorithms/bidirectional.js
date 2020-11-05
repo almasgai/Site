@@ -1,5 +1,4 @@
-import { pause } from "../eventlisteners.js";
-import { get_node } from "./util.js";
+import { get_node, pause } from "./util.js";
 
 async function Bidirectional() {
   if (start_row == end_row && start_col == end_col) return;
@@ -91,6 +90,8 @@ async function Bidirectional() {
               "lightgreen";
 
             await pause(10);
+            document.getElementById(`${row} ${col}`).style.backgroundColor =
+              "lightblue";
           }
         }
 

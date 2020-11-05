@@ -1,8 +1,14 @@
 Implement remaining algorithms
 
 Create a path after finding algorithm
-
 Add event listener to give time and space complexity
 in big O and theta when selecting algorithm
 
 Add weight functionality
+
+Make sure clearing the grid remove grid values, not just colors
+
+Remove redundant code with `this`:
+- priority queue probably doesn't need to be passed queue ever
+
+Replace janky grid system with node-based system

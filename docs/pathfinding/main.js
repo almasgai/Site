@@ -49,6 +49,17 @@ function clear_grid() {
   }
 }
 
+function clear_traversal(event) {
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      let color = document.getElementById(`${i} ${j}`).style.backgroundColor;
+      if (color == "lightblue" || color == "lightgreen") {
+        document.getElementById(`${i} ${j}`).style.backgroundColor = "white";
+      }
+    }
+  }
+}
+
 // Create HTML grid with start and finish
 (function create_grid() {
   for (let i = 0; i < rows; i++) {
@@ -83,8 +94,15 @@ function clear_grid() {
       square.addEventListener("mousemove", event.move_node);
       square.addEventListener("mousedown", event.toggle_move);
 
+      square.addEventListener("drop", event.drop);
+      square.addEventListener("dragover", event.allow_drop);
+
+      square.addEventListener("dblclick", event.offscreen);
+
+      /*
       square.ondrop = event.drop;
       square.ondragover = event.allow_drop;
+      */
 
       row.append(square);
     }
@@ -114,15 +132,12 @@ function clear_grid() {
   }
 })();
 
-// Press 'c' to clear the screen
 document.addEventListener("keydown", event.clear_grid);
 
 // Stop drawing or moving start/end nodes if mouse goes off screen
 document.addEventListener("mouseleave", event.offscreen);
+document.addEventListener("mouseup", event.offscreen);
 document.getElementById("menu").addEventListener("mouseenter", event.offscreen);
-document
-  .getElementById("fontawesome_icon")
-  .addEventListener("mouseleave", event.offscreen);
 document
   .getElementById("fontawesome_icon")
   .addEventListener("mouseenter", event.offscreen);
@@ -138,21 +153,6 @@ end.addEventListener("mousemove", event.move_node);
 end.addEventListener("mouseup", event.toggle_move);
 
 async function main() {
-  function clear_traversal() {
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-        let square = document.getElementById(`${i} ${j}`);
-        if (
-          square.style.backgroundColor == "lightblue" ||
-          square.style.backgroundColor == "lightgreen"
-        ) {
-          square.style.backgroundColor = "white";
-        }
-      }
-    }
-    draw = false;
-  }
-
   function lookup(name) {
     switch (name) {
       case "BFS":
@@ -161,6 +161,8 @@ async function main() {
         return DFS;
       case "Bidirectional":
         return Bidirectional;
+      case "Dijkstra":
+        return Dijsktra;
       default:
         return BFS;
     }
@@ -177,8 +179,15 @@ async function main() {
 document
   .getElementById("fontawesome_icon")
   .addEventListener("drag", function drag(event) {
+    event.preventDefault();
+    event.stopPropagation();
     event.dataTransfer.setData("text", event.target.id);
   });
 
+document
+  .getElementById("fontawesome_icon")
+  .addEventListener("mouseleave", event.offscreen);
+
 window.main = main;
 window.clear_grid = clear_grid;
+window.clear_traversal = clear_traversal;

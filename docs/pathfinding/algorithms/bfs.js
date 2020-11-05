@@ -1,5 +1,4 @@
-import { pause } from "../eventlisteners.js";
-import { get_node } from "./util.js";
+import { get_node, pause } from "./util.js";
 
 async function BFS() {
   if (start_row == end_row && start_col == end_col) return;
@@ -29,7 +28,9 @@ async function BFS() {
         document.getElementById(`${row} ${col}`).style.backgroundColor =
           "lightgreen";
 
-        await pause(25);
+        var last_node = [row, col];
+
+        await pause(20);
       }
     }
 
@@ -63,10 +64,14 @@ async function BFS() {
                 document.getElementById(`${i} ${j}`).style.backgroundColor ==
                 "green"
               ) {
+                document.getElementById(
+                  `${last_node[0]} ${last_node[1]}`
+                ).style.backgroundColor = "lightblue";
                 done = true;
               }
             }
           }
+
           queue.push(node);
           if (done) {
             return;

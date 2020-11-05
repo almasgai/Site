@@ -1,5 +1,4 @@
-import { pause } from "../eventlisteners.js";
-import { get_node } from "./util.js";
+import { get_node, pause } from "./util.js";
 
 async function DFS() {
   if (start_row == end_row && start_col == end_col) return;

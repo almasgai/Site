@@ -1,15 +1,13 @@
 // Give permission user to draw on grid
 export function toggle_square(event) {
   event.preventDefault();
-  /*
-  if (
-    event.target.style.backgroundColor == "lightblue" ||
-    event.target.style.backgroundColor == "lightgreen"
-  )
-  return;
-  */
-  square_color =
-    event.target.style.backgroundColor == "white" ? "gray" : "white";
+  let color = event.target.style.backgroundColor;
+  if (color == "white") {
+    square_color = "gray";
+  } else if (color == "gray") {
+    square_color = "white";
+  }
+
   node = event.target.style.backgroundColor;
   draw = !draw;
 }
@@ -29,14 +27,6 @@ export function color(event) {
     return;
   }
 
-  /*
-  if (square.style.backgroundColor == "lightblue") {
-    draw = false;
-    move = false;
-    return;
-  }
-  */
-
   // Visually block/unblock square
   square.style.backgroundColor = square_color;
 
@@ -51,8 +41,7 @@ export function color_click(event) {
   if (
     square.style.backgroundColor == "red" ||
     square.style.backgroundColor == "green" ||
-    square.style.backgroundColor == "black" ||
-    square.style.backgroundColor == "lightblue"
+    square.style.backgroundColor == "black"
   )
     return;
 
@@ -65,20 +54,23 @@ export function color_click(event) {
 // Allow user to move src/dst on screen
 export function toggle_move(event) {
   event.preventDefault();
-  if (event.target != start && event.target != end) return;
-  move = !move;
-  draw = false;
+  if (
+    event.target == start ||
+    event.target == end ||
+    event.target.style.backgroundColor == "black"
+  ) {
+    move = !move;
+    draw = false;
+  }
 }
 
 export function _clear_grid(event) {
-  if (event.code == "KeyC") {
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-        if (grid[i][j] != 2 && grid[i][j] != 3) {
-          grid[i][j] = 0;
-          let square = document.getElementById(`${i} ${j}`);
-          square.style.backgroundColor = "white";
-        }
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      if (grid[i][j] != 2 && grid[i][j] != 3) {
+        grid[i][j] = 0;
+        let square = document.getElementById(`${i} ${j}`);
+        square.style.backgroundColor = "white";
       }
     }
   }
@@ -97,9 +89,7 @@ export function move_node(event) {
     !move ||
     event.target == end ||
     event.target == start ||
-    event.target.style.backgroundColor == "gray" ||
-    event.target.style.backgroundColor == "black" ||
-    event.target.style.backgroundColor == "lightblue"
+    event.target.style.backgroundColor == "gray"
   )
     return;
 
@@ -188,9 +178,7 @@ export function drop(event) {
 }
 
 export function drag(event) {
+  event.preventDefault();
+  event.stopPropagation();
   event.dataTransfer.setData("text", event.target.id);
-}
-
-export function pause(speed) {
-  return new Promise((resolve) => setTimeout(resolve, speed));
 }

@@ -4,6 +4,8 @@ import BFS from "./algorithms/bfs.js";
 import DFS from "./algorithms/dfs.js";
 import Bidirectional from "./algorithms/bidirectional.js";
 import Dijsktra from "./algorithms/dijkstra.js";
+import AStar from "./algorithms/astar.js";
+import BestFirst from "./algorithms/bestfirst.js";
 
 /*
  * If left >= -5 and top >= -5, white. Otherwise gray.
@@ -53,7 +55,7 @@ function clear_traversal(event) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       let color = document.getElementById(`${i} ${j}`).style.backgroundColor;
-      if (color == "lightblue" || color == "lightgreen") {
+      if (color == "lightblue" || color == "lightgreen" || color == "yellow") {
         document.getElementById(`${i} ${j}`).style.backgroundColor = "white";
       }
     }
@@ -163,6 +165,10 @@ async function main() {
         return Bidirectional;
       case "Dijkstra":
         return Dijsktra;
+      case "AStar":
+        return AStar;
+      case "BestFirst":
+        return BestFirst;
       default:
         return BFS;
     }

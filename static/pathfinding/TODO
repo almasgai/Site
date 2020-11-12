@@ -1,14 +1,19 @@
-Implement remaining algorithms
-
 Create a path after finding algorithm
+
 Add event listener to give time and space complexity
 in big O and theta when selecting algorithm
-
-Add weight functionality
-
-Make sure clearing the grid remove grid values, not just colors
 
 Remove redundant code with `this`:
 - priority queue probably doesn't need to be passed queue ever
 
 Replace janky grid system with node-based system
+
+Two adjacent weighted squares halt the Dijkstra
+
+Moving a weighted square removes destination node
+
+Add start and destination properties to node
+
+Create a function that creates the grid with nodes
+
+Nodes are being re-added to the priority queue even if they're already in there

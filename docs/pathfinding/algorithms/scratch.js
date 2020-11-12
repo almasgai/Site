@@ -1,17 +1,5 @@
-let obj = [
-  { name: "Big Al", age: 24, fav_color: "blue" },
-  { name: "Johnny", age: 23, fav_color: "blue" },
-  { name: "Cogs", age: 22, fav_color: "green" },
-  { name: "Danny", age: 24, fav_color: "red" }
-];
-
-function f(array, prop) {
-  for (let o of array) {
-    console.log(`${index} ${o[prop]}`);
-  }
-  console.log();
+let a = [1, 2, 3, 4, 5];
+while (a.length) {
+  console.log(a[a.length - 1]);
+  a.pop();
 }
-
-f(obj, "age");
-f(obj, "name");
-f(obj, "fav_color");

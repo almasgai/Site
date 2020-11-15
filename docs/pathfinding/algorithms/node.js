@@ -12,6 +12,7 @@ export default function Node(i, j, color) {
   this.from_end = this.to_goal() + this.cost;
   this.manhatten_distance = this.to_start() + this.to_goal() + this.cost; // Functions because these values may be updated
 }
+
 Node.prototype.lookup = {
   white: 1,
   black: 10,

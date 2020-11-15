@@ -1,8 +1,6 @@
 import { get_node, pause } from "./util.js";
 
 async function BFS() {
-  if (start_row == end_row && start_col == end_col) return;
-
   let visited = new Set();
   visited.add([start_row, start_col].toString());
   let queue = [[start_row, start_col]];
@@ -29,8 +27,6 @@ async function BFS() {
           "lightgreen";
 
         var last_node = [row, col];
-
-        await pause(20);
       }
     }
 
@@ -54,7 +50,7 @@ async function BFS() {
           document.getElementById(`${row} ${col}`).style.backgroundColor =
             "lightblue";
 
-          await pause(5);
+          await pause(time);
 
           for (let check_neighbor of [up, right, down, left]) {
             if (check_neighbor) {

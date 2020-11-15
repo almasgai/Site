@@ -23,6 +23,9 @@ async function BestFirst() {
     distances.push(temp);
   }
 
+  distances[start_row][start_col].cost = 0;
+  distances[start_row][start_col].distance = 0;
+
   pq.add_node(priority_queue, distances[start_row][start_col], "from_end");
 
   // Queue is not empty. Or break after end node has be dequeued
@@ -62,11 +65,17 @@ async function BestFirst() {
       if (i != start_row || j != start_col) {
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightgreen";
-        await pause(20);
+
+        await pause(time);
+
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightblue";
       }
 
+      pq.add_node(priority_queue, distances[i][j], "from_end");
+      distances[i][j].previous_node = node;
+
+      /*
       if (!visited.has([i, j].toString())) {
         pq.add_node(priority_queue, distances[i][j], "from_end");
         distances[i][j].previous_node = node;
@@ -78,6 +87,7 @@ async function BestFirst() {
           }
         }
       }
+      */
     }
   }
 }

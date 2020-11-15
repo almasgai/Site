@@ -11,12 +11,26 @@ body {
   margin-top: 40px;
   margin-left: 50px;
   width: 200px;
-  height: 280px;
+  height: 400px;
+  height: auto;
   border-radius: 10px;
   background-color: rgba(20, 20, 20, 0.9);
   color: white;
   border: 2px solid black;
   padding: 10px;
+}
+
+#toggle_menu {
+  margin: 0;
+  float: right;
+}
+
+#toggle_menu:hover {
+  cursor: pointer;
+}
+
+#menu_body {
+  display: block;
 }
 
 .menu_items {
@@ -53,7 +67,7 @@ body {
 #go_back {
   position: absolute;
   display: block;
-  margin-top: 10px;
+  margin-top: 30px;
   bottom: 5px;
   color: white;
 }
@@ -63,6 +77,37 @@ body {
   width: 30px;
   display: block;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 5%;
+  display: none;
+}
+
+#complexities:hover {
+  background-color: rgba(80, 80, 80, 0.9);
+  cursor: pointer;
+  height: auto;
+  width: auto;
+}
+
+/* Make text un-selectable when clicking element */
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#complexity_container {
+  display: none;
+}
+
+p {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+ul {
+  list-style: none;
 }

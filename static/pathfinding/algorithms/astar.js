@@ -70,7 +70,9 @@ async function AStar() {
       if (!(i == start_row && j == start_col)) {
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightgreen";
-        await pause(10);
+
+        await pause(time);
+
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightblue";
       }

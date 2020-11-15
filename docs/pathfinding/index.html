@@ -8,56 +8,70 @@
   </head>
   <body>
     <div id="menu">
-      <h4>
-        Start node:
-        <div id="start_text"></div>
-      </h4>
-      <h4>
-        End node:
-        <span id="end_text"></span>
-      </h4>
-      <hr />
-      <label for="cars">Algorithms</label>
-      <select name="algos" id="algos_list">
-        <option value="BFS">BFS</option>
-        <option value="DFS">DFS</option>
-        <option value="Bidirectional">Bidirectional</option>
-        <option value="Dijkstra">Dijkstra</option>
-        <option value="AStar" selected>A*</option>
-        <option value="BestFirst">Best First</option>
-      </select>
-      <br />
-      <div id="fontawesome_icon" draggable="true">
-        <!-- This icon is provided by FontAwesome. You can find more information here: -->
-        <!-- https://fontawesome.com/license/free -->
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fas"
-          data-icon="weight-hanging"
-          class="svg-inline--fa fa-weight-hanging fa-w-16"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-        >
-          <path
-            fill="currentColor"
-            d="M510.28 445.86l-73.03-292.13c-3.8-15.19-16.44-25.72-30.87-25.72h-60.25c3.57-10.05 5.88-20.72 5.88-32 0-53.02-42.98-96-96-96s-96 42.98-96 96c0 11.28 2.3 21.95 5.88 32h-60.25c-14.43 0-27.08 10.54-30.87 25.72L1.72 445.86C-6.61 479.17 16.38 512 48.03 512h415.95c31.64 0 54.63-32.83 46.3-66.14zM256 128c-17.64 0-32-14.36-32-32s14.36-32 32-32 32 14.36 32 32-14.36 32-32 32z"
-          ></path>
-        </svg>
+      <div id="toggle_menu" class="unselectable">Hide</div>
+      <div id="menu_body">
+        <h4>
+          Start node:
+          <div id="start_text"></div>
+        </h4>
+        <h4>
+          End node:
+          <span id="end_text"></span>
+        </h4>
+        <hr />
+        <label for="algos">Algorithms</label>
+        <select name="algos" id="algos_list">
+          <option value="BFS" class="algo_item" selected>BFS</option>
+          <option value="DFS" class="algo_item">DFS</option>
+          <option value="Bidirectional" class="algo_item">Bidirectional</option>
+          <option value="Dijkstra" class="algo_item">Dijkstra</option>
+          <option value="AStar" class="algo_item">A*</option>
+          <option value="BestFirst" class="algo_item">Best First</option>
+        </select>
+        <br />
+        <br />
+        <button class="menu_items" onclick="clear_grid()">
+          Clear Walls &amp; Traversal
+        </button>
+        <button class="menu_items" onclick="clear_traversal()">
+          Clear Traversal
+        </button>
+        <button class="menu_items" type="submit" onclick="main()">Go!</button>
+        <br />
+        <br />
+        <!-- Complexities -->
+        <div id="complexities" class="unselectable">
+          <div id="complexities_text">Big O ⬇</div>
+          <hr />
+          <div id="complexity_container">
+            <p>Time: O(<span id="time">|V| + |E|</span>)</p>
+            <p>Space: O(<span id="space">|V|</span>)</p>
+            <p>Optimal: <span id="optimal">Yes</span></p>
+          </div>
+        </div>
+
+        <div id="fontawesome_icon" draggable="true">
+          <!-- This icon is provided by FontAwesome. You can find more information here: -->
+          <!-- https://fontawesome.com/license/free -->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="weight-hanging"
+            class="svg-inline--fa fa-weight-hanging fa-w-16"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M510.28 445.86l-73.03-292.13c-3.8-15.19-16.44-25.72-30.87-25.72h-60.25c3.57-10.05 5.88-20.72 5.88-32 0-53.02-42.98-96-96-96s-96 42.98-96 96c0 11.28 2.3 21.95 5.88 32h-60.25c-14.43 0-27.08 10.54-30.87 25.72L1.72 445.86C-6.61 479.17 16.38 512 48.03 512h415.95c31.64 0 54.63-32.83 46.3-66.14zM256 128c-17.64 0-32-14.36-32-32s14.36-32 32-32 32 14.36 32 32-14.36 32-32 32z"
+            ></path>
+          </svg>
+        </div>
+        <br />
+        <a href="/" id="go_back">Go Back</a>
       </div>
-      <br />
-      <br />
-      <br />
-      <button class="menu_items" onclick="clear_grid()">
-        Clear Walls &amp; Traversal
-      </button>
-      <button class="menu_items" onclick="clear_traversal()">
-        Clear Traversal
-      </button>
-      <button class="menu_items" type="submit" onclick="main()">Go!</button>
-      <br />
-      <a href="/" id="go_back">Go Back</a>
     </div>
     <div id="grid"></div>
     <script type="module" src="./main.js"></script>

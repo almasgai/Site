@@ -39,6 +39,7 @@ export function get_min_child(queue, index, property) {
 }
 
 export function percolate_down(queue, property) {
+  if (queue.length == 1) return;
   let i = 0;
 
   while (i * 2 + 2 < queue.length) {
@@ -65,6 +66,9 @@ export function pop_min(queue, property) {
   }
 
   let min_node = queue[0];
+  if (queue.length == 1) {
+    return queue.pop();
+  }
   queue[0] = queue.pop();
   percolate_down(queue, property);
   return min_node;

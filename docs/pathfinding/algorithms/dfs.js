@@ -1,15 +1,10 @@
 import { get_node, pause } from "./util.js";
 
 async function DFS() {
-  if (start_row == end_row && start_col == end_col) return;
-
   let visited = new Set();
   visited.add([start_row, start_col].toString());
 
-  console.log("DFS");
-
   async function _DFS(i, j) {
-    console.log("_DFS");
     if (
       i < 0 ||
       j < 0 ||
@@ -17,7 +12,7 @@ async function DFS() {
       j >= grid[0].length ||
       grid[i][j] == 1 ||
       visited.has([i, j].toString()) ||
-      document.getElementById(`${i} ${j}`).style.backgroundColor == "cyan"
+      document.getElementById(`${i} ${j}`).style.backgroundColor == "lightblue"
     ) {
       return;
     }
@@ -32,9 +27,9 @@ async function DFS() {
     }
 
     visited.add([i, j].toString());
-    await pause(40);
+    await pause(time);
     document.getElementById(`${i} ${j}`).style.backgroundColor = "lightgreen";
-    await pause(40);
+    await pause(time);
     document.getElementById(`${i} ${j}`).style.backgroundColor = "lightblue";
 
     // If at any point get_neighbor returns true, the end node has been found

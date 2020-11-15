@@ -21,6 +21,8 @@ function initialize_variables() {
 
   window.start = undefined;
   window.end = undefined;
+
+  window.time = 10;
 }
 
 export default initialize_variables;

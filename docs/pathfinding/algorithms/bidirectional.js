@@ -38,7 +38,7 @@ async function Bidirectional() {
           document.getElementById(`${row} ${col}`).style.backgroundColor =
             "lightgreen";
 
-          await pause(10);
+          await pause(time);
         }
       }
 
@@ -50,7 +50,7 @@ async function Bidirectional() {
           document.getElementById(`${row} ${col}`).style.backgroundColor =
             "lightblue";
 
-          await pause(5);
+          await pause(time);
 
           // Now check to see if current node connects to destinations node
           let up = get_node(row - 1, col, start_visited);
@@ -89,7 +89,7 @@ async function Bidirectional() {
             document.getElementById(`${row} ${col}`).style.backgroundColor =
               "lightgreen";
 
-            await pause(10);
+            await pause(time);
             document.getElementById(`${row} ${col}`).style.backgroundColor =
               "lightblue";
           }
@@ -102,8 +102,6 @@ async function Bidirectional() {
 
             document.getElementById(`${row} ${col}`).style.backgroundColor =
               "lightblue";
-
-            await pause(5);
 
             // Now check to see if current node connects to destinations node
             let up = get_node(row - 1, col, end_visited);

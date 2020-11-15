@@ -1,10 +1,12 @@
+import Complexities from "./complexities.js";
+
 // Give permission user to draw on grid
 export function toggle_square(event) {
   event.preventDefault();
   let color = event.target.style.backgroundColor;
-  if (color == "white") {
+  if (color == "white" || color == "lightblue") {
     square_color = "gray";
-  } else if (color == "gray") {
+  } else {
     square_color = "white";
   }
 
@@ -45,8 +47,11 @@ export function color_click(event) {
   )
     return;
 
-  square.style.backgroundColor =
-    square.style.backgroundColor == "white" ? "gray" : "white";
+  if (square.style.backgroundColor == "gray") {
+    square.style.backgroundColor = "white";
+  } else {
+    square.style.backgroundColor = "gray";
+  }
 
   update_grid(square, square.style.backgroundColor);
 }
@@ -112,7 +117,7 @@ export function move_node(event) {
     grid[i][j] = 2;
 
     start = document.getElementById(`${i} ${j}`);
-  } else {
+  } else if (node == "green") {
     end.style.backgroundColor = "white";
     square.style.backgroundColor = node;
     let old_end = end.id.split(" ");
@@ -133,7 +138,7 @@ export function move_node(event) {
 
 function update_grid(square, square_color) {
   if (
-    square_color == "lightblue" ||
+    // square_color == "lightblue" ||
     square_color == "lightgreen" ||
     square_color == "black"
   )
@@ -181,4 +186,29 @@ export function drag(event) {
   event.preventDefault();
   event.stopPropagation();
   event.dataTransfer.setData("text", event.target.id);
+}
+
+export function show_weights(event) {
+  for (let option of document.getElementsByTagName("option")) {
+    if (option.selected) {
+      if (
+        option.value == "BestFirst" ||
+        option.value == "Dijkstra" ||
+        option.value == "AStar"
+      ) {
+        document.getElementById("fontawesome_icon").style.display = "inline";
+      } else {
+        document.getElementById("fontawesome_icon").style.display = "none";
+      }
+    }
+  }
+}
+
+export function get_complexities(event) {
+  let algo = event.target.value;
+  let complexities = Complexities[algo];
+
+  document.getElementById("time").innerHTML = complexities[0];
+  document.getElementById("space").innerHTML = complexities[1];
+  document.getElementById("optimal").innerHTML = complexities[2];
 }

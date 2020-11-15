@@ -15,7 +15,7 @@ export function percolate_up(queue, node, property) {
   // and while there is a parent node to compare it to.
   while (Math.floor((index - 1) / 2) >= 0) {
     let min_index = Math.floor((index - 1) / 2);
-    if (queue[index][property] >= queue[min_index][property]) return;
+    if (queue[index][property] > queue[min_index][property]) return;
 
     let temp = queue[index];
     queue[index] = queue[min_index];
@@ -29,8 +29,8 @@ export function get_min_child(queue, index, property) {
   // Since arrays are zero-indexed, to get left child it 2k + 1.
   // To get right, 2k + 2
   if (
-    index * 2 + 1 >= queue.length ||
-    queue[index * 2 + 1][property] < queue[index * 2 + 2][property]
+    index * 2 + 2 >= queue.length ||
+    queue[index * 2 + 1][property] <= queue[index * 2 + 2][property]
   ) {
     return index * 2 + 1;
   } else {
@@ -39,12 +39,13 @@ export function get_min_child(queue, index, property) {
 }
 
 export function percolate_down(queue, property) {
+  if (queue.length == 1) return;
   let i = 0;
 
   while (i * 2 + 2 < queue.length) {
     let min_child = get_min_child(queue, i, property);
 
-    if (queue[i][property] > queue[min_child][property]) {
+    if (queue[i][property] >= queue[min_child][property]) {
       let temp = queue[i];
       queue[i] = queue[min_child];
       queue[min_child] = temp;
@@ -65,6 +66,9 @@ export function pop_min(queue, property) {
   }
 
   let min_node = queue[0];
+  if (queue.length == 1) {
+    return queue.pop();
+  }
   queue[0] = queue.pop();
   percolate_down(queue, property);
   return min_node;

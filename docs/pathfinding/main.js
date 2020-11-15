@@ -3,7 +3,7 @@ import initialize_variables from "./variables.js";
 import BFS from "./algorithms/bfs.js";
 import DFS from "./algorithms/dfs.js";
 import Bidirectional from "./algorithms/bidirectional.js";
-import Dijsktra from "./algorithms/dijkstra.js";
+import Dijkstra from "./algorithms/dijkstra.js";
 import AStar from "./algorithms/astar.js";
 import BestFirst from "./algorithms/bestfirst.js";
 
@@ -164,7 +164,7 @@ async function main() {
       case "Bidirectional":
         return Bidirectional;
       case "Dijkstra":
-        return Dijsktra;
+        return Dijkstra;
       case "AStar":
         return AStar;
       case "BestFirst":
@@ -193,6 +193,41 @@ document
 document
   .getElementById("fontawesome_icon")
   .addEventListener("mouseleave", event.offscreen);
+
+document
+  .getElementById("algos_list")
+  .addEventListener("change", event.show_weights);
+
+document
+  .getElementById("toggle_menu")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    let toggle_menu = document.getElementById("toggle_menu");
+    toggle_menu.innerText = toggle_menu.innerText == "Hide" ? "Show" : "Hide";
+
+    let body = document.getElementById("menu_body");
+    body.style.display =
+      body.style.display == "none" || undefined ? "block" : "none";
+  });
+
+document
+  .getElementById("complexities")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    let display = document.getElementById("complexity_container").style.display;
+
+    document.getElementById("complexity_container").style.display =
+      display == "none" || !display ? "block" : "none";
+
+    document.getElementById("complexities_text").innerText =
+      document.getElementById("complexity_container").style.display == "none"
+        ? "Big O ⬇"
+        : "Big O ⬆";
+  });
+
+document
+  .getElementById("algos_list")
+  .addEventListener("change", event.get_complexities);
 
 window.main = main;
 window.clear_grid = clear_grid;

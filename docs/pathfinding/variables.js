@@ -16,11 +16,13 @@ function initialize_variables() {
   window.start_row = Math.floor(rows / 3);
   window.start_col = Math.floor(columns / 6);
 
-  window.end_row = Math.floor(rows / 3);
-  window.end_col = Math.floor(columns / 2);
+  window.end_row = start_row;
+  window.end_col = start_col + 15;
 
   window.start = undefined;
   window.end = undefined;
+
+  window.time = 10;
 }
 
 export default initialize_variables;

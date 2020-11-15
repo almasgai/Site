@@ -35,10 +35,6 @@ async function AStar() {
     let row = node.x;
     let col = node.y;
 
-    // Don't believe you need this. If you pop of from the PQ, you may need
-    // to revisit a node... which this line does not allow.
-    // if (visited.has([row, col].toString())) continue;
-
     let up = get_node_no_set(row - 1, col);
     let right = get_node_no_set(row, col + 1);
     let down = get_node_no_set(row + 1, col);
@@ -53,61 +49,40 @@ async function AStar() {
       let i = neighbor[0];
       let j = neighbor[1];
 
-      // If neighbor is destination node
-      if (
-        document.getElementById(`${i} ${j}`).style.backgroundColor == "green" ||
-        distances[i][j].is_end
-      ) {
-        done = true;
-        distances[i][j].previous_node = node;
-        break;
-      }
-
-      // If neighbor is already visited or blue, continue. The node has either
+      // If neighbor is already visited or lightblue, continue. The node has either
       // been completely visited or in the priority queue to be visited.
-      /*
       if (
         visited.has([i, j].toString()) ||
         document.getElementById(`${i} ${j}`).style.backgroundColor ==
           "lightblue"
-      )
+      ) {
         continue;
-        */
+      }
 
-      // If the neighbor is not already visited, in the priority queue, or
-      // the destination node, visit it.
-      if (i != start_row || j != start_col) {
+      // If neighbor is destination node
+      if (
+        document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
+      ) {
+        done = true;
+        break;
+      }
+
+      if (!(i == start_row && j == start_col)) {
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightgreen";
-        await pause(20);
+
+        await pause(time);
+
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightblue";
       }
 
       // Add neighbor to priority queue to be visited.
       pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
-      distances[i][j].previous_node = node;
       if (all_neighbors_visited(i, j)) {
         visited.add([i, j].toString());
       }
     }
-  }
-
-  let traversal = [];
-  let pointer = distances[end_row][end_col];
-
-  while (pointer) {
-    traversal.push([pointer.x, pointer.y]);
-    pointer = pointer.previous_node;
-  }
-
-  for (let i = traversal.length - 2; i >= 1; i--) {
-    let row = traversal[i][0];
-    let col = traversal[i][1];
-
-    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
-
-    await pause(30);
   }
 }
 

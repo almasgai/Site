@@ -23,25 +23,17 @@ async function BestFirst() {
     distances.push(temp);
   }
 
+  distances[start_row][start_col].cost = 0;
+  distances[start_row][start_col].distance = 0;
+
   pq.add_node(priority_queue, distances[start_row][start_col], "from_end");
 
-  distances[start_row][start_col].previous_node = undefined;
-
   // Queue is not empty. Or break after end node has be dequeued
-  while (priority_queue.length > 0) {
+  while (!done && priority_queue.length) {
     // Get the next viable node. Using this node, get it's neighbors
-    if (done) break;
     let node = pq.pop_min(priority_queue, "from_end");
     let row = node.x;
     let col = node.y;
-
-    /*
-    if (
-      row != start_row ||
-      (col != start_col && visited.has([row, col].toString()))
-    )
-      continue;
-    */
 
     let up = get_node_no_set(row - 1, col);
     let right = get_node_no_set(row, col + 1);
@@ -58,12 +50,9 @@ async function BestFirst() {
       let j = neighbor[1];
 
       if (
-        document.getElementById(`${i} ${j}`).style.backgroundColor == "green" ||
-        distances[i][j].is_end
+        document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
       ) {
-        done = true;
-        distances[i][j].previous_node = node;
-        break;
+        return;
       }
 
       if (
@@ -76,11 +65,17 @@ async function BestFirst() {
       if (i != start_row || j != start_col) {
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightgreen";
-        await pause(20);
+
+        await pause(time);
+
         document.getElementById(`${i} ${j}`).style.backgroundColor =
           "lightblue";
       }
 
+      pq.add_node(priority_queue, distances[i][j], "from_end");
+      distances[i][j].previous_node = node;
+
+      /*
       if (!visited.has([i, j].toString())) {
         pq.add_node(priority_queue, distances[i][j], "from_end");
         distances[i][j].previous_node = node;
@@ -92,28 +87,8 @@ async function BestFirst() {
           }
         }
       }
+      */
     }
-
-    if (done) {
-      break;
-    }
-  }
-
-  let traversal = [];
-  let pointer = distances[end_row][end_col];
-
-  while (pointer) {
-    traversal.push([pointer.x, pointer.y]);
-    pointer = pointer.previous_node;
-  }
-
-  for (let i = traversal.length - 2; i >= 1; i--) {
-    let row = traversal[i][0];
-    let col = traversal[i][1];
-
-    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
-
-    await pause(30);
   }
 }
 

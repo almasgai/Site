@@ -2,7 +2,7 @@ import { get_node_no_set, pause, all_neighbors_visited } from "./util.js";
 import * as pq from "./priority_queue.js";
 import Node from "./node.js";
 
-async function Dijsktra() {
+async function Dijkstra() {
   // Priority queue of nodes to be visited
   let priority_queue = [];
   let distances = [];
@@ -33,8 +33,7 @@ async function Dijsktra() {
   pq.add_node(priority_queue, distances[start_row][start_col], "distance");
   distances[start_row][start_col].previous_node = undefined;
 
-  while (priority_queue.length > 0) {
-    if (done) break;
+  while (!done && priority_queue.length) {
     let node = pq.pop_min(priority_queue, "distance");
     let row = node.x;
     let col = node.y;
@@ -63,27 +62,10 @@ async function Dijsktra() {
         document.getElementById(`${row} ${col}`).style.backgroundColor ==
         "green"
       ) {
-        distances[row][col].set_previous(node);
+        distances[row][col].set_previous(distances[node.x][node.y]);
         done = true;
         break;
       }
-
-      // If all the nodes neighbors have been visited, add it to the visited
-      // set and color the node blue
-      if (all_neighbors_visited(row, col)) {
-        document.getElementById(`${row} ${col}`).style.backgroundColor =
-          "lightblue";
-        visited.add([row, col].toString());
-        continue;
-      }
-
-      document.getElementById(`${row} ${col}`).style.backgroundColor =
-        "lightgreen";
-
-      await pause(1);
-
-      document.getElementById(`${row} ${col}`).style.backgroundColor =
-        "lightblue";
 
       // Get cost of visited node (default is infinity)
       let cost = distances[row][col].cost;
@@ -91,48 +73,33 @@ async function Dijsktra() {
       // Update distance if a shorter path is found
       if (prev_cost + cost < distances[row][col].distance) {
         distances[row][col].distance = prev_cost + cost;
-        distances[row][col].set_previous(node);
+        distances[row][col].set_previous(distances[node.x][node.y]);
       }
 
-      let neighbors = [
-        document.getElementById(`${row - 1} ${col}`).style.backgroundColor,
-        document.getElementById(`${row + 1} ${col}`).style.backgroundColor,
-        document.getElementById(`${row} ${col - 1}`).style.backgroundColor,
-        document.getElementById(`${row} ${col + 1}`).style.backgroundColor
-      ];
+      document.getElementById(`${row} ${col}`).style.backgroundColor =
+        "lightgreen";
 
-      /*
-      for (let neighbor of neighbors) {
-        if (neighbor == "green") break;
-      }
-      */
-    }
+      await pause(time);
 
-    /*
-     * So here was the issue: I updated the nodes and added them to the queue...
-     * one by one. This cause one node to be updated and added to the queue
-     * while the other nodes were waiting to be updated. Instead, I needed to
-     * update all the nodes first before adding them all the the queue. That way
-     * it was fair among the nodes.
-     */
-    for (let neighbor of [up, right, down, left]) {
-      if (neighbor) {
-        if (visited.has([neighbor[0], neighbor[1]].toString())) continue;
-        neighbor.previous_node = node;
+      document.getElementById(`${row} ${col}`).style.backgroundColor =
+        "lightblue";
+
+      if (!visited.has([row, col].toString())) {
         pq.add_node(
           priority_queue,
           distances[neighbor[0]][neighbor[1]],
           "distance"
         );
+        visited.add([row, col].toString());
       }
     }
   }
 
-  /*
   let traversal = [];
   let pointer = distances[end_row][end_col];
 
   while (pointer) {
+    console.log(pointer);
     traversal.push([pointer.x, pointer.y]);
     pointer = pointer.previous_node;
   }
@@ -141,9 +108,8 @@ async function Dijsktra() {
     let row = traversal[i][0];
     let col = traversal[i][1];
     document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
-    await pause(30);
+    await pause(time);
   }
-  */
 }
 
-export default Dijsktra;
+export default Dijkstra;

@@ -17,3 +17,5 @@ Add start and destination properties to node
 Create a function that creates the grid with nodes
 
 Nodes are being re-added to the priority queue even if they're already in there
+
+Cancel running algorithm while it is running

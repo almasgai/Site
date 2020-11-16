@@ -52,7 +52,9 @@ async function BestFirst() {
       if (
         document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
       ) {
-        return;
+        done = true;
+        distances[i][j].previous_node = distances[row][col];
+        break;
       }
 
       if (
@@ -74,21 +76,27 @@ async function BestFirst() {
 
       pq.add_node(priority_queue, distances[i][j], "from_end");
       distances[i][j].previous_node = node;
-
-      /*
-      if (!visited.has([i, j].toString())) {
-        pq.add_node(priority_queue, distances[i][j], "from_end");
-        distances[i][j].previous_node = node;
-        if (all_neighbors_visited(i, j)) {
-          if (i != start_row || j != start_col) {
-            document.getElementById(`${i} ${j}`).style.backgroundColor =
-              "lightblue";
-            visited.add([i, j].toString());
-          }
-        }
-      }
-      */
     }
+  }
+
+  if (!done) {
+    return;
+  }
+
+  let pointer = distances[end_row][end_col];
+  let traversal = [];
+
+  while (!pointer.start) {
+    pointer = pointer.previous_node;
+    traversal.push([pointer.x, pointer.y]);
+  }
+
+  traversal = traversal.reverse();
+  for (let i = 1; i < traversal.length; i++) {
+    let row = traversal[i][0];
+    let col = traversal[i][1];
+    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
+    await pause(time);
   }
 }
 

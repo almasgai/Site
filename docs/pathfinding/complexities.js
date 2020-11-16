@@ -9,7 +9,7 @@ const Complexities = {
   Bidirectional: [`b${"d/2".sup()}`, `b${"d/2".sup()}`, "Yes"],
   Dijkstra: [`|V|${"2".sup()}`, "|V| + |E|", "Yes"],
   AStar: [`b${"d".sup()}`, `b${"d".sup()}`, "Yes"],
-  BestFirst: [`b${"m".sup()}`, `b${"m".sup()}`, "No"]
+  BestFirst: [`b${"d".sup()}`, `b${"d".sup()}`, "No"]
 };
 
 export default Complexities;

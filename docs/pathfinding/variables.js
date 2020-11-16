@@ -22,7 +22,7 @@ function initialize_variables() {
   window.start = undefined;
   window.end = undefined;
 
-  window.time = 10;
+  window.time = 20;
 }
 
 export default initialize_variables;

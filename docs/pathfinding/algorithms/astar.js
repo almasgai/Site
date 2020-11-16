@@ -64,6 +64,7 @@ async function AStar() {
         document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
       ) {
         done = true;
+        distances[end_row][end_col].previous_node = node;
         break;
       }
 
@@ -79,10 +80,33 @@ async function AStar() {
 
       // Add neighbor to priority queue to be visited.
       pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
+      distances[i][j].previous_node = node;
       if (all_neighbors_visited(i, j)) {
         visited.add([i, j].toString());
       }
     }
+  }
+  if (!done) {
+    return;
+  }
+
+  let pointer = distances[end_row][end_col];
+  let traversal = [];
+  let c = 0;
+
+  while (!pointer.start) {
+    pointer = pointer.previous_node;
+    traversal.push([pointer.x, pointer.y]);
+    if (c++ == 50) break;
+  }
+
+  traversal = traversal.reverse();
+  console.log(traversal);
+  for (let i = 1; i < traversal.length; i++) {
+    let row = traversal[i][0];
+    let col = traversal[i][1];
+    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
+    await pause(time);
   }
 }
 

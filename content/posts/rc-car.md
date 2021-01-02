@@ -1,16 +1,17 @@
 ---
 title: "RC Car"
 date: 2018-01-04T13:32:28-05:00
-draft: false
-tags: ["arduino", "android","2018"]
+draft: true
+tags: ["arduino", "android", "2018"]
 ---
+
 # Building an Arduino-powered Car for CSC 315:
 
 This semester I took a class that I have wanted to take since my first
 semester at college: CSC 315, Software Engineering. CSC 315 focuses more on
 the practical side of computer science as opposed to the theoretical stuff like data structures and algorithms. The first half of the semester was
 learning about software engineering approaches, how to work with teams when developing software, and computer ethics.
-The second half of the semester was more hands-on. The  objective of the second half
+The second half of the semester was more hands-on. The objective of the second half
 is to pitch an idea to my professor on a project or idea that my group and I would
 like to pursue. Once given the green light, the group is given the rest of the semester
 to complete their idea.
@@ -44,7 +45,7 @@ to the car. This would result in the car interpreting the character and turning 
 between the HC-06, the motor shield, the Arduino 2560, and the motor. Troubleshooting the connections between the Arduino, Bluetooth module, and motor shield helped me understand electronics immensely. It
 is one thing to read about it online through guides on [electronics](http://www.instructables.com/class/Electronics-Class/) and [Arduinos](http://www.instructables.com/class/Arduino-Class/)
 like I did and a completely different experience doing it hands on. Although things
-didn't click at first, I  now have a strong understanding of the basics of
+didn't click at first, I now have a strong understanding of the basics of
 circuits and embedded systems. This will come handy in future Arduino-based projects
 that I will do and for a course I'm taking next semester called the Internet of Things.
 
@@ -74,7 +75,6 @@ After switching to the UUID designated for embedded systems found on the officia
 developers [Bluetooth documentation page](https://developer.android.com/reference/android/bluetooth/BluetoothDevice.html) and following [this tutorial,](https://www.youtube.com/watch?v=y8R2C86BIUc&list=PLgCYzUzKIBE8KHMzpp6JITZ2JxTgWqDH2)
 I was able to send data over to the Arduino and see it via the serial monitor in the Arduino IDE.
 
-
 ## Pivoting our Product
 
 This took way longer than anticipated and time was running out of the semester so
@@ -90,7 +90,6 @@ left or right based on whether of not there are obstacles in either the left or 
 Unfortunately, we had to give all the project parts back to our professor after the semester ended.
 I still want to make a car fully autonomous so I might just buy all the necessary
 parts again in the future and do it on my own time next semester.
-
 
 ## The Big Day: Presenting
 
@@ -138,11 +137,11 @@ tiny computers like the Raspberry Pi.
 - [Distance Sensor Sonar](https://www.amazon.com/SainSmart-HC-SR04-Ranging-Detector-Distance/dp/B004U8TOE6/ref=sr_1_13?s=electronics&ie=UTF8&qid=1515287849&sr=1-13&keywords=distance+sensor)
 
 - [IR Distance Sensors](https://www.amazon.com/OSOYOO-Infrared-Obstacle-Avoidance-Arduino/dp/B01I57HIJ0/ref=sr_1_3?s=electronics&ie=UTF8&qid=1515287890&sr=1-3&keywords=ir+distance)
-![Image 1](/images/RC/1.png)
-![Image 2](/images/RC/2.png)
-![Image 4](/images/RC/4.jpg)
-![Image 5](/images/RC/5.jpg)
-![Image 6](/images/RC/6.jpg)
-![Image 7](/images/RC/7.jpg)
-![Image 8](/images/RC/8.jpg)
-![Image 9](/images/RC/9.jpg)
+  ![Image 1](/images/RC/1.png)
+  ![Image 2](/images/RC/2.png)
+  ![Image 4](/images/RC/4.jpg)
+  ![Image 5](/images/RC/5.jpg)
+  ![Image 6](/images/RC/6.jpg)
+  ![Image 7](/images/RC/7.jpg)
+  ![Image 8](/images/RC/8.jpg)
+  ![Image 9](/images/RC/9.jpg)

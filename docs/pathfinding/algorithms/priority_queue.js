@@ -15,7 +15,7 @@ export function percolate_up(queue, node, property) {
   // and while there is a parent node to compare it to.
   while (Math.floor((index - 1) / 2) >= 0) {
     let min_index = Math.floor((index - 1) / 2);
-    if (queue[index][property] > queue[min_index][property]) return;
+    if (queue[index][property] >= queue[min_index][property]) return;
 
     let temp = queue[index];
     queue[index] = queue[min_index];
@@ -29,8 +29,8 @@ export function get_min_child(queue, index, property) {
   // Since arrays are zero-indexed, to get left child it 2k + 1.
   // To get right, 2k + 2
   if (
-    index * 2 + 2 >= queue.length ||
-    queue[index * 2 + 1][property] <= queue[index * 2 + 2][property]
+    index * 2 + 2 > queue.length ||
+    queue[index * 2 + 1][property] < queue[index * 2 + 2][property]
   ) {
     return index * 2 + 1;
   } else {

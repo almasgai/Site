@@ -1,7 +1,7 @@
 ---
 title: "I Will Never Miss an 8am Again"
 date: 2018-03-01T14:10:27-05:00
-draft: false
+draft: true
 tags: ["arduino", "DIY"]
 ---
 
@@ -24,27 +24,27 @@ up earlier easier begins!
 Below are all the parts I used, most of which are similar to what you can find
 in the video
 
-* [LED Light Strip](https://www.amazon.com/gp/product/B00HSF64JG/ref=oh_aui_detailpage_o07_s01?ie=UTF8&psc=1): Personally I chose to use 'warm' white to emulate natural
+- [LED Light Strip](https://www.amazon.com/gp/product/B00HSF64JG/ref=oh_aui_detailpage_o07_s01?ie=UTF8&psc=1): Personally I chose to use 'warm' white to emulate natural
   sunlight
-* [Fake Leather](https://www.amazon.com/gp/product/B00JLPQKFO/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1): Used this as the panel since pleather is flexible, strong, and inexpensive!
-* [Power Source](https://www.amazon.com/Adapter-Arduino-Tbuymax-Listed-Positive/dp/B06Y1LF8T5/ref=sr_1_3?ie=UTF8&qid=1519933043&sr=8-3&keywords=arduino+power+supply&dpID=51%252BmVpNs4eL&preST=_SY300_QL70_&dpSrc=srch): Used to power the Arduino and light panel.
-* [MOSFET](https://www.amazon.com/gp/product/B00CHTLAIS/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1): Used to control the 12V LED lights. Using this allows the Arduino to pump
+- [Fake Leather](https://www.amazon.com/gp/product/B00JLPQKFO/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1): Used this as the panel since pleather is flexible, strong, and inexpensive!
+- [Power Source](https://www.amazon.com/Adapter-Arduino-Tbuymax-Listed-Positive/dp/B06Y1LF8T5/ref=sr_1_3?ie=UTF8&qid=1519933043&sr=8-3&keywords=arduino+power+supply&dpID=51%252BmVpNs4eL&preST=_SY300_QL70_&dpSrc=srch): Used to power the Arduino and light panel.
+- [MOSFET](https://www.amazon.com/gp/product/B00CHTLAIS/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1): Used to control the 12V LED lights. Using this allows the Arduino to pump
   out more electricity to the lights without frying the Arduino board when using a
   12V power supply. The LED lights still work using at 75% power using the power
   supply above. I used the power supply listed above because it was something that I
   already had in my room and was satisfied with how bright it was.
-* [Aluminum Wire](https://www.amazon.com/gp/product/B01B0Y06SA/ref=oh_aui_detailpage_o02_s05?ie=UTF8&psc=1):
+- [Aluminum Wire](https://www.amazon.com/gp/product/B01B0Y06SA/ref=oh_aui_detailpage_o02_s05?ie=UTF8&psc=1):
   This is used to help the panel maintain its form. The wires are easy to bend, but
   hard to break. Perfect for the panel.
 
 Miscellaneous parts that most electronic enthusiasts already have:
 
-* Soldering Iron
-* Solder Wire
-* Red(+) & Black(-) Wire
-* Wire Cutter
-* Smoke Fan with Carbon Filter
-* Hot Glue Gun
+- Soldering Iron
+- Solder Wire
+- Red(+) & Black(-) Wire
+- Wire Cutter
+- Smoke Fan with Carbon Filter
+- Hot Glue Gun
 
 After gathering all the parts, I got down to work!
 

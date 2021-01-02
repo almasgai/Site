@@ -417,18 +417,18 @@ function lookup(name) {
 }
 
 let speedController = document.getElementById("speed");
-speedController.addEventListener("input", function(e) {
+speedController.addEventListener("input", function (e) {
   speed = 4000 - e.target.value;
 });
 
 let sizeController = document.getElementById("size");
-sizeController.addEventListener("input", function(e) {
+sizeController.addEventListener("input", function (e) {
   resize(e.target.value);
   document.getElementById("sizeLabel").innerText = sizeController.value;
 });
 
 let blockWidthController = document.getElementById("blockWidthController");
-blockWidthController.addEventListener("input", function(e) {
+blockWidthController.addEventListener("input", function (e) {
   let blocks = document.body.getElementsByClassName("block");
   blockWidth = e.target.value;
 

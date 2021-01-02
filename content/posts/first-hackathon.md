@@ -1,7 +1,7 @@
 ---
 title: "My First Hackathon"
 date: 2018-04-15T20:57:59-04:00
-draft: false
+draft: true
 tags: ["2018"]
 ---
 
@@ -16,9 +16,9 @@ As a third year CS student, I’ve now come to understand that I will never be 1
 
 Unfortunately no one else in my classes wanted to go to a hackathon for one of three reasons:
 
-* They did not want to be locked up in a room all weekend hacking away a project since they already code enough in school
-* They did not feel adequately prepared to compete against others in a completive way
-* The timing just wasn’t right. Something came up
+- They did not want to be locked up in a room all weekend hacking away a project since they already code enough in school
+- They did not feel adequately prepared to compete against others in a completive way
+- The timing just wasn’t right. Something came up
 
 <center>![The room minus all the screaming basketball fans](/images/first-hackathon/room.jpg)</center>
 

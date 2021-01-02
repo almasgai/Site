@@ -1,7 +1,7 @@
 ---
 title: "Particles"
 date: 2018-01-28T13:20:32-05:00
-draft: true
+draft: false
 tags: ["c++", "2018"]
 ---
 

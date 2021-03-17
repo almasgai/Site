@@ -86,22 +86,22 @@ async function AStar() {
       }
     }
   }
+
   if (!done) {
+    // Unable to reach end goal. Just stop the algorithm from running.
     return;
   }
 
   let pointer = distances[end_row][end_col];
   let traversal = [];
-  let c = 0;
 
-  while (!pointer.start) {
+  while (!pointer.is_start()) {
     pointer = pointer.previous_node;
+    console.log(pointer);
     traversal.push([pointer.x, pointer.y]);
-    if (c++ == 50) break;
   }
 
   traversal = traversal.reverse();
-  console.log(traversal);
   for (let i = 1; i < traversal.length; i++) {
     let row = traversal[i][0];
     let col = traversal[i][1];

@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://masgai.com/</loc>
     <lastmod>2018-04-15T20:57:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/first-hackathon/</loc>
     <lastmod>2018-04-15T20:57:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/</loc>
     <lastmod>2018-04-15T20:57:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/wula-alarm/</loc>
     <lastmod>2018-03-01T14:10:27-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/particles/</loc>
     <lastmod>2018-01-28T13:20:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/rc-car/</loc>
     <lastmod>2018-01-04T13:32:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/posts/hello-world/</loc>
     <lastmod>2017-12-23T22:09:19-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://masgai.com/index.html</loc>
   </url>
-  
 </urlset>

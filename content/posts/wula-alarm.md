@@ -1,5 +1,5 @@
 ---
-title: "I Will Never Miss an 8am Again"
+title: "Alarm Clock"
 date: 2018-03-01T14:10:27-05:00
 draft: false
 tags: ["arduino", "DIY"]
@@ -7,8 +7,7 @@ tags: ["arduino", "DIY"]
 
 ## Solving a Common College Student Problem:
 
-Like most people, I enjoy sleep. A lot. Maybe too much. Waking up early in the
-morning is a herculean task for me because I'm a heavy sleeper. But I'm also taking an 8 am
+Like most people, I enjoy sleep. But I'm taking an 8 am
 class this semester and don't want to sleep in. I decided that between my knowledge on
 programming and electronics, I could somehow solve my problem.
 
@@ -16,8 +15,7 @@ I had my 'eureka' moment about two weeks ago while watching a [YouTube video](ht
 on creating flexible LED panels. I thought that waking up would be easier if
 I could have one of these turn on above my bed in the morning so that I could
 wake up. I estimated that my idea would cheap, feasible, and very useful everyday
-of my life, plus I might learn something new. This is where my quest to waking
-up earlier easier begins!
+of my life, plus I might learn something new.
 
 ## Parts List
 

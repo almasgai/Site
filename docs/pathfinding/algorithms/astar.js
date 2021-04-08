@@ -28,6 +28,9 @@ async function AStar() {
     "manhatten_distance"
   );
 
+  distances[start_row][start_col].cost = 0;
+  distances[start_row][start_col].distance = 0;
+
   // Queue is not empty. Or break after end node has be dequeued
   while (!done && priority_queue.length) {
     // Get the next viable node. Using this node, get it's neighbors
@@ -35,13 +38,24 @@ async function AStar() {
     let row = node.x;
     let col = node.y;
 
+    if (visited.has([row, col])) continue;
+
+    if (row == end_row && col == end_col) {
+      done = true;
+      break;
+    }
+
     let up = get_node_no_set(row - 1, col);
     let right = get_node_no_set(row, col + 1);
     let down = get_node_no_set(row + 1, col);
     let left = get_node_no_set(row, col - 1);
+    let ul = get_node_no_set(row - 1, col - 1);
+    let ur = get_node_no_set(row - 1, col + 1);
+    let dl = get_node_no_set(row + 1, col - 1);
+    let dr = get_node_no_set(row + 1, col + 1);
 
     // First check to see if one of the neighbors neighbors is the end node
-    for (let neighbor of [up, right, down, left]) {
+    for (let neighbor of [up, right, down, left, ul, ur, dl, dr]) {
       if (!neighbor) {
         continue;
       }
@@ -78,12 +92,19 @@ async function AStar() {
           "lightblue";
       }
 
-      // Add neighbor to priority queue to be visited.
-      pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
-      distances[i][j].previous_node = node;
-      if (all_neighbors_visited(i, j)) {
-        visited.add([i, j].toString());
+      let new_cost = node.distance + distances[i][j].cost;
+      if (
+        distances[i][j].previous_node == undefined ||
+        new_cost <= distances[i][j].distance
+      ) {
+        distances[i][j].previous_node = node;
+        distances[i][j].distance = new_cost;
+        pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
       }
+
+      // if (all_neighbors_visited(i, j)) {
+      // visited.add([i, j].toString());
+      // }
     }
   }
 

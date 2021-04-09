@@ -3,13 +3,6 @@ import * as pq from "./priority_queue.js";
 import Node from "./node.js";
 
 async function AStar() {
-  let priority_queue = [];
-  let done = false;
-  let visited = new Set();
-
-  // Create grid of nodes and calculate all their distances:
-  // from_start == g(n): Manhatten distance from starting point
-  // to_end == h(n): Manhatten distance to end point
   let distances = [];
 
   for (let row = 0; row < rows; row++) {
@@ -22,89 +15,55 @@ async function AStar() {
     distances.push(temp);
   }
 
-  pq.add_node(
-    priority_queue,
-    distances[start_row][start_col],
-    "manhatten_distance"
-  );
+  let priority_queue = [];
+  let start = distances[start_row][start_col];
+  let start_id = `${start.x} ${start.y}`;
+  pq.add_node(priority_queue, start, "manhatten_distance");
 
-  distances[start_row][start_col].cost = 0;
-  distances[start_row][start_col].distance = 0;
+  let came_from = Object();
+  let cost_so_far = Object();
+  came_from[start_id] = undefined;
+  cost_so_far[start_id] = 0;
+  let done = false;
 
   // Queue is not empty. Or break after end node has be dequeued
-  while (!done && priority_queue.length) {
+  while (priority_queue.length) {
     // Get the next viable node. Using this node, get it's neighbors
     let node = pq.pop_min(priority_queue, "manhatten_distance");
-    let row = node.x;
-    let col = node.y;
-
-    if (visited.has([row, col])) continue;
-
-    if (row == end_row && col == end_col) {
+    if (node.is_end()) {
       done = true;
       break;
     }
 
-    let up = get_node_no_set(row - 1, col);
-    let right = get_node_no_set(row, col + 1);
-    let down = get_node_no_set(row + 1, col);
-    let left = get_node_no_set(row, col - 1);
-    let ul = get_node_no_set(row - 1, col - 1);
-    let ur = get_node_no_set(row - 1, col + 1);
-    let dl = get_node_no_set(row + 1, col - 1);
-    let dr = get_node_no_set(row + 1, col + 1);
+    let row = node.x;
+    let col = node.y;
 
-    // First check to see if one of the neighbors neighbors is the end node
-    for (let neighbor of [up, right, down, left, ul, ur, dl, dr]) {
-      if (!neighbor) {
-        continue;
-      }
+    let neighbors = [
+      get_node_no_set(row - 1, col),
+      get_node_no_set(row, col + 1),
+      get_node_no_set(row + 1, col),
+      get_node_no_set(row, col - 1),
+    ];
 
-      let i = neighbor[0];
-      let j = neighbor[1];
+    for (let next of neighbors) {
+      if (next === undefined) continue;
+      let next_id = `${next[0]} ${next[1]}`;
+      next = distances[next[0]][next[1]];
 
-      // If neighbor is already visited or lightblue, continue. The node has either
-      // been completely visited or in the priority queue to be visited.
-      if (
-        visited.has([i, j].toString()) ||
-        document.getElementById(`${i} ${j}`).style.backgroundColor ==
-          "lightblue"
-      ) {
-        continue;
-      }
-
-      // If neighbor is destination node
-      if (
-        document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
-      ) {
-        done = true;
-        distances[end_row][end_col].previous_node = node;
-        break;
-      }
-
-      if (!(i == start_row && j == start_col)) {
-        document.getElementById(`${i} ${j}`).style.backgroundColor =
-          "lightgreen";
-
+      /*
+      if (!next.is_start() || !next.is_end()) {
+        document.getElementById(next_id).style.backgroundColor = "lightgreen";
         await pause(time);
-
-        document.getElementById(`${i} ${j}`).style.backgroundColor =
-          "lightblue";
+        document.getElementById(next_id).style.backgroundColor = "lightblue";
       }
+      */
 
-      let new_cost = node.distance + distances[i][j].cost;
-      if (
-        distances[i][j].previous_node == undefined ||
-        new_cost <= distances[i][j].distance
-      ) {
-        distances[i][j].previous_node = node;
-        distances[i][j].distance = new_cost;
-        pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
+      let new_cost = node.distance + next.cost;
+      if (!(next_id in cost_so_far) || new_cost < cost_so_far[next_id]) {
+        cost_so_far[next_id] = new_cost;
+        pq.add_node(priority_queue, next, "manhatten_distance");
+        came_from[next_id] = node;
       }
-
-      // if (all_neighbors_visited(i, j)) {
-      // visited.add([i, j].toString());
-      // }
     }
   }
 
@@ -116,8 +75,11 @@ async function AStar() {
   let pointer = distances[end_row][end_col];
   let traversal = [];
 
+  console.log("pointer", pointer);
+
   while (!pointer.is_start()) {
-    pointer = pointer.previous_node;
+    let id = `${pointer.x} ${pointer.y}`;
+    pointer = came_from[id];
     console.log(pointer);
     traversal.push([pointer.x, pointer.y]);
   }

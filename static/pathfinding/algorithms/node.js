@@ -1,16 +1,15 @@
-export default function Node(i, j, color) {
-  this.x = i; // row in grid
-  this.y = j; // column in grid
+export default function Node(row, col, color) {
+  this.id = `${row} ${col}`;
+  this.row = row;
+  this.col = col;
   this.color = color; // color of square
-  this.previous_node = undefined; // state the previous node that points to this node
-  this.cost = Node.prototype.lookup[color]; // costs (not including distance)
-  this.able_to_visit = color == "gray" ? false : true; // is it possible to visit this node
-  this.end = this.is_end();
-  this.start = this.is_start();
-  this.from_start = this.to_start() + this.cost;
-  this.from_end = this.to_goal() + this.cost;
-  this.distance = this.get_distance(); // weight + incoming node distance. Initially set to Infinity
-  this.manhatten_distance = this.to_goal() + this.get_distance(); // Functions because these values may be updated
+  this.cost = Node.prototype.lookup[color];
+  this.is_wall = color == "gray" ? true : false;
+  this.from_end = Math.abs(this.row - end_row) + Math.abs(this.col - end_col);
+  this.distance_so_far = undefined;
+  this.heuristic = this.g() + this.h();
+  this.is_start = this.row == start_row && this.col == start_col;
+  this.is_end = this.row == end_row && this.col == end_col;
 }
 
 Node.prototype.lookup = {
@@ -21,41 +20,35 @@ Node.prototype.lookup = {
   gray: Infinity,
 };
 
-// Retrieves cost if cost is updated
-Node.prototype.get_cost = function () {
-  return this.cost;
+Node.prototype.g = function () {
+  return this.distance_so_far;
 };
 
-Node.prototype.get_distance = function () {
-  if (this.is_start()) {
-    return 0;
+Node.prototype.h = function () {
+  return this.from_end;
+};
+
+Node.prototype.get_neighbors = function () {
+  let up = [this.row - 1, this.col];
+  let right = [this.row, this.col + 1];
+  let down = [this.row + 1, this.col];
+  let left = [this.row, this.col - 1];
+  /*
+  let ul = [this.row - 1, this.col - 1];
+  let ur = [this.row - 1, this.col + 1];
+  let dl = [this.row + 1, this.col - 1];
+  let dr = [this.row + 1, this.col + 1];
+  */
+
+  let valid_neighbors = [];
+
+  for (let neighbor of [up, right, down, left /*ul, ur, dl, dr*/]) {
+    let row = neighbor[0];
+    let col = neighbor[1];
+    if (row < 0 || col < 0 || row >= grid.length || col >= grid[0].length) {
+      continue;
+    }
+    valid_neighbors.push(neighbor);
   }
-  if (this.previous_node == undefined) {
-    return this.cost;
-  }
-  return this.cost + this.previous_node.distance;
-};
-
-Node.prototype.to_goal = function () {
-  return Math.abs(this.x - end_row) + Math.abs(this.y - end_col);
-};
-
-Node.prototype.to_start = function () {
-  return Math.abs(this.x - start_row) + Math.abs(this.y - start_col);
-};
-
-Node.prototype.update_distance = function (new_distance) {
-  this.distance = new_distance;
-};
-
-Node.prototype.set_previous = function (previous_node) {
-  this.previous_node = previous_node;
-};
-
-Node.prototype.is_end = function () {
-  return this.x == end_row && this.y == end_col;
-};
-
-Node.prototype.is_start = function () {
-  return this.x == start_row && this.y == start_col;
+  return valid_neighbors;
 };

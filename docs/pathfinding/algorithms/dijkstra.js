@@ -1,113 +1,90 @@
-import { get_node_no_set, pause, all_neighbors_visited } from "./util.js";
+import {
+  get_node_no_set,
+  pause,
+  all_neighbors_visited,
+  get_map,
+  set_color,
+  no_traversal,
+} from "./util.js";
 import * as pq from "./priority_queue.js";
 import Node from "./node.js";
 
 async function Dijkstra() {
-  // Priority queue of nodes to be visited
-  let priority_queue = [];
-  let distances = [];
-
-  // Hold distances from start to each node
-  for (let row = 0; row < rows; row++) {
-    let temp = [];
-    for (let col = 0; col < columns; col++) {
-      let color = document.getElementById(`${row} ${col}`).style
-        .backgroundColor;
-      temp.push(new Node(row, col, color));
-    }
-    distances.push(temp);
-  }
-
-  // Distances to all nodes in graph
-  let visited = new Set();
-  visited.add([start_row, start_col].toString());
-
+  /* Dijkstra:
+   * Start off with an intial node in the priority queue. While the queue
+   * is not empty, pop off the min values and see if the popped off value
+   * is the goal. If it is, you are done. If not, search the neighboring
+   * nodes of the popped off node. If they are not in came_from or if the
+   * cost of reaching that node plus the popped off nodes distance so far
+   * if less than neighbors distance so far, update both distance so far
+   * and came_from as well as pushing the neighbor onto the priority queue
+   * with it's new value.
+   */
   let done = false;
+  let map = get_map();
+  let start = map[start_row][start_col];
+  let goal = map[end_row][end_col];
+  let came_from = new Object();
+  let distance_so_far = new Object();
+  came_from[start.id] = undefined;
+  distance_so_far[start.id] = 0;
+  let priority_queue = [];
+  pq.add_node(priority_queue, start, "distance_so_far");
 
-  // Additional cost to get to this node
-  distances[start_row][start_col].cost = 0;
-  // Cumulative cost to get to this node
-  distances[start_row][start_col].distance = 0;
+  let closed_set = new Set();
 
-  // Add distance node to priority queue
-  pq.add_node(priority_queue, distances[start_row][start_col], "distance");
-  distances[start_row][start_col].previous_node = undefined;
+  while (priority_queue.length) {
+    let current_node = pq.pop_min(priority_queue, "distance_so_far");
 
-  while (!done && priority_queue.length) {
-    let node = pq.pop_min(priority_queue, "distance");
-    let row = node.x;
-    let col = node.y;
+    if (current_node.is_end) {
+      done = true;
+      break;
+    }
 
-    // Get the total distance of node
-    let prev_cost = node.distance;
+    if (closed_set.has(current_node.id)) {
+      continue;
+    }
 
-    // Get neighbors of node. Note there is not set passed because nodes
-    // need to be re-visited to find better paths.
-    let up = get_node_no_set(row - 1, col);
-    let right = get_node_no_set(row, col + 1);
-    let down = get_node_no_set(row + 1, col);
-    let left = get_node_no_set(row, col - 1);
+    for (let neighbor of current_node.get_neighbors()) {
+      let n = map[neighbor[0]][neighbor[1]];
+      let new_distance = n.cost + distance_so_far[current_node.id];
 
-    for (let neighbor of [up, right, down, left]) {
-      if (!neighbor || visited.has([neighbor[0], neighbor[1]].toString())) {
-        continue;
+      if (!(n.id in came_from)) {
+        set_color(n.id, "lightgreen");
+        await pause(time);
+        set_color(n.id, "lightblue");
       }
 
-      // Get neighbors row, column, and color to look them up in the
-      // distances array
-      let row = neighbor[0];
-      let col = neighbor[1];
-
-      if (
-        document.getElementById(`${row} ${col}`).style.backgroundColor ==
-        "green"
-      ) {
-        distances[row][col].set_previous(distances[node.x][node.y]);
-        done = true;
-        break;
+      if (new_distance <= n.distance_so_far) {
+        distance_so_far[n.id] = new_distance;
+        came_from[n.id] = current_node.id;
+        n.distance_so_far = new_distance;
+        pq.add_node(priority_queue, n, "distance_so_far");
       }
+    }
 
-      // Get cost of visited node (default is infinity)
-      let cost = distances[row][col].cost;
-
-      // Update distance if a shorter path is found
-      if (prev_cost + cost < distances[row][col].distance) {
-        distances[row][col].distance = prev_cost + cost;
-        distances[row][col].set_previous(distances[node.x][node.y]);
-      }
-
-      document.getElementById(`${row} ${col}`).style.backgroundColor =
-        "lightgreen";
-
-      await pause(time);
-
-      document.getElementById(`${row} ${col}`).style.backgroundColor =
-        "lightblue";
-
-      if (!visited.has([row, col].toString())) {
-        pq.add_node(
-          priority_queue,
-          distances[neighbor[0]][neighbor[1]],
-          "distance"
-        );
-        visited.add([row, col].toString());
-      }
+    if (all_neighbors_visited(current_node.row, current_node.col)) {
+      closed_set.add(current_node.id);
     }
   }
 
-  let traversal = [];
-  let pointer = distances[end_row][end_col];
-
-  while (pointer) {
-    console.log(pointer);
-    traversal.push([pointer.x, pointer.y]);
-    pointer = pointer.previous_node;
+  if (!done) {
+    no_traversal();
+    return;
   }
 
-  for (let i = traversal.length - 2; i >= 1; i--) {
-    let row = traversal[i][0];
-    let col = traversal[i][1];
-    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
+  let pointer = came_from[goal.id];
+  let traversal = [];
+
+  while (pointer != start.id) {
+    traversal.push(pointer);
+    pointer = came_from[pointer];
+  }
+
+  traversal.reverse();
+
+  for (let i = 0; i < traversal.length; i++) {
+    set_color(traversal[i], "yellow");
     await pause(time);
   }
 }

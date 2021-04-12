@@ -1,132 +1,82 @@
-import { get_node_no_set, pause, all_neighbors_visited } from "./util.js";
+import {
+  get_node_no_set,
+  pause,
+  all_neighbors_visited,
+  get_map,
+  set_color,
+  no_traversal,
+} from "./util.js";
 import * as pq from "./priority_queue.js";
 import Node from "./node.js";
 
 async function AStar() {
-  let priority_queue = [];
   let done = false;
-  let visited = new Set();
+  let map = get_map();
+  let start = map[start_row][start_col];
+  let goal = map[end_row][end_col];
+  let came_from = new Object();
+  start.distance_so_far = 0;
+  let cost_so_far = new Object();
+  came_from[start.id] = undefined;
+  cost_so_far[start.id] = 0;
+  let priority_queue = [];
+  start.a_star_heuristic = start.from_end;
+  pq.add_node(priority_queue, start, "a_star_heuristic");
 
-  // Create grid of nodes and calculate all their distances:
-  // from_start == g(n): Manhatten distance from starting point
-  // to_end == h(n): Manhatten distance to end point
-  let distances = [];
+  let closed_set = new Set();
 
-  for (let row = 0; row < rows; row++) {
-    let temp = [];
-    for (let col = 0; col < columns; col++) {
-      let color = document.getElementById(`${row} ${col}`).style
-        .backgroundColor;
-      temp.push(new Node(row, col, color));
-    }
-    distances.push(temp);
-  }
+  while (priority_queue.length) {
+    let current_node = pq.pop_min(priority_queue, "a_star_heuristic");
 
-  pq.add_node(
-    priority_queue,
-    distances[start_row][start_col],
-    "manhatten_distance"
-  );
-
-  distances[start_row][start_col].cost = 0;
-  distances[start_row][start_col].distance = 0;
-
-  // Queue is not empty. Or break after end node has be dequeued
-  while (!done && priority_queue.length) {
-    // Get the next viable node. Using this node, get it's neighbors
-    let node = pq.pop_min(priority_queue, "manhatten_distance");
-    let row = node.x;
-    let col = node.y;
-
-    if (visited.has([row, col])) continue;
-
-    if (row == end_row && col == end_col) {
+    if (current_node.is_end) {
       done = true;
       break;
     }
 
-    let up = get_node_no_set(row - 1, col);
-    let right = get_node_no_set(row, col + 1);
-    let down = get_node_no_set(row + 1, col);
-    let left = get_node_no_set(row, col - 1);
-    let ul = get_node_no_set(row - 1, col - 1);
-    let ur = get_node_no_set(row - 1, col + 1);
-    let dl = get_node_no_set(row + 1, col - 1);
-    let dr = get_node_no_set(row + 1, col + 1);
+    if (closed_set.has(current_node.id)) {
+      continue;
+    }
 
-    // First check to see if one of the neighbors neighbors is the end node
-    for (let neighbor of [up, right, down, left, ul, ur, dl, dr]) {
-      if (!neighbor) {
-        continue;
-      }
+    for (let neighbor of current_node.get_neighbors()) {
+      let n = map[neighbor[0]][neighbor[1]];
+      let new_distance = n.cost + cost_so_far[current_node.id] + n.from_end;
 
-      let i = neighbor[0];
-      let j = neighbor[1];
-
-      // If neighbor is already visited or lightblue, continue. The node has either
-      // been completely visited or in the priority queue to be visited.
-      if (
-        visited.has([i, j].toString()) ||
-        document.getElementById(`${i} ${j}`).style.backgroundColor ==
-          "lightblue"
-      ) {
-        continue;
-      }
-
-      // If neighbor is destination node
-      if (
-        document.getElementById(`${i} ${j}`).style.backgroundColor == "green"
-      ) {
-        done = true;
-        distances[end_row][end_col].previous_node = node;
-        break;
-      }
-
-      if (!(i == start_row && j == start_col)) {
-        document.getElementById(`${i} ${j}`).style.backgroundColor =
-          "lightgreen";
-
+      if (!(n.id in came_from)) {
+        set_color(n.id, "lightgreen");
         await pause(time);
-
-        document.getElementById(`${i} ${j}`).style.backgroundColor =
-          "lightblue";
+        set_color(n.id, "lightblue");
       }
 
-      let new_cost = node.distance + distances[i][j].cost;
-      if (
-        distances[i][j].previous_node == undefined ||
-        new_cost <= distances[i][j].distance
-      ) {
-        distances[i][j].previous_node = node;
-        distances[i][j].distance = new_cost;
-        pq.add_node(priority_queue, distances[i][j], "manhatten_distance");
+      if (!(n.id in came_from) || new_distance < n.a_star_heuristic) {
+        cost_so_far[n.id] = new_distance;
+        came_from[n.id] = current_node.id;
+        n.a_star_heuristic = new_distance;
+        pq.add_node(priority_queue, n, "a_star_heuristic");
       }
+    }
 
-      // if (all_neighbors_visited(i, j)) {
-      // visited.add([i, j].toString());
-      // }
+    if (all_neighbors_visited(current_node.row, current_node.col)) {
+      closed_set.add(current_node.id);
     }
   }
 
   if (!done) {
-    // Unable to reach end goal. Just stop the algorithm from running.
+    no_traversal();
     return;
   }
 
-  let pointer = distances[end_row][end_col];
+  let pointer = came_from[goal.id];
   let traversal = [];
 
-  while (!pointer.is_start()) {
-    pointer = pointer.previous_node;
-    console.log(pointer);
-    traversal.push([pointer.x, pointer.y]);
+  while (pointer != start.id) {
+    traversal.push(pointer);
+    pointer = came_from[pointer];
   }
 
-  traversal = traversal.reverse();
-  for (let i = 1; i < traversal.length; i++) {
-    let row = traversal[i][0];
-    let col = traversal[i][1];
-    document.getElementById(`${row} ${col}`).style.backgroundColor = "yellow";
+  traversal.reverse();
+
+  for (let i = 0; i < traversal.length; i++) {
+    set_color(traversal[i], "yellow");
     await pause(time);
   }
 }

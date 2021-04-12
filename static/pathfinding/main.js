@@ -55,7 +55,12 @@ function clear_traversal(event) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       let color = document.getElementById(`${i} ${j}`).style.backgroundColor;
-      if (color == "lightblue" || color == "lightgreen" || color == "yellow") {
+      if (
+        color == "lightblue" ||
+        color == "lightgreen" ||
+        color == "yellow" ||
+        color == "indianred"
+      ) {
         document.getElementById(`${i} ${j}`).style.backgroundColor = "white";
       }
     }

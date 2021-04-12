@@ -72,5 +72,26 @@ export function get_map() {
 }
 
 export function set_color(id, color) {
-  document.getElementById(id).style.backgroundColor = color;
+  let previous_color = document.getElementById(id).style.backgroundColor;
+  if (
+    previous_color != "gray" &&
+    previous_color != "red" &&
+    previous_color != "green"
+  ) {
+    document.getElementById(id).style.backgroundColor = color;
+  }
+}
+
+export async function no_traversal() {
+  await pause(10);
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      let color = document.getElementById(`${i} ${j}`).style.backgroundColor;
+      if (color == "lightblue" || color == "lightgreen") {
+        document.getElementById(`${i} ${j}`).style.backgroundColor =
+          "indianred";
+        await pause(5);
+      }
+    }
+  }
 }

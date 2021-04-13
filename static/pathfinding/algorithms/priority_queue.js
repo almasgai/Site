@@ -45,7 +45,7 @@ export function percolate_down(queue, property) {
   while (i * 2 + 2 < queue.length) {
     let min_child = get_min_child(queue, i, property);
 
-    if (queue[i][property] >= queue[min_child][property]) {
+    if (queue[i][property] > queue[min_child][property]) {
       let temp = queue[i];
       queue[i] = queue[min_child];
       queue[min_child] = temp;

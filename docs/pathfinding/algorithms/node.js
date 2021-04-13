@@ -7,7 +7,9 @@ export default function Node(row, col, color) {
   this.is_wall = color == "gray" ? true : false;
   this.from_start =
     Math.abs(this.row - start_row) + Math.abs(this.col - start_col);
-  this.from_end = Math.abs(this.row - end_row) + Math.abs(this.col - end_col);
+  this.from_end = Math.ceil(
+    Math.abs(this.row - end_row) + Math.abs(this.col - end_col)
+  );
   this.a_star_heuristic = Infinity; // this.g() + this.h();
   this.is_start = this.row == start_row && this.col == start_col;
   this.is_end = this.row == end_row && this.col == end_col;

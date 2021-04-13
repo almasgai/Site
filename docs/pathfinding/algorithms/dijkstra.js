@@ -55,7 +55,7 @@ async function Dijkstra() {
         set_color(n.id, "lightblue");
       }
 
-      if (new_distance <= n.distance_so_far) {
+      if (new_distance < n.distance_so_far) {
         distance_so_far[n.id] = new_distance;
         came_from[n.id] = current_node.id;
         n.distance_so_far = new_distance;

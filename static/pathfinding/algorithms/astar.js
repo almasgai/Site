@@ -15,12 +15,11 @@ async function AStar() {
   let start = map[start_row][start_col];
   let goal = map[end_row][end_col];
   let came_from = new Object();
-  start.distance_so_far = 0;
-  let cost_so_far = new Object();
+  let distance_so_far = new Object();
   came_from[start.id] = undefined;
-  cost_so_far[start.id] = 0;
+  distance_so_far[start.id] = 0;
+  start.a_star_heuristic = 0;
   let priority_queue = [];
-  start.a_star_heuristic = start.from_end;
   pq.add_node(priority_queue, start, "a_star_heuristic");
 
   let closed_set = new Set();
@@ -39,7 +38,11 @@ async function AStar() {
 
     for (let neighbor of current_node.get_neighbors()) {
       let n = map[neighbor[0]][neighbor[1]];
-      let new_distance = n.cost + cost_so_far[current_node.id] + n.from_end;
+      if (n.is_wall) {
+        continue;
+      }
+
+      let new_distance = n.cost + distance_so_far[current_node.id];
 
       if (!(n.id in came_from)) {
         set_color(n.id, "lightgreen");
@@ -47,10 +50,10 @@ async function AStar() {
         set_color(n.id, "lightblue");
       }
 
-      if (!(n.id in came_from) || new_distance < n.a_star_heuristic) {
-        cost_so_far[n.id] = new_distance;
+      if (!(n.id in came_from) || new_distance < distance_so_far[n.id]) {
+        distance_so_far[n.id] = new_distance;
         came_from[n.id] = current_node.id;
-        n.a_star_heuristic = new_distance;
+        n.a_star_heuristic = new_distance + n.from_end;
         pq.add_node(priority_queue, n, "a_star_heuristic");
       }
     }
@@ -60,6 +63,8 @@ async function AStar() {
     }
   }
 
+  console.log("Done algo");
+
   if (!done) {
     no_traversal();
     return;
@@ -68,7 +73,8 @@ async function AStar() {
   let pointer = came_from[goal.id];
   let traversal = [];
 
-  while (pointer != start.id) {
+  while (pointer) {
+    console.log(pointer);
     traversal.push(pointer);
     pointer = came_from[pointer];
   }

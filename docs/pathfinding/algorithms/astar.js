@@ -33,11 +33,15 @@ async function AStar() {
     }
 
     if (closed_set.has(current_node.id)) {
-      // continue;
+      continue;
     }
 
     for (let neighbor of current_node.get_neighbors()) {
       let n = map[neighbor[0]][neighbor[1]];
+      if (n.is_wall) {
+        continue;
+      }
+
       let new_distance = n.cost + distance_so_far[current_node.id];
 
       if (!(n.id in came_from)) {
@@ -46,7 +50,7 @@ async function AStar() {
         set_color(n.id, "lightblue");
       }
 
-      if (!(n.id in distance_so_far) || new_distance < n.distance_so_far) {
+      if (!(n.id in came_from) || new_distance < distance_so_far[n.id]) {
         distance_so_far[n.id] = new_distance;
         came_from[n.id] = current_node.id;
         n.a_star_heuristic = new_distance + n.from_end;
@@ -68,13 +72,11 @@ async function AStar() {
 
   let pointer = came_from[goal.id];
   let traversal = [];
-  let i = 0;
 
-  while (i < 10 && pointer) {
+  while (pointer) {
     console.log(pointer);
     traversal.push(pointer);
     pointer = came_from[pointer];
-    i++;
   }
 
   traversal.reverse();

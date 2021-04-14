@@ -3,6 +3,7 @@ let speed = 4000 - document.getElementById("speed").value;
 let hideWarning = false;
 let inOrder = false;
 let blockWidth = 100;
+let values = [];
 
 function createBlock(num) {
   if (num < 0) {
@@ -27,8 +28,11 @@ function init() {
     blockCountSlider.setAttribute("min", "15");
     alert("This program works best on larger screens.");
   }
+
   for (let i = 0; i < 10; i++) {
-    createBlock(Math.floor(Math.random() * 400));
+    let temp = Math.floor(Math.random() * 400);
+    createBlock(temp);
+    values.push(temp);
   }
 }
 

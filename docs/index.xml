@@ -6,7 +6,28 @@
     <description>Recent content on Al Masgai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Apr 2018 20:57:59 -0400</lastBuildDate><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 02:15:37 -0400</lastBuildDate><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drone Part Two</title>
+      <link>http://masgai.com/posts/drone-part-two/</link>
+      <pubDate>Wed, 28 Apr 2021 02:15:37 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/drone-part-two/</guid>
+      <description>Source Code for Drone Part one of the drone covers most of the non-technical details. In this part, I&amp;rsquo;ll talk about the technical details of the project.
+Project Structure I broke the project into four sections: labels, model, src, and tests.
+model and labels: these directories are a bit self-explanatory. TensorFlow reads in a model from model and a label set from labels.
+Most of the project started in tests. I would write simple programs to test the GPIO buttons to make sure I could interact with the Pi while it was attached to the drone.</description>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>http://masgai.com/posts/drone/</link>
+      <pubDate>Tue, 27 Apr 2021 15:41:47 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/drone/</guid>
+      <description>A Pi that Flies Something I never bothered writing about on my blog was my senior design project. Part of this is because I never found the time to write and eventually forgot to write it. The other part is because drones were prohibited on campus until after I graduated. Plus I was an RA so it looked bad if I was breaking the rules I should be enforcing. In this blog post I&amp;rsquo;ll talk about the original drone design and my changes the second time I did it based on the new skills I&amp;rsquo;ve acquired.</description>
+    </item>
+    
     <item>
       <title>My First Hackathon</title>
       <link>http://masgai.com/posts/first-hackathon/</link>

@@ -7,7 +7,7 @@ tags: ["2018"]
 
 # Philly Codefest '18
 
-<center>![Our Project](/images/first-hackathon/gallery.jpg)</center>
+![Our Project](/images/first-hackathon/gallery.jpg)
 Hackathons are almost a rite of passage for computer science students so it was about time that I went to one. I recently participated in Philly Codefest at Drexel University where the theme was to create something for social good. The overall experience was quite memorable and lots of fun.
 
 I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough. The thought of being on a team with 4 or 5 other programmers for over 24 hours and not being able to contribute any meaningful work due to lack of skills deterred me from hackathons. As a result, I chose to knock out all my core CS classes and a few electives before going to my first hackathon but then I came to a realization.
@@ -20,7 +20,7 @@ Unfortunately no one else in my classes wanted to go to a hackathon for one of t
 - They did not feel adequately prepared to compete against others in a completive way
 - The timing just wasn’t right. Something came up
 
-<center>![The room minus all the screaming basketball fans](/images/first-hackathon/room.jpg)</center>
+![The room minus all the screaming basketball fans](/images/first-hackathon/room.jpg)
 
 I was initially disappointed by the lack of interest from my peers yet I still wanted to go. After contemplating back and forth for about a day, I decided I would go anyway. Going to a hackathon can be pretty unnerving for first timers. It will vary among hackathons but the gist is that tens to hundreds of sleep-deprived, caffeinated programmers are all in one very large room. At Drexel, we were all in Daskalakis Athletic Center.
 
@@ -40,7 +40,7 @@ Aside from coming up with the idea, Bethany created all the images for the site 
 
 Bethany and Chris were working seamlessly in their respective divisions while the three of us had reached a standstill before even starting. We chose to determine what backend technology to use based on who had the most experience with their language and framework. We decided that for a simple site like the one we had in mind, PHP was our best bet. Node and Django may have been a bit overkill. That meant that Austin and I would have to learn along the way and quickly; we only 36 hours to go from idea to final project.
 
-<center>![PHP](/images/first-hackathon/logo.svg)</center>
+![PHP](/images/first-hackathon/logo.svg)
 
 I dived right into PHP’s documentation and used [this tutorial](https://www.tutorialspoint.com/php/index.htm) to fill in the gaps. We after learning the basics of the language as quickly as I could, I got down to work. Siling and I would handle user information and store it to a database. We had to make sure our product did not violate HIPA. Although I admittedly do not know much about the laws surrounding HIPA, we as a team consciously made our site anonymize user information that we would have through their cosent. It was around 2am when everyone was finished and we decided as a team to meet around 12pm.
 

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Drone &middot; Al Masgai</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Al Masgai" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Al Masgai</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/posts/">
+                
+                <span>Posts</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/sorting/">
+                
+                <span>Sorting</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/pathfinding/">
+                
+                <span>Pathfinding</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by Al</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2021-04-27 15:41:47 -0400 EDT">April 27, 2021</time>
+</div>
+
+		<h1 class="post-title">Drone</h1>
+<div class="post-line"></div>
+
+		
+
+		<h1 id="a-pi-that-flies">A Pi that Flies</h1>
+<p>Something I never bothered writing about on my blog was my senior design project. Part of this is because I never found the time to write and eventually forgot to write it. The other part is because drones were prohibited on campus until <a href="https://sites.sju.edu/communitystandards/files/2020/08/2020-2021_STUDENT-HANDBOOK_Jan2021.pdf">after I graduated</a>. Plus I was an RA so it looked bad if I was breaking the rules I should be enforcing. In this blog post I&rsquo;ll talk about the original drone design and my changes the second time I did it based on the new skills I&rsquo;ve acquired. I&rsquo;m recalling most of this project from memory so if anything is unclear, please let me know.</p>
+<h3 id="the-short-version">The short version:</h3>
+<p><em>This ended up being a long post so if you only want a quick summary here it is: I decided for my senior design to assemble a first responder drone and make it &lsquo;smart&rsquo; by attaching a Raspberry Pi to it. The drone
+would &lsquo;look&rsquo; for people using a web cam and then interpret the frames using TensorFlow and MobileNet model. If a person is detected, it would log the result to a text file and send a text message using Twilio. Part two talks about the technical details more.</em></p>
+<p><em>You can find the source code <a href="https://github.com/almasgai/Drone">here</a>.</em></p>
+<hr>
+<h3 id="csc-495">CSC 495</h3>
+<p>CSC 495 was a class I looked forward to since I was a freshman. I remember each year eagerly watching each senior class present their projects. Most of the projects were websites or apps. Some of my favorite were an app that synchronizes with other phones and plays music simultaneously similar to how Sonos speakers work and an app that was basically Uber for the campus vans.</p>
+<p>But the majority of projects seemed like the same CRUD app or website so I wanted to do
+something different. By the time I was a senior I was familiar with basic electronics and
+even built a few projects, <a href="http://masgai.com/posts/wula-alarm/">like my alarm clock for 8ams.</a>. I knew I wanted to do something along those lines so I chose to build a drone.</p>
+<p>I had never flown a drone up until that point and didn&rsquo;t even know where to begin. Do I
+order a complete set or do I pick out individual components? Since I was a college student at the time with very limited money, I found out it would be cheaper to order
+the parts separately. Plus I needed a large lipo battery to power both the drone and the Raspberry Pi and most kits on Amazon wouldn&rsquo;t suffice.</p>
+<h3 id="defining-the-project">Defining the Project</h3>
+<p>Another problem I had was actually <em>defining</em> my project. Did I want to write the firmware from scratch and use an Arduino / Teensy as the flight controller? Did I want
+to create a drone that focused solely on recording video during flights? Or something else? The problem is that these things have already been done so I wouldn&rsquo;t be original if I had recreated them. My goal was to create something valuable and original. Based on my time constraint and skillset, I decided I would make a smart drone by leveraging TensorFlow and Twilio. The drone would fly around like any other drone but have a Raspberry Pi and web cam attached to it. If a human was detected, it would log the GPS coordinates and send a text message to my phone. Once I was approved, I started researching drone parts. I did this by reading <a href="https://www.amazon.com/Building-Smart-Drones-ESP8266-Arduino/dp/1788477510/ref=sr_1_2?dchild=1&amp;keywords=drone+arduino+book&amp;qid=1620749437&amp;sr=8-2">a</a> <a href="https://www.amazon.com/DIY-Drones-Evil-Genius-Customize/dp/1259861465/ref=sr_1_17?dchild=1&amp;keywords=drone+book&amp;qid=1620749408&amp;sr=8-17">few</a> <a href="https://www.amazon.com/Make-Drones-Teach-Arduino-Fly/dp/1680451715/ref=sr_1_3?dchild=1&amp;keywords=drone+arduino+book&amp;qid=1620749437&amp;sr=8-3">books</a>.</p>
+<h3 id="getting-the-parts">Getting the Parts</h3>
+<p>Something I didn&rsquo;t anticipate was how long it would take to learn all the intricate details of a drone. Similar to building a PC, all drones require a lot of parts that are necessary to make them fly. The problems is, some parts are incompatible with other
+parts. I didn&rsquo;t know this when starting out. There isn&rsquo;t something like <a href="https://pcpartpicker.com/">PC Part Picker</a> for drone
+parts so I had to be really careful when getting parts. Since there weren&rsquo;t any stores nearby that sold drone parts, I had to order all the parts online so if something was incompatible with the rest of the parts, I would be unable to make any sort of progress for at least a few days while I waited for the right part to come. This alone made the project very stressful.</p>
+<p>One time I bought <a href="https://www.amazon.com/gp/product/B01CJMJ886/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">propellers</a> on Amazon but when they arrived I realized they didn&rsquo;t work with my <a href="https://www.amazon.com/gp/product/B075DD16LK/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">brushless motors</a>. The problem was the brushless motors required DJI&rsquo;s proprietary self tightening propellers so my generic ones weren&rsquo;t compatible. I ended up buying the right ones later.</p>
+<p>Another issue was finding a transmitter that worked with the <a href="https://www.amazon.com/gp/product/B07MD3ZRKJ/ref=ppx_yo_dt_b_asin_title_o08_s01?ie=UTF8&amp;psc=1">APM 2.8 flight controller</a>. I originally bought a really <a href="https://www.amazon.com/Holy-Stone-Quadcopter-Batteries-Adjustment/dp/B085HKVRVV/ref=sr_1_28?dchild=1&amp;keywords=drone&amp;qid=1619581998&amp;refinements=p_36%3A1253560011&amp;rnid=386491011&amp;s=toys-and-games&amp;sr=1-28">cheap drone</a> and tried to use the transmitter with my flight controller but it didn&rsquo;t recognize it. (I believe the transmitter was &lsquo;locked&rsquo; to the cheap drone so I had to buy a transmitter that
+worked with my flight controller.) Different flight controllers
+and transmitters use different protocols to communicate with each other so I had to find one that
+was cheap and compatible. Eventually I settled on the <a href="https://www.amazon.com/Flysky-FS-i6X-Transmitter-FSs-iA6B-Receiver/dp/B0744DPPL8/ref=sr_1_4?dchild=1&amp;keywords=flysky+fs+i6&amp;qid=1620750371&amp;sr=8-4">Flysky FS i6x</a>.</p>
+<p>Parts List</p>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B013YENQ2W/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">Drone Frame</a>: frame of the drone that holds as the pieces together</li>
+<li><a href="https://www.amazon.com/gp/product/B07D5VGF95/ref=ppx_yo_dt_b_asin_title_o05_s01?ie=UTF8&amp;psc=1">ESC</a>: electronic speed controller (controls the speed of the motors)</li>
+<li><a href="https://www.amazon.com/gp/product/B075DD16LK/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">Brushless Motors</a>: drone motors can be either brushed or brushless. I went with brushless because they&rsquo;re more energy efficient and because brushed motors tend to wear out quicker</li>
+<li><a href="https://www.amazon.com/gp/product/B07MTZK4PB/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&amp;psc=1">Lipo Battery</a></li>
+<li><a href="https://www.amazon.com/gp/product/B004FGWY54/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&amp;psc=1">LiPo Charger</a>: these LiPo&rsquo;s are really powerfull and require a special charger to charge them</li>
+<li><a href="https://www.amazon.com/gp/product/B078JBT2HQ/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Power Distribution Board</a>: used to provide power to both the flight controller and Pi)</li>
+<li><a href="https://www.amazon.com/gp/product/B01CN62MZE/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">XT60 Power Connector</a>: this connected the LiPo battery to the power distribution board which in turn powered the Pi and flight controller</li>
+<li><a href="https://www.amazon.com/gp/product/B01GHMW0C0/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">5V UBEC</a>: this lowered the LiPo voltage to 5V so the Pi could safely draw power</li>
+<li><a href="https://www.amazon.com/gp/product/B01N52KN5C/ref=ppx_yo_dt_b_asin_title_o01_s01?ie=UTF8&amp;psc=1">Fireproof Battery Storage for Charging</a>: this was essential. I was paranoid the LiPo battery would cause a fire in McShain Hall</li>
+<li><a href="https://www.amazon.com/gp/product/B00XQ91ECA/ref=ppx_yo_dt_b_asin_title_o01_s01?ie=UTF8&amp;psc=1">Battery Voltage Checker</a>: to track of battery life (it would beep once the battery was low)</li>
+<li><a href="https://www.amazon.com/gp/product/B00Z2X4U3S/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">Propellers</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07D35C6MQ/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">Receiver</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07MD3ZRKJ/ref=ppx_yo_dt_b_asin_title_o08_s01?ie=UTF8&amp;psc=1">Flight Controller</a>: the brain of the drone</li>
+<li><a href="https://www.amazon.com/gp/product/B0744DPPL8/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Transmitter</a></li>
+</ul>
+<h3 id="putting-together-the-pieces">Putting together the Pieces</h3>
+<p>Once I received all my parts, I started assembling the drone. This was a lot of fun because I was learning
+how each individual part played a role in the drone. There were a few instances in previous electronics projects where I
+released <a href="https://en.wikipedia.org/wiki/Magic_smoke">magic smoke</a> in my room. I knew there was greater risk using a high-powered LiPo battery and didn&rsquo;t want to burn down my dorm so I decided to work on my project elsewhere. Since Saint Joe&rsquo;s doesn&rsquo;t have a building dedicated where I could solder, I decided to use the Perch, the campus student lounge late at night. It helped that I worked there as well and had access to the closets, where I stored my parts when I went back to my dorm early in the morning. In the unlikely case something sets off an alarm, I&rsquo;d be the only one in there.</p>
+<p>As the due date for the project drew closer, I was spending a majority of my time in the Perch whether it was
+between classes, late into the night, or simply to work my shift. It became an exhilarating schedule. During the day I was at class, doing boring work for other classes, or running community programs for my floor as an RA. At night, I was working on the drone well into the early hours of the morning. I don&rsquo;t think any of my friends really knew what I was up to. My schedule of waking up late and staying up really late meant I was on a completely different schedule than anyone else. I rarely even went out my last semester because I wanted to see this project through. Sometimes the nights were longer than anticpated and I ended up sleeping through my 9:30 the next morning (sorry Dr. Brown!) but eventually I had something working. The code was based on TensorFlow&rsquo;s <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi">examples</a> and <a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi">Edje Electronics repos</a>. The code would open a stream on the web cam, and check the labels in each frame. If one of the labels was a human, the result was logged to a file
+and a text message would be sent.</p>
+<p>After working on the drone for a few weeks, one night everything came together. I finally hacked something that worked and was ready to test it out. I left the Perch sometime around 1 am and headed to the field hockey field on the Merion side of campus in pitch dark. I armed the drone and propellers began to spin slowly. My heart began to race. The Raspberry Pi and web cam were hastily bounded to the drone with cheap zip ties and rattled. I slowly pushed the thrust joystick as slowly as possible and the drone became animated and full of life. It sprung up about 50 feet into the air almost instantly. I quickly realized that I would need to change the sensitivity settings. I was initially worried that battery wouldn&rsquo;t be strong enough to power both the drone and the Pi, but the opposite turned out to be the case: the battery was <em>too</em> powerful. And it didn&rsquo;t help that I was new to flying drones aside from the cheap, 20 dollar drone that had a mere fraction of
+the power this one possessed. The drone was way too sensitive to fly.</p>
+<p>In matter of seconds the only visible part of the drone was the red LED that flashed against the black sky and the loud hum was a faint whisper. The plan was to release the thrust completely and push the thrust again
+once the drone got closer to the ground once again. Of course, that was the plan. What actually happened was
+the drone fell so fast that by the time I pushed the thruster forward, the drone was falling down too
+fast to catch itself and two of its landing feet broke.</p>
+<p>The second run was more chaotic than the first. I was able to solve the drone&rsquo;s height stability issue by
+switching to &lsquo;easy mode&rsquo; which set the drone to a certain height and allowed the user to control its 2D
+coordinates. The controls were still jerky but I managed to get it flying. I don&rsquo;t know how fast my drone
+could go but a quick Google search for 3S drones says about 70 miles per hour which seems about right. Eventually I got too confident and got out of easy mode. Big mistake. I tried keeping it at its height but my
+drones orientation was off. So when I pressed forward on my transmitter, the drone go forward but forward based on its orientation was to go right and head straight towards the Foley Center, which was originally a
+church filled with glass panes. I then went the other direction and played with the controls in real time, trying to figure out which direction was which. The drone zoomed over me and was headed towards City Ave at
+a low height. I was certain it would hit a car! My reflexes veered the drone right for about a third of the field and into the turf. The crash was epic. The drone was cover in turf burn and lost another leg in the
+process. The drone was literally on its last leg. Surpringly the rest of the parts, including the web cam and
+the Pi were fine.</p>
+<p>I flew the drone one last time and set it in autohome mode. While the drone was autohoming I recorded the
+footage. I was afraid if it crashed anymore, something would break and I wouldn&rsquo;t have any footage to prove
+I got it working. I eventually figured out how to tone down the control sensitivity in CleanFlight a few days later. I showcased my drone to my professors and peers. It was generally positive even though by the time I showed off my drone, it was beaten up and covered in turf burns and dust. Eventually I bought a stronger carbon fiber air frame.</p>
+<p>Instead of considering the project complete, I considered it just done its first iteration. The project still
+had many rough edges and the code base was hacked together quickly because I was running out of time. Aside from that the drone relied on Wifi to send text messages which was unreliable when flying. I wanted to add a cellular module to fix this problem but I ran out of money. The rattling web cam also proved to be unreliable
+in detecting humans but I see it as an opportunity to learn about gimbals. Perhaps it&rsquo;ll have a gimbal in the
+next iteration. Overall I would consider it still a proof-of-concept. When I found myself unexpectedly with more freetime, I addressed some of these issues in <a href="http://masgai.com/posts/drone-part-two">part two</a>.</p>
+<hr>
+<h3 id="gallery">Gallery</h3>
+<p><img src="/images/Drone/0.jpg" alt="0">
+<em>My LiPo battery did not come with XT60 plugs so I soldered the XT60 plugs
+off my 3D printer and attached them to the drone.</em>
+<img src="/images/Drone/1.jpg" alt="1">
+<img src="/images/Drone/2.jpg" alt="2">
+<img src="/images/Drone/3.jpg" alt="3">
+<img src="/images/Drone/4.jpg" alt="4">
+<img src="/images/Drone/5.jpg" alt="5">
+<em>Drone feat. Pizza</em>
+<img src="/images/Drone/6.jpg" alt="6">
+<em>Assembling things late into the night.</em>
+<img src="/images/Drone/7.jpg" alt="7">
+<img src="/images/Drone/8.jpg" alt="8">
+<img src="/images/Drone/9.jpg" alt="9">
+<img src="/images/Drone/10.jpg" alt="10">
+<em>Originally I ordered a Nav32 flight controller. For some reason I couldn&rsquo;t
+get it to communicate with my laptop and transmitter. I don&rsquo;t remember the
+details but I do remember buying the APM2.8 after much frustration.</em></p>
+<p><img src="/images/Drone/11.jpg" alt="11">
+<img src="/images/Drone/12.jpg" alt="12">
+<img src="/images/Drone/13.jpg" alt="13">
+<img src="/images/Drone/14.jpg" alt="14">
+<em>I was following a YouTube video that said is was safe to flash a firmware
+to the flight controller while the LiPo battery was connected to the flight
+controller. Once I connected my laptop to the drone, my laptop made a popping
+noise and I shorted out the motherboard. This was less than one week before
+my presentation was due. I ended up going to MicroCenter the next day and
+buying a W530 ThinkPad. A few months after graduating I replaced the
+motherboard and still use the laptop today.</em></p>
+<p><img src="/images/Drone/15.jpg" alt="15">
+<em>Eventually campus security caught on to me being in The Perch really late
+into the night and told me The Perch was closed&hellip; even though it&rsquo;s <a href="https://en.wikipedia.org/wiki/Saint_Joseph's_University">open 24
+hours</a>. I didn&rsquo;t argue
+although I was bummed I would have to work in my crowded room. It didn&rsquo;t make
+much of a difference though since I was done soldering all the components.</em></p>
+<p><img src="/images/Drone/16.jpg" alt="16">
+<img src="/images/Drone/17.jpg" alt="17">
+<img src="/images/Drone/18.jpg" alt="18">
+<em>Gnarly turf burn.</em></p>
+<p><img src="/images/Drone/19.jpg" alt="19">
+<img src="/images/Drone/20.jpg" alt="20">
+<em>My attempt to fix my broken air frame was futile. If I could manage to
+connect two fragments back together they almost immediately broke when
+attempting to fly again due to the motors exerting pressure on the air
+frame. I recently purchased a so called carbon fiber version that I hope<br>
+will make up for my reckless flying.</em></p>
+<p><img src="/images/Drone/21.jpg" alt="21">
+<em>This was interesting. One time while flying, I forgot to include the voltage
+checker to the drone. When the battery died, I was flying it about fifty feet
+in the air. While falling the lipo battery ended up unplugged from the
+power board and managed to slip out of the velcro straps holding it in place
+and ended up falling. Despite their reputation for being fragile, mine
+miraculously was fine. <a href="https://www.youtube.com/watch?v=ZmInkxbvlCs">Tis but a scratch</a>.</em></p>
+<p>Footage:</p>
+<ul>
+<li><a href="/images/Drone/23.mp4">Armed</a></li>
+<li><a href="/images/Drone/22.mp4">Landing</a></li>
+<li><a href="/images/Drone/24.mp4">Landing 2</a></li>
+<li><a href="/images/Drone/25.mp4">Big things coming</a></li>
+</ul>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/first-hackathon/" class="left arrow">&#8592;</a>
+		<a href="/posts/drone-part-two/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2021-06-09 01:45:31.196682 -0400 EDT m=&#43;0.082771273">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

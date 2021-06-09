@@ -38,7 +38,7 @@ the article, I will focus on my approach and creating this project.
 
 ### Setting Up SDL to Work in Xcode
 
-<center>![SDL Logo](/images/Particles/logo.png)</center>
+![SDL Logo](/images/Particles/logo.png)
 
 Despite its ease of use when setting it up on Windows and Linux,
 SDL seemed unnecessarily difficult to set up on macOS.
@@ -128,7 +128,7 @@ addition operator (+) and the shifting bitwise left operator (<<).
 I set mine up to pulsate between an aqua blue and red. It is a simple program
 but I'm happy with how it turned out:
 
-<center>![Gif of Project](/images/Particles/a.gif)</center>
+![Gif of Project](/images/Particles/a.gif)
 
 # Future Plans & Takeaways
 
@@ -136,8 +136,7 @@ I decided to intentionally write a blog post about this project in particular to
 make sure that I completely understand the program, the SDL library, and all my
 memory management done with pointers, references, and SDL objects. Through the assistance of [this](https://www.youtube.com/user/caveofprogramming/videos) YouTube channel, I
 can now create basic GUI's using SDL. Looking back in hindsight, there were probably
-easier, more up-to-date libraries that I could have used such as the robust [Qt framework]
-(https://www.qt.io) or the incredible [Cinder library](https://libcinder.org) but SDL
+easier, more up-to-date libraries that I could have used such as the robust [Qt framework](https://www.qt.io) or the incredible [Cinder library](https://libcinder.org) but SDL
 is still a solid GUI library regardless and I am confident that what I learned will
 transfer to other GUI frameworks and libraries one way or another.
 

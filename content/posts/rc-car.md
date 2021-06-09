@@ -26,7 +26,7 @@ we all gave honest feedback to each other and pulled our own weight in the proje
 
 We all sat down and discussed our top ideas to each other. Luckily for me, the
 two final ideas that we came to were both mine: a fully functioning e-commerce
-website or an RC car. You can probably guess which idea we pursued. 😉
+website or an RC car. You can probably guess which idea we pursued.
 
 ## Assigning Roles & Responsibilities
 
@@ -62,7 +62,7 @@ one way or another. In my case, I had a lot of learning to do to become comforta
 with Arduinos because I never used them before. I had to make sure that I had correct wiring so
 I don't blow out any important parts. This was stressful because we only had one Bluetooth
 module. If I passed too much electricity through it I potentially could have fried it.
-(Surprisingly, only two LED lights blew out when I was testing out wiring 😃).
+(Surprisingly, only two LED lights blew out when I was testing out wiring.
 This would mean that we would have to order another one online and wait until it came. After
 setting up some pretty gnarly wiring (see images below) between the HC-06 and MEGA 2560, I had an ugly
 but working set up to test my app on.

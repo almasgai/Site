@@ -1,0 +1,20 @@
+"""
+Create a file that reads in all the listed files
+and converts their long names to numbers:
+    a234Hbajlsadfb.jpeg --> 1.jpeg
+"""
+import re
+import os
+
+files = os.popen("ls").read().split("\n")
+pattern = re.compile(r"[\d_]+\.")
+i = 0
+
+
+for i, f in enumerate(files):
+    if not f:
+        continue
+
+    new_name = re.sub(pattern, f"{i}.", f)
+    print(f"Changing file name from {f} to {new_name}")
+    os.rename(f"{f}", f"{new_name}")

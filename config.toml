@@ -40,3 +40,6 @@ tag = ["electronics", "arduino", "C", "C++", "Python", "Mobile", "School"]
     title = "Pathfinding"
     url = "/pathfinding/"
     weight = 4
+
+[markup.goldmark.renderer]
+unsafe= true

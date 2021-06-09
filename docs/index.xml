@@ -2,9 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Al Masgai</title>
-    <link>http://masgai.com/index.html</link>
+    <link>http://masgai.com/</link>
     <description>Recent content on Al Masgai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Apr 2021 02:15:37 -0400</lastBuildDate><atom:link href="http://masgai.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drone Part Two</title>
+      <link>http://masgai.com/posts/drone-part-two/</link>
+      <pubDate>Wed, 28 Apr 2021 02:15:37 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/drone-part-two/</guid>
+      <description>Source Code for Drone Part one of the drone covers most of the non-technical details. In this part, I&amp;rsquo;ll talk about the technical details of the project.
+Project Structure I broke the project into four sections: labels, model, src, and tests.
+model and labels: these directories are a bit self-explanatory. TensorFlow reads in a model from model and a label set from labels.
+Most of the project started in tests. I would write simple programs to test the GPIO buttons to make sure I could interact with the Pi while it was attached to the drone.</description>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>http://masgai.com/posts/drone/</link>
+      <pubDate>Tue, 27 Apr 2021 15:41:47 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/drone/</guid>
+      <description>A Pi that Flies Something I never bothered writing about on my blog was my senior design project. Part of this is because I never found the time to write and eventually forgot to write it. The other part is because drones were prohibited on campus until after I graduated. Plus I was an RA so it looked bad if I was breaking the rules I should be enforcing. In this blog post I&amp;rsquo;ll talk about the original drone design and my changes the second time I did it based on the new skills I&amp;rsquo;ve acquired.</description>
+    </item>
+    
+    <item>
+      <title>My First Hackathon</title>
+      <link>http://masgai.com/posts/first-hackathon/</link>
+      <pubDate>Sun, 15 Apr 2018 20:57:59 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/first-hackathon/</guid>
+      <description>Philly Codefest &amp;lsquo;18 ![Our Project](/images/first-hackathon/gallery.jpg) Hackathons are almost a rite of passage for computer science students so it was about time that I went to one. I recently participated in Philly Codefest at Drexel University where the theme was to create something for social good. The overall experience was quite memorable and lots of fun. I had always wanted to go to a hackathon since freshmen year but never felt prepared or good enough.</description>
+    </item>
+    
+    <item>
+      <title>Alarm Clock</title>
+      <link>http://masgai.com/posts/wula-alarm/</link>
+      <pubDate>Thu, 01 Mar 2018 14:10:27 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/wula-alarm/</guid>
+      <description>Solving a Common College Student Problem: Like most people, I enjoy sleep. But I&amp;rsquo;m taking an 8 am class this semester and don&amp;rsquo;t want to sleep in. I decided that between my knowledge on programming and electronics, I could somehow solve my problem.
+I had my &amp;lsquo;eureka&amp;rsquo; moment about two weeks ago while watching a YouTube video on creating flexible LED panels. I thought that waking up would be easier if I could have one of these turn on above my bed in the morning so that I could wake up.</description>
+    </item>
+    
+    <item>
+      <title>Particles</title>
+      <link>http://masgai.com/posts/particles/</link>
+      <pubDate>Sun, 28 Jan 2018 13:20:32 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/particles/</guid>
+      <description>Simple Particle Simulation in C++: The title says it all! In this project I wanted to use a simple library that would allow me to create a GUI of a particle simulation. After searching around, I decided to use Simple DirectMedia Layer, better known as SDL for its simplicity and plethora of online resources in case I get stuck. In order to learn the library I used SDL&amp;rsquo;s documentation and followed a YouTube channel to help structure my project.</description>
+    </item>
+    
+    <item>
+      <title>RC Car</title>
+      <link>http://masgai.com/posts/rc-car/</link>
+      <pubDate>Thu, 04 Jan 2018 13:32:28 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/rc-car/</guid>
+      <description>Building an Arduino-powered Car for CSC 315: This semester I took a class that I have wanted to take since my first semester at college: CSC 315, Software Engineering. CSC 315 focuses more on the practical side of computer science as opposed to the theoretical stuff like data structures and algorithms. The first half of the semester was learning about software engineering approaches, how to work with teams when developing software, and computer ethics.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://masgai.com/posts/hello-world/</link>
+      <pubDate>Sat, 23 Dec 2017 22:09:19 -0500</pubDate>
+      
+      <guid>http://masgai.com/posts/hello-world/</guid>
+      <description>Hello world! This my first article on my Hugo-powered blog! The purpose of this blog to is periodically update recruiters on CS related projects.
+I decided I wanted a simple, lightweight blogging site. I chose to use Hugo for its ease of use and speed. By opting for Hugo my website does not use a database making faster and more secure. As for the Hugo theme I chose Tales. For hosting, I chose to use Github Pages.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -107,13 +107,24 @@ hard to break. Perfect for the panel.</li>
 <li>Hot Glue Gun</li>
 </ul>
 <p>After gathering all the parts, I got down to work!</p>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/1.jpg">
+    <figcaption>One big mess</figcaption>
+  </figure>
+</center>
 <h2 id="first-things-first">First Things First</h2>
 <p>I wanted to make my panel rectangular so that when the light shines at 7 in the
 morning, it would cover my entire field of vision and (hopefully) wake up. I
 decided to make each strip 18 LED lights long. I then cut pleather to make a
 lightweight, flexible panel panel.</p>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/2.jpg">
+    <figcaption>Cut up and wired the strips pasted them across the pleather panel.</figcaption>
+  </figure>
+</center>
+<br>
 <p>It wasn&rsquo;t too long until I hit my first roadblock,
 which was soldering. I found the culprit, or should I say culprits. The first problem
 was I placed the LED light strips too close together. Originally this was what I
@@ -148,11 +159,21 @@ this leather down so that the wiring would remain concealed.</p>
 soldering of wires was done. This helped hide where the positive and negative ends were
 exposed. I also made a small cut where the power adapter was and threaded the
 power adapter through the hole so that it would remain hidden from the front view.</p>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/3.jpg">
+    <figcaption>The Arduino-less panel unit. I unfortunately could not find an effective to hide those hideous wires.</figcaption>
+  </figure>
+</center>
 <p>After testing out the lights one last time to ensure that everything was working,
 I switched over to the software side of things.</p>
 <h2 id="a-simple-microcontroller-for-a-simple-task-arduino-uno">A Simple Microcontroller for a Simple Task: Arduino Uno</h2>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/logo.svg">
+    <figcaption>Arduino Logo</figcaption>
+</center>
+<br>
 <p>Keeping my costs down was my number one priority. Originally, I thougt about using
 an STM32 but I already had a spare Arduino Uno laying around so I thought it was
 about time putting it to use. I had also considered using an Arduino Mega2560 as
@@ -215,7 +236,12 @@ I was able to write up a relatively simple program below:</p>
   countDown <span style="color:#f92672">=</span> <span style="color:#ae81ff">2700</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>;
   <span style="color:#a6e22e">analogWrite</span>(PIN, <span style="color:#66d9ef">LOW</span>);
 }
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div><center>
+  <figure>
+    <img src="/images/wula/4.jpg" alt="Anotha one">
+    <figcaption>Working on the Arduino program and testing it out on panel.</figcaption>
+  </figure>
+</center>
 <h2 id="piecing-things-together">Piecing Things Together</h2>
 <p>My next step was bringing the project together. I connected pin 9 (PWM) to the source
 of the MOSFET. It is important to use a pin with a tilde(~) next to it. These pins
@@ -235,7 +261,12 @@ wire that directly fed into the negative end of the LED lights. I then connected
 drain terminal to the GND pin on the Arduino. Lastly, I connected the positive red
 wire from the LED strip to the VIN pin which powers the panel with 9V of electricity.</p>
 <h2 id="tying-up-the-loose-ends">Tying Up the Loose Ends</h2>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/5.jpg" alt="Putting it together">
+    <figcaption> Added those strange loops to panel here using glue gun. Soldered the wiring up between the panel and Arduino as well, making it one unit. </figcaption>
+  </figure>
+</center>
 <p>From a functional stand point, my product worked and was 100% complete. Structurally
 speaking, there was still work left to be done. I wanted to suspend my LED panel
 above my bed but initially had no clear way of doing it so I eventually decided to
@@ -252,7 +283,12 @@ accomplished my goal. I explored two new and very practical libraries that may
 come handy somewhere down the line and I few like I have a pretty solid understanding
 of basic electronics. Now waking up isn&rsquo;t so bad and I won&rsquo;t be sleeping in anymore
 8 am classes, at least I hope not!</p>
-<!-- raw HTML omitted -->
+<center>
+  <figure>
+    <img src="/images/wula/vid.gif" alt="Panel in Action">
+    <figcaption>Animation of what the fading effect looks like.</figcaption>
+  </figure>
+</center>
 
 
 		
@@ -270,7 +306,7 @@ of basic electronics. Now waking up isn&rsquo;t so bad and I won&rsquo;t be slee
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2021-06-09 01:06:51.104697 -0400 EDT m=&#43;0.542984173">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2021-06-09 01:33:20.712939 -0400 EDT m=&#43;0.375747770">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

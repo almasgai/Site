@@ -237,3 +237,6 @@ document
 window.main = main;
 window.clear_grid = clear_grid;
 window.clear_traversal = clear_traversal;
+window.onload = () => {
+  alert("This program works best on a desktop computer.");
+};

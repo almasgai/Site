@@ -29,6 +29,15 @@ Most of the project started in tests. I would write simple programs to test the 
     </item>
     
     <item>
+      <title>Translator</title>
+      <link>http://masgai.com/posts/translator/</link>
+      <pubDate>Thu, 14 Jan 2021 09:19:53 -0400</pubDate>
+      
+      <guid>http://masgai.com/posts/translator/</guid>
+      <description>A Handheld Translator for the Price of Lunch I always wanted to travel abroad while in college but couldn&amp;rsquo;t since I was an RA. Eventually I do plan on traveling once the COVID settles down but in the meantime I&amp;rsquo;m stuck at home. To keep myself occupied, I thought of a cool idea I wanted to do: create a handheld translator using a Raspberry Pi that listens to my voice, translates it, and speaks the result.</description>
+    </item>
+    
+    <item>
       <title>My First Hackathon</title>
       <link>http://masgai.com/posts/first-hackathon/</link>
       <pubDate>Sun, 15 Apr 2018 20:57:59 -0400</pubDate>

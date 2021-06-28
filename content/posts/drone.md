@@ -174,7 +174,8 @@ on Google's TensorFlow Lite example that was extremely helpful in this project. 
 find the project [here](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi).
 I also set the camera to a more reasonable resolution of 640x480 that greatly increased
 performance. Here are some pictures I took before removing the GUI aspect of the code
-found in the Google example.
+found in the Google example. Now I have about 90% accuracy at 30 frames per second
+with my [rewritten code.](https://github.com/almasgai/Drone)
 
 ![26](/images/Drone/26.png)
 ![27](/images/Drone/27.png)

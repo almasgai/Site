@@ -1,7 +1,7 @@
 ---
 title: "My First Hackathon"
 date: 2018-04-15T20:57:59-04:00
-draft: false
+draft: true
 tags: ["2018"]
 ---
 

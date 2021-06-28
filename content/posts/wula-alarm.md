@@ -8,7 +8,7 @@ tags: ["arduino", "DIY"]
 ## Solving a Common College Student Problem:
 
 Like most people, I enjoy sleep. But I'm taking an 8 am
-class this semester and don't want to sleep in. I decided that between my knowledge on
+class this semester and don't want to sleep in so I decided that between my knowledge of
 programming and electronics, I could somehow solve my problem.
 
 I had my 'eureka' moment about two weeks ago while watching a [YouTube video](https://www.youtube.com/watch?v=qlMtakaa7u8)
@@ -132,8 +132,7 @@ Keeping my costs down was my number one priority. Originally, I thougt about usi
 an STM32 but I already had a spare Arduino Uno laying around so I thought it was
 about time putting it to use. I had also considered using an Arduino Mega2560 as
 well but thought it would be a little bit overkill since has more I/O pins than
-I know what to do with and more horsepower necessary for this particular project,
-so I settled with the Uno.
+I know what to do with and more horsepower necessary for this particular project.
 
 Programming it was straightforward. I needed to get acquainted with two libraries:
 [TimeLib](https://github.com/PaulStoffregen/Time) & [TimeAlarms](https://github.com/PaulStoffregen/TimeAlarms). TimeLib is used for timekeeping functionality, which would
@@ -162,8 +161,6 @@ void setup() {
 
   // Setting up when the alarm should go off
   Alarm.alarmRepeat(6, 45, 00, fade);
-
-
 }
 
 void loop() {

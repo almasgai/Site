@@ -75,12 +75,12 @@
 <p>Part one of the drone covers most of the non-technical details. In this part, I&rsquo;ll talk about the technical
 details of the project.</p>
 <h3 id="project-structure">Project Structure</h3>
-<p>I broke the project into four sections: <code>labels</code>, <code>model</code>, <code>src</code>, and <code>tests</code>.</p>
-<p><code>model</code> and <code>labels</code>: these directories are a bit self-explanatory. TensorFlow reads in a model from <code>model</code>
+<p>I broke the project into four directories: <code>labels</code>, <code>model</code>, <code>src</code>, and <code>tests</code>.</p>
+<p><code>model</code> and <code>labels</code> are a bit self-explanatory. TensorFlow reads in a model from <code>model</code>
 and a label set from <code>labels</code>.</p>
-<p>Most of the project started in <code>tests</code>. I would write simple programs to test the GPIO buttons to make sure
-I could interact with the Pi while it was attached to the drone. I also based the main loop after this example from <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi">Google&rsquo;s TensorFlow Lite Github.</a> The <code>src</code> directory is what this post will focus on the most.</p>
-<p>There are files files for the program:</p>
+<p>Most of the project started in <code>tests</code> where I would write simple programs to test the GPIO buttons to make sure
+I could interact with the Pi while it was attached to the drone. I also based the main loop after this example from <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi">Google&rsquo;s TensorFlow Lite Github</a> which was extremely helpful in creating this project. The <code>src</code> directory is mainly what this blog post will focus on.</p>
+<p>Theses are the files in the <code>src</code>. <code>detect_picamera.py</code> is a modified version of the TensorFlow Lite example from above.</p>
 <ul>
 <li><code>run.sh</code></li>
 <li><code>detect_picamera.py</code></li>
@@ -88,8 +88,8 @@ I could interact with the Pi while it was attached to the drone. I also based th
 <li><code>args.py</code></li>
 <li><code>sms.py</code></li>
 </ul>
-<p><code>run.sh</code> allows the Pi to run real time object detection automatically when it boots up. You add it to your rc.local file and pass arguments to <code>detect_picamera.py</code> to fit your needs though the defaults are reasonable. Run <code>python3 picamera_detect.py --help</code> to see a whole list of arguments you can pass. Alternatively you can just look at the source code for <code>args.py</code> to see all the options. In ortder for <code>run.sh</code> to work you need to <code>cd</code> into the directory that contains <code>run.sh</code>. In my case, <code>/home/pi/Drone/src/</code> so I then activated the Python environment <code>venv</code> and then ran <code>python3 detect_picamera.py &amp;</code>. It should look something like this:
-<code>rc.local</code>:</p>
+<p><code>run.sh</code> allows the Pi to run real time object detection automatically when it boots up. You add it to your rc.local file and pass arguments to <code>detect_picamera.py</code> to fit your needs though the defaults are reasonable. Run <code>python3 picamera_detect.py --help</code> to see a whole list of arguments you can pass. Alternatively you can just look at the source code for <code>args.py</code> to see all the options. In order for <code>run.sh</code> to work you need to <code>cd</code> into the directory that contains <code>run.sh</code>. In my case <code>/home/pi/Drone/src/</code>, so I then activated the Python environment <code>venv</code> and then ran <code>python3 detect_picamera.py &amp;</code>. It should look something like this:
+<code>rc.local</code> (<code>cd</code> into <code>src</code> directory and execute <code>run.sh</code> which basically activates the <code>venv</code> environment):</p>
 <pre><code>cd /home/pi/Drone/src
 ./run.sh
 </code></pre><p><code>run.sh</code>:</p>
@@ -99,9 +99,9 @@ exit
 </code></pre><p>Next is the main loop of the program: <code>detect_picamera.py</code>. The loop uses the PiCamera to look for objects in real time. I removed a great deal of code and added my own to fit my needs for the project. For example,
 originally <code>detect_picamera.py</code> included a few methods that would create a GUI that would draw a square around an object and try and label that square in real time. Since I didn&rsquo;t need a GUI, I completely removed
 this code.</p>
-<p>Next I altered the code to search for people. Since the program searched for a wide array of objects ranging from umbrellas to dogs to parking meters and everything in between, I added some code to specifically log the GPS coordinates and send a text message when a person is detected.</p>
+<p>Next I altered the code to search for people. Since the program searched for a wide array of objects ranging from umbrellas to dogs to parking meters and everything in between, I added some code to specifically log the GPS coordinates and send a text message only when a person is detected.</p>
 <p>Next I added imported my arguments from <code>args.py</code> to make the program more flexible. You can pass <code>args.py</code> your own model, label, detection threshold, height and width resolution, and pin numbers for start, stop, and kill. I also used a great library called <code>gpiozero</code> so that I could control the Pi using three buttons to 1) start detecting objects 2) stop detecting objects and 3) end the program. I also used a program called <code>flite</code> to speak text back to me. This was useful to ensure that when I pressed one of the three buttons, the Pi would speak back to me affirming my actions (&ldquo;Searching&hellip;&rdquo;, &ldquo;Stopping camera&rdquo;, and &ldquo;Killing process now&rdquo;).</p>
-<p>Lastly there <code>logger.py</code> and <code>sms.py</code> which go hand in hand. <code>sms.py</code> contains a class called <code>SMS</code> which reads in Twilio credentials passed in as environment variables for it&rsquo;s <code>__init__</code> method. It&rsquo;s only other method sends a text message with GPS coordinates that are passed to it from <code>detect_picamera.py</code>. <code>logger.py</code> connects to the SIM7600 via <code>pyserial</code>, sends it an AT command to request the GPS location, and logs the GPS coordinates if they have not already been recorded as a pair. The logging sleeps for about 5 seconds thereafter to help ensure that if there are other people logged, they are further away from the previous spot. Logger sanitizes the input and stores the GPS coordinates as longtitude and latitude variables that are added to the sets <code>longitude_history</code> and <code>latitude_history</code> respectively. The log file is recorded as <code>&lt;timestamp&gt;.txt</code> in the directory called <code>logs</code>.</p>
+<p>Lastly there <code>logger.py</code> and <code>sms.py</code> which go hand in hand. <code>sms.py</code> contains a class called <code>SMS</code> which reads in Twilio credentials passed in as environment variables for its <code>__init__</code> method. It&rsquo;s only other method sends a text message with GPS coordinates that are passed to it from <code>detect_picamera.py</code>. <code>logger.py</code> connects to the SIM7600 via <code>pyserial</code>, sends it an AT command to request the GPS location, and logs the GPS coordinates if they have not already been recorded as a pair. The logging sleeps for about 5 seconds thereafter to help ensure that if there are other people logged, they are further away from the previous spot. Logger sanitizes the input and stores the GPS coordinates as longtitude and latitude variables that are added to the sets <code>longitude_history</code> and <code>latitude_history</code> respectively. The log file is recorded as <code>&lt;timestamp&gt;.txt</code> in the directory called <code>logs</code>.</p>
 
 
 		
@@ -118,7 +118,7 @@ this code.</p>
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2021-06-15 00:14:52.020942 -0400 EDT m=&#43;0.084310097">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2021-06-28 17:53:28.280209 -0400 EDT m=&#43;0.072826921">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
